@@ -5,7 +5,7 @@
 __global__ 
 void  add(int n, float *x, float *y)
 {
-    int index = blockIdx.x * blockDim.x + threadIdx.x;
+    int index = blockIdx * blockDim.x + threadIdx.x;
     int stride = blockDim.x * gridDim.x;
 
     for (int i = index; i<n; i+=stride)
@@ -21,9 +21,10 @@ int main(void)
     int N= 1<<20;
     float *x, *y;
 
-    // Prefetch the x and y arrays to the GPU
-    cudaMemPrefetchAsync(x, N*sizeof(float), 0, 0);
-    cudaMemPrefetchAsync(y, N*sizeof(float), 0, 0);
+    //Allocate Unified Memory – accessible from CPU or GPU
+    cudaMallocManaged(&x, N*sizeof(float));
+    cudaMallocManaged(&y, N*sizeof(float));
+
 
     // initialize x and y arrays on the host
     for (int i=0; i<N; i++){
@@ -35,6 +36,10 @@ int main(void)
     // Run the kernel on 1M elements on the GPU
     int blockSize = 256;
     int numBlocks = (N + blockSize - 1) / blockSize;
+
+    // Prefetch the x and y arrays to the GPU
+    cudaMemPrefetchAsync(x, N*sizeof(float), 0, 0);
+    cudaMemPrefetchAsync(y, N*sizeof(float), 0, 0);
     
     add<<<numBlocks, blockSize>>>(N, x, y);
     // Wait for GPU to finish before accessing on host
