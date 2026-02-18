@@ -65,13 +65,19 @@ gpu_kernel_time_ns() {
 
   nvprof --log-file "$log" ./"$exe" >/dev/null 2>&1 || true
 
-  # token is the Time column on the first kernel row under GPU activities
   local tok
-  tok="$(awk '/GPU activities:/{f=1;next} f && NF{print $3; exit}' "$log" 2>/dev/null || true)"
+  tok="$(awk '
+    /GPU activities:/ {in=1; next}
+    in && NF {
+      for (i=1; i<=NF; i++) {
+        if ($i ~ /^[0-9]*\.?[0-9]+(ns|us|ms|s)$/) { print $i; exit }
+      }
+    }
+  ' "$log" 2>/dev/null || true)"
 
   if [[ -z "${tok:-}" ]]; then
-    echo "ERROR: Could not find GPU kernel time for $exe." >&2
-    echo "Try: nvprof ./$exe and confirm there is a GPU activities kernel row." >&2
+    echo "ERROR: Could not find a kernel time token for $exe in $log." >&2
+    echo "Hint: open $log and look under 'GPU activities' to verify a time like '30.496us' exists." >&2
     exit 1
   fi
 
@@ -83,6 +89,7 @@ gpu_kernel_time_ns() {
   fi
   echo "$ns"
 }
+
 
 # ---- collect times ----
 t_cpu="$(cpu_time_ns "$CPU_EXE")"
