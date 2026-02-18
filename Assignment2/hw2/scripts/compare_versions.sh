@@ -43,8 +43,10 @@ cpu_time_ns() {
   local out secs
   out="$(mktemp)"
 
-  # Run and capture GNU time -p output (stderr). Silence program output.
-  # -p prints: real <sec>\nuser...\nsys...
+  # GNU time -p prints:
+  # real <sec>
+  # user <sec>
+  # sys  <sec>
   /usr/bin/time -p ./"$exe" >/dev/null 2>"$out" || true
 
   secs="$(awk '/^real[[:space:]]+/ {print $2; exit}' "$out")"
@@ -55,7 +57,7 @@ cpu_time_ns() {
     exit 1
   fi
 
-  # convert seconds -> ns
+  # seconds -> ns
   awk "BEGIN{printf \"%.0f\", $secs * 1000000000}"
 }
 
@@ -65,11 +67,19 @@ gpu_kernel_time_ns() {
 
   nvprof --log-file "$log" ./"$exe" >/dev/null 2>&1 || true
 
+  # nvprof can place the kernel row either:
+  #  (A) on the SAME LINE as "GPU activities:"  (your case), or
+  #  (B) on the next line(s)
+  #
+  # So: scan from "GPU activities:" up to "API calls:" and grab the first token
+  # that looks like a time:  number + (ns|us|ms|s)
   local tok
   tok="$(awk '
-    /GPU activities:/ {in=1; next}
-    in && NF {
+    /GPU activities:/ {in=1}
+    in {
+      if ($0 ~ /API calls:/) exit
       for (i=1; i<=NF; i++) {
+        gsub(/\r/, "", $i)
         if ($i ~ /^[0-9]*\.?[0-9]+(ns|us|ms|s)$/) { print $i; exit }
       }
     }
@@ -77,7 +87,7 @@ gpu_kernel_time_ns() {
 
   if [[ -z "${tok:-}" ]]; then
     echo "ERROR: Could not find a kernel time token for $exe in $log." >&2
-    echo "Hint: open $log and look under 'GPU activities' to verify a time like '30.496us' exists." >&2
+    echo "Debug: sed -n '/GPU activities:/,/API calls:/p' $log" >&2
     exit 1
   fi
 
@@ -89,7 +99,6 @@ gpu_kernel_time_ns() {
   fi
   echo "$ns"
 }
-
 
 # ---- collect times ----
 t_cpu="$(cpu_time_ns "$CPU_EXE")"
