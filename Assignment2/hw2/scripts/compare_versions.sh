@@ -3,16 +3,16 @@ set -euo pipefail
 
 # ===== EDIT THESE if needed =====
 CPU_EXE="add_cpu"
-GPU_EXES=("add, add_block" "add_grid")
+GPU_EXES=("add_block" "add_grid")
 LABELS=("Single Thread" "Single Block (256 threads)" "Multiple Blocks")
-N=$((1<<20))                    # must match code
+N=$((1<<20))
 # ================================
 
-BYTES=$((3 * N * 4))            # 12 bytes/element for y = x + y (float)
+# bytes moved for y[i] = x[i] + y[i] with float: 12 bytes/element
+BYTES=$((3 * N * 4))
 
 module load cuda11/11.0 >/dev/null 2>&1 || true
 
-# Convert nvprof time token -> ns (ns/us/ms/s)
 to_ns() {
   local tok="$1"
   local val unit
@@ -27,7 +27,6 @@ to_ns() {
   esac
 }
 
-# Pretty-print ns
 pretty_time() {
   local ns="$1"
   if (( ns < 1000000 )); then
@@ -39,29 +38,50 @@ pretty_time() {
   fi
 }
 
-# CPU wall-time in ns using /usr/bin/time (no code changes needed)
 cpu_time_ns() {
   local exe="$1"
-  local secs
-  # /usr/bin/time prints to stderr; capture it. %e = elapsed real time in seconds (decimal)
-  secs="$(/usr/bin/time -f "%e" ./"$exe" >/dev/null 2>&1 2>&1)"
+  local out secs
+  out="$(mktemp)"
+
+  # Run and capture GNU time -p output (stderr). Silence program output.
+  # -p prints: real <sec>\nuser...\nsys...
+  /usr/bin/time -p ./"$exe" >/dev/null 2>"$out" || true
+
+  secs="$(awk '/^real[[:space:]]+/ {print $2; exit}' "$out")"
+  rm -f "$out"
+
+  if [[ -z "${secs:-}" ]]; then
+    echo "ERROR: Could not parse CPU time. Ensure /usr/bin/time exists and $exe runs." >&2
+    exit 1
+  fi
+
   # convert seconds -> ns
   awk "BEGIN{printf \"%.0f\", $secs * 1000000000}"
 }
 
-# nvprof kernel time in ns (GPU activities)
 gpu_kernel_time_ns() {
   local exe="$1"
   local log="prof_${exe}.txt"
+
   nvprof --log-file "$log" ./"$exe" >/dev/null 2>&1 || true
+
+  # token is the Time column on the first kernel row under GPU activities
   local tok
   tok="$(awk '/GPU activities:/{f=1;next} f && NF{print $3; exit}' "$log" 2>/dev/null || true)"
+
   if [[ -z "${tok:-}" ]]; then
-    echo "ERROR: Could not find GPU kernel time for $exe in nvprof output." >&2
-    echo "Hint: run 'nvprof ./$exe' manually and confirm there is a GPU activities kernel row." >&2
+    echo "ERROR: Could not find GPU kernel time for $exe." >&2
+    echo "Try: nvprof ./$exe and confirm there is a GPU activities kernel row." >&2
     exit 1
   fi
-  to_ns "$tok"
+
+  local ns
+  ns="$(to_ns "$tok")"
+  if [[ -z "${ns:-}" ]]; then
+    echo "ERROR: Could not parse nvprof time token '$tok' for $exe." >&2
+    exit 1
+  fi
+  echo "$ns"
 }
 
 # ---- collect times ----
@@ -70,12 +90,11 @@ t_block="$(gpu_kernel_time_ns "${GPU_EXES[0]}")"
 t_grid="$(gpu_kernel_time_ns "${GPU_EXES[1]}")"
 
 times=("$t_cpu" "$t_block" "$t_grid")
+T0="${times[0]}"
 
 # ---- print table ----
 printf "%-26s  %14s  %16s  %12s\n" "Version" "Time" "Speedup vs CPU" "Bandwidth"
 printf "%-26s  %14s  %16s  %12s\n" "--------------------------" "--------------" "----------------" "----------"
-
-T0="${times[0]}"
 
 for i in 0 1 2; do
   t="${times[$i]}"
