@@ -11,6 +11,24 @@
   } while (0)
 
 //@@ INSERT DEVICE CODE HERE
+
+__global__ void colorToGrayScale(float *inputImageData, float *outputImageData, int imageWidth, int imageHeight, int imageChannels) {
+    
+  int x  = blockDim.x * blockIdx.x + threadIdx.x;
+  int y  = blockDim.y * blockIdx.y + threadIdx.y;
+
+  if (x < imageWidth && y < imageHeight) {
+    int idx = (y * imageWidth + x) * imageChannels; // Calculate the index for the pixel in input image
+    float r = inputImageData[idx];     // Red channel
+    float g = inputImageData[idx + 1]; // Green channel
+    float b = inputImageData[idx + 2]; // Blue channel
+
+    // make the grey into its channel p not 3p
+    outputImageData[y * imageWidth + x] = 0.21f * r + 0.71f * g + 0.07f * b; // Convert to grayscale using luminosity method
+
+    }
+}
+
 // Also modify the main function to launch thekernel. 
 int main(int argc, char *argv[]) {
   wbArg_t args;
@@ -60,6 +78,16 @@ int main(int argc, char *argv[]) {
   ///////////////////////////////////////////////////////
   wbTime_start(Compute, "Doing the computation on the GPU");
   //@@ INSERT CODE HERE
+
+  // define block size and grid size
+  int blockSizeX = 16;
+  int blockSizeY = 16;
+  dim3 blockSize(blockSizeX, blockSizeY); // 16x16 threads per block
+  dim3 gridSize((imageWidth + blockSizeX - 1) / blockSizeX, (imageHeight + blockSizeY - 1) / blockSizeY);
+
+  // launch the kernel
+  colorToGrayScale<<<gridSize, blockSize>>>(deviceInputImageData, deviceOutputImageData, imageWidth, imageHeight, imageChannels);
+  cudaDeviceSynchronize();
 
   wbTime_stop(Compute, "Doing the computation on the GPU");
 
