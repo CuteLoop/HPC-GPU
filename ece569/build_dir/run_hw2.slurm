@@ -7,7 +7,7 @@
 ### List of PI groups available to each user can be found with "va" command
 
 ####ece569 students can also replace ece569 with another group id if sponsored by another faculty. 
-#SBATCH --account=ece566
+#SBATCH --account=ece569
 
 ### Set the queue for this job as windfall or standard (adjust ### and #)
 #SBATCH --partition=standard
@@ -28,12 +28,14 @@
 ### Load required modules/libraries if needed (openmpi example)
 ### Use "module avail" command to list all available modules
 ###module load openmpi3
-###module load cuda11/11.0
+module load cuda11/11.0
+module load cmake/3.28.3
 
 ### set directory for job execution, replace the following path with your own path
-hw_path=~HPC-GPU/ece569/build_dir
+hw_path=/home/u16/joelmaldonado/HPC-GPU/ece569/build_dir
 
 cd $hw_path
+mkdir -p ImageColorToGrayScale_output VectorAdd_output
 ###
 PATHS[0]=$hw_path/ImageColorToGrayscale/Dataset/0;
 PATHS[1]=$hw_path/ImageColorToGrayscale/Dataset/1;
