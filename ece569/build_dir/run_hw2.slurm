@@ -10,7 +10,7 @@
 #SBATCH --account=ece569
 
 ### Set the queue for this job as windfall or standard (adjust ### and #)
-#SBATCH --partition=standard
+#SBATCH --partition=gpu_standard
 
 #SBATCH -e run.error
 #SBATCH -o run.out

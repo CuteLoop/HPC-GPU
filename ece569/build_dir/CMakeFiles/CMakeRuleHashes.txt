@@ -1,0 +1,3 @@
+# Hashes of file build rules.
+ef38087036dfa136b7b1a98f8c7b1e17 CMakeFiles/ImageColorToGrayscale_Solution.dir/hw2/ImageColorToGrayscale/ImageColorToGrayscale_Solution_generated_solution.cu.o
+e682e5ad94dd49ee726cb9151715b977 CMakeFiles/VectorAdd_Solution.dir/hw2/VectorAdd/VectorAdd_Solution_generated_solution.cu.o

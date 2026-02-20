@@ -1,0 +1,128 @@
+[
+{
+  "directory": "/home/u16/joelmaldonado/HPC-GPU/ece569/build_dir",
+  "command": "/usr/bin/g++  -I/home/u16/joelmaldonado/HPC-GPU/Assignment2/libwb -I/opt/ohpc/pub/apps/cuda/11.8/include  -Wall -Wno-unused-function -Wno-unused-parameter -Wextra -std=c++11 -Wno-dollar-in-identifier-extension -O3 -DNDEBUG -std=gnu++11 -o CMakeFiles/wb.dir/libwb/wbArg.cpp.o -c /home/u16/joelmaldonado/HPC-GPU/Assignment2/libwb/wbArg.cpp",
+  "file": "/home/u16/joelmaldonado/HPC-GPU/Assignment2/libwb/wbArg.cpp",
+  "output": "CMakeFiles/wb.dir/libwb/wbArg.cpp.o"
+},
+{
+  "directory": "/home/u16/joelmaldonado/HPC-GPU/ece569/build_dir",
+  "command": "/usr/bin/g++  -I/home/u16/joelmaldonado/HPC-GPU/Assignment2/libwb -I/opt/ohpc/pub/apps/cuda/11.8/include  -Wall -Wno-unused-function -Wno-unused-parameter -Wextra -std=c++11 -Wno-dollar-in-identifier-extension -O3 -DNDEBUG -std=gnu++11 -o CMakeFiles/wb.dir/libwb/wbCUDA.cpp.o -c /home/u16/joelmaldonado/HPC-GPU/Assignment2/libwb/wbCUDA.cpp",
+  "file": "/home/u16/joelmaldonado/HPC-GPU/Assignment2/libwb/wbCUDA.cpp",
+  "output": "CMakeFiles/wb.dir/libwb/wbCUDA.cpp.o"
+},
+{
+  "directory": "/home/u16/joelmaldonado/HPC-GPU/ece569/build_dir",
+  "command": "/usr/bin/g++  -I/home/u16/joelmaldonado/HPC-GPU/Assignment2/libwb -I/opt/ohpc/pub/apps/cuda/11.8/include  -Wall -Wno-unused-function -Wno-unused-parameter -Wextra -std=c++11 -Wno-dollar-in-identifier-extension -O3 -DNDEBUG -std=gnu++11 -o CMakeFiles/wb.dir/libwb/wbDataset.cpp.o -c /home/u16/joelmaldonado/HPC-GPU/Assignment2/libwb/wbDataset.cpp",
+  "file": "/home/u16/joelmaldonado/HPC-GPU/Assignment2/libwb/wbDataset.cpp",
+  "output": "CMakeFiles/wb.dir/libwb/wbDataset.cpp.o"
+},
+{
+  "directory": "/home/u16/joelmaldonado/HPC-GPU/ece569/build_dir",
+  "command": "/usr/bin/g++  -I/home/u16/joelmaldonado/HPC-GPU/Assignment2/libwb -I/opt/ohpc/pub/apps/cuda/11.8/include  -Wall -Wno-unused-function -Wno-unused-parameter -Wextra -std=c++11 -Wno-dollar-in-identifier-extension -O3 -DNDEBUG -std=gnu++11 -o CMakeFiles/wb.dir/libwb/wbDirectory.cpp.o -c /home/u16/joelmaldonado/HPC-GPU/Assignment2/libwb/wbDirectory.cpp",
+  "file": "/home/u16/joelmaldonado/HPC-GPU/Assignment2/libwb/wbDirectory.cpp",
+  "output": "CMakeFiles/wb.dir/libwb/wbDirectory.cpp.o"
+},
+{
+  "directory": "/home/u16/joelmaldonado/HPC-GPU/ece569/build_dir",
+  "command": "/usr/bin/g++  -I/home/u16/joelmaldonado/HPC-GPU/Assignment2/libwb -I/opt/ohpc/pub/apps/cuda/11.8/include  -Wall -Wno-unused-function -Wno-unused-parameter -Wextra -std=c++11 -Wno-dollar-in-identifier-extension -O3 -DNDEBUG -std=gnu++11 -o CMakeFiles/wb.dir/libwb/wbExit.cpp.o -c /home/u16/joelmaldonado/HPC-GPU/Assignment2/libwb/wbExit.cpp",
+  "file": "/home/u16/joelmaldonado/HPC-GPU/Assignment2/libwb/wbExit.cpp",
+  "output": "CMakeFiles/wb.dir/libwb/wbExit.cpp.o"
+},
+{
+  "directory": "/home/u16/joelmaldonado/HPC-GPU/ece569/build_dir",
+  "command": "/usr/bin/g++  -I/home/u16/joelmaldonado/HPC-GPU/Assignment2/libwb -I/opt/ohpc/pub/apps/cuda/11.8/include  -Wall -Wno-unused-function -Wno-unused-parameter -Wextra -std=c++11 -Wno-dollar-in-identifier-extension -O3 -DNDEBUG -std=gnu++11 -o CMakeFiles/wb.dir/libwb/wbExport.cpp.o -c /home/u16/joelmaldonado/HPC-GPU/Assignment2/libwb/wbExport.cpp",
+  "file": "/home/u16/joelmaldonado/HPC-GPU/Assignment2/libwb/wbExport.cpp",
+  "output": "CMakeFiles/wb.dir/libwb/wbExport.cpp.o"
+},
+{
+  "directory": "/home/u16/joelmaldonado/HPC-GPU/ece569/build_dir",
+  "command": "/usr/bin/g++  -I/home/u16/joelmaldonado/HPC-GPU/Assignment2/libwb -I/opt/ohpc/pub/apps/cuda/11.8/include  -Wall -Wno-unused-function -Wno-unused-parameter -Wextra -std=c++11 -Wno-dollar-in-identifier-extension -O3 -DNDEBUG -std=gnu++11 -o CMakeFiles/wb.dir/libwb/wbFile.cpp.o -c /home/u16/joelmaldonado/HPC-GPU/Assignment2/libwb/wbFile.cpp",
+  "file": "/home/u16/joelmaldonado/HPC-GPU/Assignment2/libwb/wbFile.cpp",
+  "output": "CMakeFiles/wb.dir/libwb/wbFile.cpp.o"
+},
+{
+  "directory": "/home/u16/joelmaldonado/HPC-GPU/ece569/build_dir",
+  "command": "/usr/bin/g++  -I/home/u16/joelmaldonado/HPC-GPU/Assignment2/libwb -I/opt/ohpc/pub/apps/cuda/11.8/include  -Wall -Wno-unused-function -Wno-unused-parameter -Wextra -std=c++11 -Wno-dollar-in-identifier-extension -O3 -DNDEBUG -std=gnu++11 -o CMakeFiles/wb.dir/libwb/wbImage.cpp.o -c /home/u16/joelmaldonado/HPC-GPU/Assignment2/libwb/wbImage.cpp",
+  "file": "/home/u16/joelmaldonado/HPC-GPU/Assignment2/libwb/wbImage.cpp",
+  "output": "CMakeFiles/wb.dir/libwb/wbImage.cpp.o"
+},
+{
+  "directory": "/home/u16/joelmaldonado/HPC-GPU/ece569/build_dir",
+  "command": "/usr/bin/g++  -I/home/u16/joelmaldonado/HPC-GPU/Assignment2/libwb -I/opt/ohpc/pub/apps/cuda/11.8/include  -Wall -Wno-unused-function -Wno-unused-parameter -Wextra -std=c++11 -Wno-dollar-in-identifier-extension -O3 -DNDEBUG -std=gnu++11 -o CMakeFiles/wb.dir/libwb/wbImport.cpp.o -c /home/u16/joelmaldonado/HPC-GPU/Assignment2/libwb/wbImport.cpp",
+  "file": "/home/u16/joelmaldonado/HPC-GPU/Assignment2/libwb/wbImport.cpp",
+  "output": "CMakeFiles/wb.dir/libwb/wbImport.cpp.o"
+},
+{
+  "directory": "/home/u16/joelmaldonado/HPC-GPU/ece569/build_dir",
+  "command": "/usr/bin/g++  -I/home/u16/joelmaldonado/HPC-GPU/Assignment2/libwb -I/opt/ohpc/pub/apps/cuda/11.8/include  -Wall -Wno-unused-function -Wno-unused-parameter -Wextra -std=c++11 -Wno-dollar-in-identifier-extension -O3 -DNDEBUG -std=gnu++11 -o CMakeFiles/wb.dir/libwb/wbInit.cpp.o -c /home/u16/joelmaldonado/HPC-GPU/Assignment2/libwb/wbInit.cpp",
+  "file": "/home/u16/joelmaldonado/HPC-GPU/Assignment2/libwb/wbInit.cpp",
+  "output": "CMakeFiles/wb.dir/libwb/wbInit.cpp.o"
+},
+{
+  "directory": "/home/u16/joelmaldonado/HPC-GPU/ece569/build_dir",
+  "command": "/usr/bin/g++  -I/home/u16/joelmaldonado/HPC-GPU/Assignment2/libwb -I/opt/ohpc/pub/apps/cuda/11.8/include  -Wall -Wno-unused-function -Wno-unused-parameter -Wextra -std=c++11 -Wno-dollar-in-identifier-extension -O3 -DNDEBUG -std=gnu++11 -o CMakeFiles/wb.dir/libwb/wbLogger.cpp.o -c /home/u16/joelmaldonado/HPC-GPU/Assignment2/libwb/wbLogger.cpp",
+  "file": "/home/u16/joelmaldonado/HPC-GPU/Assignment2/libwb/wbLogger.cpp",
+  "output": "CMakeFiles/wb.dir/libwb/wbLogger.cpp.o"
+},
+{
+  "directory": "/home/u16/joelmaldonado/HPC-GPU/ece569/build_dir",
+  "command": "/usr/bin/g++  -I/home/u16/joelmaldonado/HPC-GPU/Assignment2/libwb -I/opt/ohpc/pub/apps/cuda/11.8/include  -Wall -Wno-unused-function -Wno-unused-parameter -Wextra -std=c++11 -Wno-dollar-in-identifier-extension -O3 -DNDEBUG -std=gnu++11 -o CMakeFiles/wb.dir/libwb/wbMPI.cpp.o -c /home/u16/joelmaldonado/HPC-GPU/Assignment2/libwb/wbMPI.cpp",
+  "file": "/home/u16/joelmaldonado/HPC-GPU/Assignment2/libwb/wbMPI.cpp",
+  "output": "CMakeFiles/wb.dir/libwb/wbMPI.cpp.o"
+},
+{
+  "directory": "/home/u16/joelmaldonado/HPC-GPU/ece569/build_dir",
+  "command": "/usr/bin/g++  -I/home/u16/joelmaldonado/HPC-GPU/Assignment2/libwb -I/opt/ohpc/pub/apps/cuda/11.8/include  -Wall -Wno-unused-function -Wno-unused-parameter -Wextra -std=c++11 -Wno-dollar-in-identifier-extension -O3 -DNDEBUG -std=gnu++11 -o CMakeFiles/wb.dir/libwb/wbPPM.cpp.o -c /home/u16/joelmaldonado/HPC-GPU/Assignment2/libwb/wbPPM.cpp",
+  "file": "/home/u16/joelmaldonado/HPC-GPU/Assignment2/libwb/wbPPM.cpp",
+  "output": "CMakeFiles/wb.dir/libwb/wbPPM.cpp.o"
+},
+{
+  "directory": "/home/u16/joelmaldonado/HPC-GPU/ece569/build_dir",
+  "command": "/usr/bin/g++  -I/home/u16/joelmaldonado/HPC-GPU/Assignment2/libwb -I/opt/ohpc/pub/apps/cuda/11.8/include  -Wall -Wno-unused-function -Wno-unused-parameter -Wextra -std=c++11 -Wno-dollar-in-identifier-extension -O3 -DNDEBUG -std=gnu++11 -o CMakeFiles/wb.dir/libwb/wbPath.cpp.o -c /home/u16/joelmaldonado/HPC-GPU/Assignment2/libwb/wbPath.cpp",
+  "file": "/home/u16/joelmaldonado/HPC-GPU/Assignment2/libwb/wbPath.cpp",
+  "output": "CMakeFiles/wb.dir/libwb/wbPath.cpp.o"
+},
+{
+  "directory": "/home/u16/joelmaldonado/HPC-GPU/ece569/build_dir",
+  "command": "/usr/bin/g++  -I/home/u16/joelmaldonado/HPC-GPU/Assignment2/libwb -I/opt/ohpc/pub/apps/cuda/11.8/include  -Wall -Wno-unused-function -Wno-unused-parameter -Wextra -std=c++11 -Wno-dollar-in-identifier-extension -O3 -DNDEBUG -std=gnu++11 -o CMakeFiles/wb.dir/libwb/wbSolution.cpp.o -c /home/u16/joelmaldonado/HPC-GPU/Assignment2/libwb/wbSolution.cpp",
+  "file": "/home/u16/joelmaldonado/HPC-GPU/Assignment2/libwb/wbSolution.cpp",
+  "output": "CMakeFiles/wb.dir/libwb/wbSolution.cpp.o"
+},
+{
+  "directory": "/home/u16/joelmaldonado/HPC-GPU/ece569/build_dir",
+  "command": "/usr/bin/g++  -I/home/u16/joelmaldonado/HPC-GPU/Assignment2/libwb -I/opt/ohpc/pub/apps/cuda/11.8/include  -Wall -Wno-unused-function -Wno-unused-parameter -Wextra -std=c++11 -Wno-dollar-in-identifier-extension -O3 -DNDEBUG -std=gnu++11 -o CMakeFiles/wb.dir/libwb/wbSparse.cpp.o -c /home/u16/joelmaldonado/HPC-GPU/Assignment2/libwb/wbSparse.cpp",
+  "file": "/home/u16/joelmaldonado/HPC-GPU/Assignment2/libwb/wbSparse.cpp",
+  "output": "CMakeFiles/wb.dir/libwb/wbSparse.cpp.o"
+},
+{
+  "directory": "/home/u16/joelmaldonado/HPC-GPU/ece569/build_dir",
+  "command": "/usr/bin/g++  -I/home/u16/joelmaldonado/HPC-GPU/Assignment2/libwb -I/opt/ohpc/pub/apps/cuda/11.8/include  -Wall -Wno-unused-function -Wno-unused-parameter -Wextra -std=c++11 -Wno-dollar-in-identifier-extension -O3 -DNDEBUG -std=gnu++11 -o CMakeFiles/wb.dir/libwb/wbTimer.cpp.o -c /home/u16/joelmaldonado/HPC-GPU/Assignment2/libwb/wbTimer.cpp",
+  "file": "/home/u16/joelmaldonado/HPC-GPU/Assignment2/libwb/wbTimer.cpp",
+  "output": "CMakeFiles/wb.dir/libwb/wbTimer.cpp.o"
+},
+{
+  "directory": "/home/u16/joelmaldonado/HPC-GPU/ece569/build_dir",
+  "command": "/usr/bin/g++  -I/home/u16/joelmaldonado/HPC-GPU/Assignment2/libwb -I/opt/ohpc/pub/apps/cuda/11.8/include  -Wall -Wno-unused-function -Wno-unused-parameter -Wextra -std=c++11 -Wno-dollar-in-identifier-extension -O3 -DNDEBUG -std=gnu++11 -o CMakeFiles/wb.dir/libwb/wbUtils.cpp.o -c /home/u16/joelmaldonado/HPC-GPU/Assignment2/libwb/wbUtils.cpp",
+  "file": "/home/u16/joelmaldonado/HPC-GPU/Assignment2/libwb/wbUtils.cpp",
+  "output": "CMakeFiles/wb.dir/libwb/wbUtils.cpp.o"
+},
+{
+  "directory": "/home/u16/joelmaldonado/HPC-GPU/ece569/build_dir",
+  "command": "/usr/bin/g++  -I/home/u16/joelmaldonado/HPC-GPU/Assignment2/libwb -I/opt/ohpc/pub/apps/cuda/11.8/include  -Wall -Wno-unused-function -Wno-unused-parameter -Wextra -std=c++11 -Wno-dollar-in-identifier-extension -O3 -DNDEBUG -std=gnu++11 -o CMakeFiles/wb.dir/libwb/vendor/json11.cpp.o -c /home/u16/joelmaldonado/HPC-GPU/Assignment2/libwb/vendor/json11.cpp",
+  "file": "/home/u16/joelmaldonado/HPC-GPU/Assignment2/libwb/vendor/json11.cpp",
+  "output": "CMakeFiles/wb.dir/libwb/vendor/json11.cpp.o"
+},
+{
+  "directory": "/home/u16/joelmaldonado/HPC-GPU/ece569/build_dir",
+  "command": "/usr/bin/g++  -I/home/u16/joelmaldonado/HPC-GPU/Assignment2/libwb -I/opt/ohpc/pub/apps/cuda/11.8/include  -Wall -Wno-unused-function -Wno-unused-parameter -Wextra -std=c++11 -Wno-dollar-in-identifier-extension -O3 -DNDEBUG -std=gnu++11 -o CMakeFiles/VectorAdd_DatasetGenerator.dir/hw2/VectorAdd/dataset_generator.cpp.o -c /home/u16/joelmaldonado/HPC-GPU/Assignment2/hw2/VectorAdd/dataset_generator.cpp",
+  "file": "/home/u16/joelmaldonado/HPC-GPU/Assignment2/hw2/VectorAdd/dataset_generator.cpp",
+  "output": "CMakeFiles/VectorAdd_DatasetGenerator.dir/hw2/VectorAdd/dataset_generator.cpp.o"
+},
+{
+  "directory": "/home/u16/joelmaldonado/HPC-GPU/ece569/build_dir",
+  "command": "/usr/bin/g++  -I/home/u16/joelmaldonado/HPC-GPU/Assignment2/libwb -I/opt/ohpc/pub/apps/cuda/11.8/include  -Wall -Wno-unused-function -Wno-unused-parameter -Wextra -std=c++11 -Wno-dollar-in-identifier-extension -O3 -DNDEBUG -std=gnu++11 -o CMakeFiles/ImageColorToGrayscale_DatasetGenerator.dir/hw2/ImageColorToGrayscale/dataset_generator.cpp.o -c /home/u16/joelmaldonado/HPC-GPU/Assignment2/hw2/ImageColorToGrayscale/dataset_generator.cpp",
+  "file": "/home/u16/joelmaldonado/HPC-GPU/Assignment2/hw2/ImageColorToGrayscale/dataset_generator.cpp",
+  "output": "CMakeFiles/ImageColorToGrayscale_DatasetGenerator.dir/hw2/ImageColorToGrayscale/dataset_generator.cpp.o"
+}
+]

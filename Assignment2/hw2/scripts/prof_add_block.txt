@@ -1,0 +1,25 @@
+==6624== NVPROF is profiling process 6624, command: ./add_block
+==6624== Profiling application: ./add_block
+==6624== Profiling result:
+            Type  Time(%)      Time     Calls       Avg       Min       Max  Name
+ GPU activities:  100.00%  2.4459ms         1  2.4459ms  2.4459ms  2.4459ms  add(int, float*, float*)
+      API calls:   90.68%  170.84ms         2  85.420ms  26.540us  170.81ms  cudaMallocManaged
+                    7.68%  14.477ms         1  14.477ms  14.477ms  14.477ms  cudaLaunchKernel
+                    1.30%  2.4481ms         1  2.4481ms  2.4481ms  2.4481ms  cudaDeviceSynchronize
+                    0.26%  481.89us         2  240.94us  195.28us  286.60us  cudaFree
+                    0.07%  125.67us       101  1.2440us     147ns  47.217us  cuDeviceGetAttribute
+                    0.01%  10.516us         1  10.516us  10.516us  10.516us  cuDeviceGetPCIBusId
+                    0.01%  10.320us         1  10.320us  10.320us  10.320us  cuDeviceGetName
+                    0.00%  1.8120us         1  1.8120us  1.8120us  1.8120us  cuDeviceGetUuid
+                    0.00%  1.2580us         3     419ns     236ns     758ns  cuDeviceGetCount
+                    0.00%     810ns         2     405ns     219ns     591ns  cuDeviceGet
+                    0.00%     615ns         1     615ns     615ns     615ns  cuDeviceTotalMem
+                    0.00%     436ns         1     436ns     436ns     436ns     x
+
+==6624== Unified Memory profiling result:
+Device "Tesla P100-PCIE-16GB (0)"
+   Count  Avg Size  Min Size  Max Size  Total Size  Total Time  Name
+      48  170.67KB  4.0000KB  0.9961MB  8.000000MB  757.4080us  Host To Device
+      24  170.67KB  4.0000KB  0.9961MB  4.000000MB  340.0000us  Device To Host
+      12         -         -         -           -  1.480896ms  Gpu page fault groups
+Total CPU Page faults: 36
