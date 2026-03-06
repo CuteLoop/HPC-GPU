@@ -1,0 +1,10 @@
+/var/spool/slurm/d/job5334957/slurm_script: line 113: ./basic_sweep: No such file or directory
+/var/spool/slurm/d/job5334957/slurm_script: line 113: ./basic_sweep: No such file or directory
+/var/spool/slurm/d/job5334957/slurm_script: line 113: ./basic_sweep: No such file or directory
+/var/spool/slurm/d/job5334957/slurm_script: line 113: ./basic_sweep: No such file or directory
+/var/spool/slurm/d/job5334957/slurm_script: line 113: ./basic_sweep: No such file or directory
+/var/spool/slurm/d/job5334957/slurm_script: line 113: ./basic_sweep: No such file or directory
+/var/spool/slurm/d/job5334957/slurm_script: line 113: ./basic_sweep: No such file or directory
+/var/spool/slurm/d/job5334957/slurm_script: line 113: ./basic_sweep: No such file or directory
+/var/spool/slurm/d/job5334957/slurm_script: line 113: ./basic_sweep: No such file or directory
+/var/spool/slurm/d/job5334957/slurm_script: line 113: ./basic_sweep: No such file or directory

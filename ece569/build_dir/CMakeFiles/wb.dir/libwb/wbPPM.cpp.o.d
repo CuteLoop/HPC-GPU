@@ -1,5 +1,5 @@
 CMakeFiles/wb.dir/libwb/wbPPM.cpp.o: \
- /home/u16/joelmaldonado/HPC-GPU/Assignment2/libwb/wbPPM.cpp \
+ /home/u16/joelmaldonado/HPC-GPU/Assignment3/libwb/wbPPM.cpp \
  /usr/include/stdc-predef.h \
  /opt/ohpc/pub/apps/cuda/11.8/Linux_x86_64/22.11/compilers/include/math.h \
  /usr/include/math.h /usr/include/features.h /usr/include/sys/cdefs.h \
@@ -9,7 +9,7 @@ CMakeFiles/wb.dir/libwb/wbPPM.cpp.o: \
  /usr/include/bits/inf.h /usr/include/bits/nan.h \
  /usr/include/bits/mathdef.h /usr/include/bits/mathcalls.h \
  /usr/include/bits/mathinline.h \
- /home/u16/joelmaldonado/HPC-GPU/Assignment2/libwb/wb.h \
+ /home/u16/joelmaldonado/HPC-GPU/Assignment3/libwb/wb.h \
  /usr/include/stdio.h \
  /usr/lib/gcc/x86_64-redhat-linux/4.8.5/include/stddef.h \
  /usr/include/bits/types.h /usr/include/bits/typesizes.h \
@@ -34,7 +34,7 @@ CMakeFiles/wb.dir/libwb/wbPPM.cpp.o: \
  /usr/include/bits/stat.h /usr/include/unistd.h \
  /usr/include/bits/posix_opt.h /usr/include/bits/environments.h \
  /usr/include/bits/confname.h /usr/include/getopt.h \
- /home/u16/joelmaldonado/HPC-GPU/Assignment2/libwb/vendor/json11.hpp \
+ /home/u16/joelmaldonado/HPC-GPU/Assignment3/libwb/vendor/json11.hpp \
  /usr/include/c++/4.8.2/string \
  /opt/ohpc/pub/apps/cuda/11.8/Linux_x86_64/22.11/compilers/include/bits/c++config.h \
  /usr/include/c++/4.8.2/x86_64-redhat-linux/bits/c++config.h \
@@ -118,11 +118,11 @@ CMakeFiles/wb.dir/libwb/wbPPM.cpp.o: \
  /usr/include/c++/4.8.2/bits/shared_ptr.h \
  /usr/include/c++/4.8.2/bits/shared_ptr_base.h \
  /usr/include/c++/4.8.2/backward/auto_ptr.h \
- /home/u16/joelmaldonado/HPC-GPU/Assignment2/libwb/wbTypes.h \
- /home/u16/joelmaldonado/HPC-GPU/Assignment2/libwb/wbAssert.h \
+ /home/u16/joelmaldonado/HPC-GPU/Assignment3/libwb/wbTypes.h \
+ /home/u16/joelmaldonado/HPC-GPU/Assignment3/libwb/wbAssert.h \
  /usr/include/assert.h \
- /home/u16/joelmaldonado/HPC-GPU/Assignment2/libwb/wbMalloc.h \
- /home/u16/joelmaldonado/HPC-GPU/Assignment2/libwb/wbString.h \
+ /home/u16/joelmaldonado/HPC-GPU/Assignment3/libwb/wbMalloc.h \
+ /home/u16/joelmaldonado/HPC-GPU/Assignment3/libwb/wbString.h \
  /usr/include/c++/4.8.2/iostream /usr/include/c++/4.8.2/ostream \
  /usr/include/c++/4.8.2/ios /usr/include/c++/4.8.2/bits/ios_base.h \
  /usr/include/c++/4.8.2/bits/locale_classes.h \
@@ -140,8 +140,8 @@ CMakeFiles/wb.dir/libwb/wbPPM.cpp.o: \
  /usr/include/c++/4.8.2/bits/ostream.tcc /usr/include/c++/4.8.2/istream \
  /usr/include/c++/4.8.2/bits/istream.tcc /usr/include/c++/4.8.2/sstream \
  /usr/include/c++/4.8.2/bits/sstream.tcc \
- /home/u16/joelmaldonado/HPC-GPU/Assignment2/libwb/wbUtils.h \
- /home/u16/joelmaldonado/HPC-GPU/Assignment2/libwb/vendor/sole.hpp \
+ /home/u16/joelmaldonado/HPC-GPU/Assignment3/libwb/wbUtils.h \
+ /home/u16/joelmaldonado/HPC-GPU/Assignment3/libwb/vendor/sole.hpp \
  /usr/include/memory.h /usr/include/c++/4.8.2/cstring \
  /usr/include/c++/4.8.2/ctime /usr/include/c++/4.8.2/iomanip \
  /usr/include/c++/4.8.2/locale \
@@ -170,24 +170,24 @@ CMakeFiles/wb.dir/libwb/wbPPM.cpp.o: \
  /usr/include/asm/ioctl.h /usr/include/asm-generic/ioctl.h \
  /usr/include/bits/ioctl-types.h /usr/include/sys/ttydefaults.h \
  /usr/include/sys/time.h \
- /home/u16/joelmaldonado/HPC-GPU/Assignment2/libwb/wbArg.h \
- /home/u16/joelmaldonado/HPC-GPU/Assignment2/libwb/wbCUDA.h \
- /home/u16/joelmaldonado/HPC-GPU/Assignment2/libwb/wbCast.h \
- /home/u16/joelmaldonado/HPC-GPU/Assignment2/libwb/wbComparator.h \
- /home/u16/joelmaldonado/HPC-GPU/Assignment2/libwb/wbDirectory.h \
- /home/u16/joelmaldonado/HPC-GPU/Assignment2/libwb/wbExit.h \
- /home/u16/joelmaldonado/HPC-GPU/Assignment2/libwb/wbExport.h \
- /home/u16/joelmaldonado/HPC-GPU/Assignment2/libwb/wbFile.h \
- /home/u16/joelmaldonado/HPC-GPU/Assignment2/libwb/wbPPM.h \
- /home/u16/joelmaldonado/HPC-GPU/Assignment2/libwb/wbImage.h \
- /home/u16/joelmaldonado/HPC-GPU/Assignment2/libwb/wbImport.h \
- /home/u16/joelmaldonado/HPC-GPU/Assignment2/libwb/wbInit.h \
- /home/u16/joelmaldonado/HPC-GPU/Assignment2/libwb/wbLogger.h \
- /home/u16/joelmaldonado/HPC-GPU/Assignment2/libwb/wbMD5.h \
- /home/u16/joelmaldonado/HPC-GPU/Assignment2/libwb/wbMPI.h \
- /home/u16/joelmaldonado/HPC-GPU/Assignment2/libwb/wbSolution.h \
- /home/u16/joelmaldonado/HPC-GPU/Assignment2/libwb/wbSparse.h \
- /home/u16/joelmaldonado/HPC-GPU/Assignment2/libwb/wbThrust.h \
- /home/u16/joelmaldonado/HPC-GPU/Assignment2/libwb/wbTimer.h \
- /home/u16/joelmaldonado/HPC-GPU/Assignment2/libwb/wbPath.h \
- /home/u16/joelmaldonado/HPC-GPU/Assignment2/libwb/wbDataset.h
+ /home/u16/joelmaldonado/HPC-GPU/Assignment3/libwb/wbArg.h \
+ /home/u16/joelmaldonado/HPC-GPU/Assignment3/libwb/wbCUDA.h \
+ /home/u16/joelmaldonado/HPC-GPU/Assignment3/libwb/wbCast.h \
+ /home/u16/joelmaldonado/HPC-GPU/Assignment3/libwb/wbComparator.h \
+ /home/u16/joelmaldonado/HPC-GPU/Assignment3/libwb/wbDirectory.h \
+ /home/u16/joelmaldonado/HPC-GPU/Assignment3/libwb/wbExit.h \
+ /home/u16/joelmaldonado/HPC-GPU/Assignment3/libwb/wbExport.h \
+ /home/u16/joelmaldonado/HPC-GPU/Assignment3/libwb/wbFile.h \
+ /home/u16/joelmaldonado/HPC-GPU/Assignment3/libwb/wbPPM.h \
+ /home/u16/joelmaldonado/HPC-GPU/Assignment3/libwb/wbImage.h \
+ /home/u16/joelmaldonado/HPC-GPU/Assignment3/libwb/wbImport.h \
+ /home/u16/joelmaldonado/HPC-GPU/Assignment3/libwb/wbInit.h \
+ /home/u16/joelmaldonado/HPC-GPU/Assignment3/libwb/wbLogger.h \
+ /home/u16/joelmaldonado/HPC-GPU/Assignment3/libwb/wbMD5.h \
+ /home/u16/joelmaldonado/HPC-GPU/Assignment3/libwb/wbMPI.h \
+ /home/u16/joelmaldonado/HPC-GPU/Assignment3/libwb/wbSolution.h \
+ /home/u16/joelmaldonado/HPC-GPU/Assignment3/libwb/wbSparse.h \
+ /home/u16/joelmaldonado/HPC-GPU/Assignment3/libwb/wbThrust.h \
+ /home/u16/joelmaldonado/HPC-GPU/Assignment3/libwb/wbTimer.h \
+ /home/u16/joelmaldonado/HPC-GPU/Assignment3/libwb/wbPath.h \
+ /home/u16/joelmaldonado/HPC-GPU/Assignment3/libwb/wbDataset.h

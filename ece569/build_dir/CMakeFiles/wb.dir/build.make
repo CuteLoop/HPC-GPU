@@ -53,7 +53,7 @@ RM = /opt/ohpc/pub/apps/cmake/3.28.3/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/u16/joelmaldonado/HPC-GPU/Assignment2
+CMAKE_SOURCE_DIR = /home/u16/joelmaldonado/HPC-GPU/Assignment3
 
 # The top-level build directory on which CMake was run.
 CMAKE_BINARY_DIR = /home/u16/joelmaldonado/HPC-GPU/ece569/build_dir
@@ -70,270 +70,270 @@ include CMakeFiles/wb.dir/progress.make
 include CMakeFiles/wb.dir/flags.make
 
 CMakeFiles/wb.dir/libwb/wbArg.cpp.o: CMakeFiles/wb.dir/flags.make
-CMakeFiles/wb.dir/libwb/wbArg.cpp.o: /home/u16/joelmaldonado/HPC-GPU/Assignment2/libwb/wbArg.cpp
+CMakeFiles/wb.dir/libwb/wbArg.cpp.o: /home/u16/joelmaldonado/HPC-GPU/Assignment3/libwb/wbArg.cpp
 CMakeFiles/wb.dir/libwb/wbArg.cpp.o: CMakeFiles/wb.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/u16/joelmaldonado/HPC-GPU/ece569/build_dir/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/wb.dir/libwb/wbArg.cpp.o"
-	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/wb.dir/libwb/wbArg.cpp.o -MF CMakeFiles/wb.dir/libwb/wbArg.cpp.o.d -o CMakeFiles/wb.dir/libwb/wbArg.cpp.o -c /home/u16/joelmaldonado/HPC-GPU/Assignment2/libwb/wbArg.cpp
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/wb.dir/libwb/wbArg.cpp.o -MF CMakeFiles/wb.dir/libwb/wbArg.cpp.o.d -o CMakeFiles/wb.dir/libwb/wbArg.cpp.o -c /home/u16/joelmaldonado/HPC-GPU/Assignment3/libwb/wbArg.cpp
 
 CMakeFiles/wb.dir/libwb/wbArg.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/wb.dir/libwb/wbArg.cpp.i"
-	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/u16/joelmaldonado/HPC-GPU/Assignment2/libwb/wbArg.cpp > CMakeFiles/wb.dir/libwb/wbArg.cpp.i
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/u16/joelmaldonado/HPC-GPU/Assignment3/libwb/wbArg.cpp > CMakeFiles/wb.dir/libwb/wbArg.cpp.i
 
 CMakeFiles/wb.dir/libwb/wbArg.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/wb.dir/libwb/wbArg.cpp.s"
-	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/u16/joelmaldonado/HPC-GPU/Assignment2/libwb/wbArg.cpp -o CMakeFiles/wb.dir/libwb/wbArg.cpp.s
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/u16/joelmaldonado/HPC-GPU/Assignment3/libwb/wbArg.cpp -o CMakeFiles/wb.dir/libwb/wbArg.cpp.s
 
 CMakeFiles/wb.dir/libwb/wbCUDA.cpp.o: CMakeFiles/wb.dir/flags.make
-CMakeFiles/wb.dir/libwb/wbCUDA.cpp.o: /home/u16/joelmaldonado/HPC-GPU/Assignment2/libwb/wbCUDA.cpp
+CMakeFiles/wb.dir/libwb/wbCUDA.cpp.o: /home/u16/joelmaldonado/HPC-GPU/Assignment3/libwb/wbCUDA.cpp
 CMakeFiles/wb.dir/libwb/wbCUDA.cpp.o: CMakeFiles/wb.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/u16/joelmaldonado/HPC-GPU/ece569/build_dir/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/wb.dir/libwb/wbCUDA.cpp.o"
-	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/wb.dir/libwb/wbCUDA.cpp.o -MF CMakeFiles/wb.dir/libwb/wbCUDA.cpp.o.d -o CMakeFiles/wb.dir/libwb/wbCUDA.cpp.o -c /home/u16/joelmaldonado/HPC-GPU/Assignment2/libwb/wbCUDA.cpp
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/wb.dir/libwb/wbCUDA.cpp.o -MF CMakeFiles/wb.dir/libwb/wbCUDA.cpp.o.d -o CMakeFiles/wb.dir/libwb/wbCUDA.cpp.o -c /home/u16/joelmaldonado/HPC-GPU/Assignment3/libwb/wbCUDA.cpp
 
 CMakeFiles/wb.dir/libwb/wbCUDA.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/wb.dir/libwb/wbCUDA.cpp.i"
-	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/u16/joelmaldonado/HPC-GPU/Assignment2/libwb/wbCUDA.cpp > CMakeFiles/wb.dir/libwb/wbCUDA.cpp.i
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/u16/joelmaldonado/HPC-GPU/Assignment3/libwb/wbCUDA.cpp > CMakeFiles/wb.dir/libwb/wbCUDA.cpp.i
 
 CMakeFiles/wb.dir/libwb/wbCUDA.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/wb.dir/libwb/wbCUDA.cpp.s"
-	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/u16/joelmaldonado/HPC-GPU/Assignment2/libwb/wbCUDA.cpp -o CMakeFiles/wb.dir/libwb/wbCUDA.cpp.s
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/u16/joelmaldonado/HPC-GPU/Assignment3/libwb/wbCUDA.cpp -o CMakeFiles/wb.dir/libwb/wbCUDA.cpp.s
 
 CMakeFiles/wb.dir/libwb/wbDataset.cpp.o: CMakeFiles/wb.dir/flags.make
-CMakeFiles/wb.dir/libwb/wbDataset.cpp.o: /home/u16/joelmaldonado/HPC-GPU/Assignment2/libwb/wbDataset.cpp
+CMakeFiles/wb.dir/libwb/wbDataset.cpp.o: /home/u16/joelmaldonado/HPC-GPU/Assignment3/libwb/wbDataset.cpp
 CMakeFiles/wb.dir/libwb/wbDataset.cpp.o: CMakeFiles/wb.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/u16/joelmaldonado/HPC-GPU/ece569/build_dir/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/wb.dir/libwb/wbDataset.cpp.o"
-	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/wb.dir/libwb/wbDataset.cpp.o -MF CMakeFiles/wb.dir/libwb/wbDataset.cpp.o.d -o CMakeFiles/wb.dir/libwb/wbDataset.cpp.o -c /home/u16/joelmaldonado/HPC-GPU/Assignment2/libwb/wbDataset.cpp
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/wb.dir/libwb/wbDataset.cpp.o -MF CMakeFiles/wb.dir/libwb/wbDataset.cpp.o.d -o CMakeFiles/wb.dir/libwb/wbDataset.cpp.o -c /home/u16/joelmaldonado/HPC-GPU/Assignment3/libwb/wbDataset.cpp
 
 CMakeFiles/wb.dir/libwb/wbDataset.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/wb.dir/libwb/wbDataset.cpp.i"
-	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/u16/joelmaldonado/HPC-GPU/Assignment2/libwb/wbDataset.cpp > CMakeFiles/wb.dir/libwb/wbDataset.cpp.i
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/u16/joelmaldonado/HPC-GPU/Assignment3/libwb/wbDataset.cpp > CMakeFiles/wb.dir/libwb/wbDataset.cpp.i
 
 CMakeFiles/wb.dir/libwb/wbDataset.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/wb.dir/libwb/wbDataset.cpp.s"
-	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/u16/joelmaldonado/HPC-GPU/Assignment2/libwb/wbDataset.cpp -o CMakeFiles/wb.dir/libwb/wbDataset.cpp.s
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/u16/joelmaldonado/HPC-GPU/Assignment3/libwb/wbDataset.cpp -o CMakeFiles/wb.dir/libwb/wbDataset.cpp.s
 
 CMakeFiles/wb.dir/libwb/wbDirectory.cpp.o: CMakeFiles/wb.dir/flags.make
-CMakeFiles/wb.dir/libwb/wbDirectory.cpp.o: /home/u16/joelmaldonado/HPC-GPU/Assignment2/libwb/wbDirectory.cpp
+CMakeFiles/wb.dir/libwb/wbDirectory.cpp.o: /home/u16/joelmaldonado/HPC-GPU/Assignment3/libwb/wbDirectory.cpp
 CMakeFiles/wb.dir/libwb/wbDirectory.cpp.o: CMakeFiles/wb.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/u16/joelmaldonado/HPC-GPU/ece569/build_dir/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/wb.dir/libwb/wbDirectory.cpp.o"
-	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/wb.dir/libwb/wbDirectory.cpp.o -MF CMakeFiles/wb.dir/libwb/wbDirectory.cpp.o.d -o CMakeFiles/wb.dir/libwb/wbDirectory.cpp.o -c /home/u16/joelmaldonado/HPC-GPU/Assignment2/libwb/wbDirectory.cpp
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/wb.dir/libwb/wbDirectory.cpp.o -MF CMakeFiles/wb.dir/libwb/wbDirectory.cpp.o.d -o CMakeFiles/wb.dir/libwb/wbDirectory.cpp.o -c /home/u16/joelmaldonado/HPC-GPU/Assignment3/libwb/wbDirectory.cpp
 
 CMakeFiles/wb.dir/libwb/wbDirectory.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/wb.dir/libwb/wbDirectory.cpp.i"
-	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/u16/joelmaldonado/HPC-GPU/Assignment2/libwb/wbDirectory.cpp > CMakeFiles/wb.dir/libwb/wbDirectory.cpp.i
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/u16/joelmaldonado/HPC-GPU/Assignment3/libwb/wbDirectory.cpp > CMakeFiles/wb.dir/libwb/wbDirectory.cpp.i
 
 CMakeFiles/wb.dir/libwb/wbDirectory.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/wb.dir/libwb/wbDirectory.cpp.s"
-	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/u16/joelmaldonado/HPC-GPU/Assignment2/libwb/wbDirectory.cpp -o CMakeFiles/wb.dir/libwb/wbDirectory.cpp.s
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/u16/joelmaldonado/HPC-GPU/Assignment3/libwb/wbDirectory.cpp -o CMakeFiles/wb.dir/libwb/wbDirectory.cpp.s
 
 CMakeFiles/wb.dir/libwb/wbExit.cpp.o: CMakeFiles/wb.dir/flags.make
-CMakeFiles/wb.dir/libwb/wbExit.cpp.o: /home/u16/joelmaldonado/HPC-GPU/Assignment2/libwb/wbExit.cpp
+CMakeFiles/wb.dir/libwb/wbExit.cpp.o: /home/u16/joelmaldonado/HPC-GPU/Assignment3/libwb/wbExit.cpp
 CMakeFiles/wb.dir/libwb/wbExit.cpp.o: CMakeFiles/wb.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/u16/joelmaldonado/HPC-GPU/ece569/build_dir/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/wb.dir/libwb/wbExit.cpp.o"
-	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/wb.dir/libwb/wbExit.cpp.o -MF CMakeFiles/wb.dir/libwb/wbExit.cpp.o.d -o CMakeFiles/wb.dir/libwb/wbExit.cpp.o -c /home/u16/joelmaldonado/HPC-GPU/Assignment2/libwb/wbExit.cpp
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/wb.dir/libwb/wbExit.cpp.o -MF CMakeFiles/wb.dir/libwb/wbExit.cpp.o.d -o CMakeFiles/wb.dir/libwb/wbExit.cpp.o -c /home/u16/joelmaldonado/HPC-GPU/Assignment3/libwb/wbExit.cpp
 
 CMakeFiles/wb.dir/libwb/wbExit.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/wb.dir/libwb/wbExit.cpp.i"
-	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/u16/joelmaldonado/HPC-GPU/Assignment2/libwb/wbExit.cpp > CMakeFiles/wb.dir/libwb/wbExit.cpp.i
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/u16/joelmaldonado/HPC-GPU/Assignment3/libwb/wbExit.cpp > CMakeFiles/wb.dir/libwb/wbExit.cpp.i
 
 CMakeFiles/wb.dir/libwb/wbExit.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/wb.dir/libwb/wbExit.cpp.s"
-	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/u16/joelmaldonado/HPC-GPU/Assignment2/libwb/wbExit.cpp -o CMakeFiles/wb.dir/libwb/wbExit.cpp.s
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/u16/joelmaldonado/HPC-GPU/Assignment3/libwb/wbExit.cpp -o CMakeFiles/wb.dir/libwb/wbExit.cpp.s
 
 CMakeFiles/wb.dir/libwb/wbExport.cpp.o: CMakeFiles/wb.dir/flags.make
-CMakeFiles/wb.dir/libwb/wbExport.cpp.o: /home/u16/joelmaldonado/HPC-GPU/Assignment2/libwb/wbExport.cpp
+CMakeFiles/wb.dir/libwb/wbExport.cpp.o: /home/u16/joelmaldonado/HPC-GPU/Assignment3/libwb/wbExport.cpp
 CMakeFiles/wb.dir/libwb/wbExport.cpp.o: CMakeFiles/wb.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/u16/joelmaldonado/HPC-GPU/ece569/build_dir/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/wb.dir/libwb/wbExport.cpp.o"
-	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/wb.dir/libwb/wbExport.cpp.o -MF CMakeFiles/wb.dir/libwb/wbExport.cpp.o.d -o CMakeFiles/wb.dir/libwb/wbExport.cpp.o -c /home/u16/joelmaldonado/HPC-GPU/Assignment2/libwb/wbExport.cpp
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/wb.dir/libwb/wbExport.cpp.o -MF CMakeFiles/wb.dir/libwb/wbExport.cpp.o.d -o CMakeFiles/wb.dir/libwb/wbExport.cpp.o -c /home/u16/joelmaldonado/HPC-GPU/Assignment3/libwb/wbExport.cpp
 
 CMakeFiles/wb.dir/libwb/wbExport.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/wb.dir/libwb/wbExport.cpp.i"
-	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/u16/joelmaldonado/HPC-GPU/Assignment2/libwb/wbExport.cpp > CMakeFiles/wb.dir/libwb/wbExport.cpp.i
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/u16/joelmaldonado/HPC-GPU/Assignment3/libwb/wbExport.cpp > CMakeFiles/wb.dir/libwb/wbExport.cpp.i
 
 CMakeFiles/wb.dir/libwb/wbExport.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/wb.dir/libwb/wbExport.cpp.s"
-	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/u16/joelmaldonado/HPC-GPU/Assignment2/libwb/wbExport.cpp -o CMakeFiles/wb.dir/libwb/wbExport.cpp.s
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/u16/joelmaldonado/HPC-GPU/Assignment3/libwb/wbExport.cpp -o CMakeFiles/wb.dir/libwb/wbExport.cpp.s
 
 CMakeFiles/wb.dir/libwb/wbFile.cpp.o: CMakeFiles/wb.dir/flags.make
-CMakeFiles/wb.dir/libwb/wbFile.cpp.o: /home/u16/joelmaldonado/HPC-GPU/Assignment2/libwb/wbFile.cpp
+CMakeFiles/wb.dir/libwb/wbFile.cpp.o: /home/u16/joelmaldonado/HPC-GPU/Assignment3/libwb/wbFile.cpp
 CMakeFiles/wb.dir/libwb/wbFile.cpp.o: CMakeFiles/wb.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/u16/joelmaldonado/HPC-GPU/ece569/build_dir/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/wb.dir/libwb/wbFile.cpp.o"
-	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/wb.dir/libwb/wbFile.cpp.o -MF CMakeFiles/wb.dir/libwb/wbFile.cpp.o.d -o CMakeFiles/wb.dir/libwb/wbFile.cpp.o -c /home/u16/joelmaldonado/HPC-GPU/Assignment2/libwb/wbFile.cpp
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/wb.dir/libwb/wbFile.cpp.o -MF CMakeFiles/wb.dir/libwb/wbFile.cpp.o.d -o CMakeFiles/wb.dir/libwb/wbFile.cpp.o -c /home/u16/joelmaldonado/HPC-GPU/Assignment3/libwb/wbFile.cpp
 
 CMakeFiles/wb.dir/libwb/wbFile.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/wb.dir/libwb/wbFile.cpp.i"
-	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/u16/joelmaldonado/HPC-GPU/Assignment2/libwb/wbFile.cpp > CMakeFiles/wb.dir/libwb/wbFile.cpp.i
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/u16/joelmaldonado/HPC-GPU/Assignment3/libwb/wbFile.cpp > CMakeFiles/wb.dir/libwb/wbFile.cpp.i
 
 CMakeFiles/wb.dir/libwb/wbFile.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/wb.dir/libwb/wbFile.cpp.s"
-	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/u16/joelmaldonado/HPC-GPU/Assignment2/libwb/wbFile.cpp -o CMakeFiles/wb.dir/libwb/wbFile.cpp.s
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/u16/joelmaldonado/HPC-GPU/Assignment3/libwb/wbFile.cpp -o CMakeFiles/wb.dir/libwb/wbFile.cpp.s
 
 CMakeFiles/wb.dir/libwb/wbImage.cpp.o: CMakeFiles/wb.dir/flags.make
-CMakeFiles/wb.dir/libwb/wbImage.cpp.o: /home/u16/joelmaldonado/HPC-GPU/Assignment2/libwb/wbImage.cpp
+CMakeFiles/wb.dir/libwb/wbImage.cpp.o: /home/u16/joelmaldonado/HPC-GPU/Assignment3/libwb/wbImage.cpp
 CMakeFiles/wb.dir/libwb/wbImage.cpp.o: CMakeFiles/wb.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/u16/joelmaldonado/HPC-GPU/ece569/build_dir/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/wb.dir/libwb/wbImage.cpp.o"
-	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/wb.dir/libwb/wbImage.cpp.o -MF CMakeFiles/wb.dir/libwb/wbImage.cpp.o.d -o CMakeFiles/wb.dir/libwb/wbImage.cpp.o -c /home/u16/joelmaldonado/HPC-GPU/Assignment2/libwb/wbImage.cpp
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/wb.dir/libwb/wbImage.cpp.o -MF CMakeFiles/wb.dir/libwb/wbImage.cpp.o.d -o CMakeFiles/wb.dir/libwb/wbImage.cpp.o -c /home/u16/joelmaldonado/HPC-GPU/Assignment3/libwb/wbImage.cpp
 
 CMakeFiles/wb.dir/libwb/wbImage.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/wb.dir/libwb/wbImage.cpp.i"
-	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/u16/joelmaldonado/HPC-GPU/Assignment2/libwb/wbImage.cpp > CMakeFiles/wb.dir/libwb/wbImage.cpp.i
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/u16/joelmaldonado/HPC-GPU/Assignment3/libwb/wbImage.cpp > CMakeFiles/wb.dir/libwb/wbImage.cpp.i
 
 CMakeFiles/wb.dir/libwb/wbImage.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/wb.dir/libwb/wbImage.cpp.s"
-	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/u16/joelmaldonado/HPC-GPU/Assignment2/libwb/wbImage.cpp -o CMakeFiles/wb.dir/libwb/wbImage.cpp.s
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/u16/joelmaldonado/HPC-GPU/Assignment3/libwb/wbImage.cpp -o CMakeFiles/wb.dir/libwb/wbImage.cpp.s
 
 CMakeFiles/wb.dir/libwb/wbImport.cpp.o: CMakeFiles/wb.dir/flags.make
-CMakeFiles/wb.dir/libwb/wbImport.cpp.o: /home/u16/joelmaldonado/HPC-GPU/Assignment2/libwb/wbImport.cpp
+CMakeFiles/wb.dir/libwb/wbImport.cpp.o: /home/u16/joelmaldonado/HPC-GPU/Assignment3/libwb/wbImport.cpp
 CMakeFiles/wb.dir/libwb/wbImport.cpp.o: CMakeFiles/wb.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/u16/joelmaldonado/HPC-GPU/ece569/build_dir/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/wb.dir/libwb/wbImport.cpp.o"
-	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/wb.dir/libwb/wbImport.cpp.o -MF CMakeFiles/wb.dir/libwb/wbImport.cpp.o.d -o CMakeFiles/wb.dir/libwb/wbImport.cpp.o -c /home/u16/joelmaldonado/HPC-GPU/Assignment2/libwb/wbImport.cpp
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/wb.dir/libwb/wbImport.cpp.o -MF CMakeFiles/wb.dir/libwb/wbImport.cpp.o.d -o CMakeFiles/wb.dir/libwb/wbImport.cpp.o -c /home/u16/joelmaldonado/HPC-GPU/Assignment3/libwb/wbImport.cpp
 
 CMakeFiles/wb.dir/libwb/wbImport.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/wb.dir/libwb/wbImport.cpp.i"
-	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/u16/joelmaldonado/HPC-GPU/Assignment2/libwb/wbImport.cpp > CMakeFiles/wb.dir/libwb/wbImport.cpp.i
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/u16/joelmaldonado/HPC-GPU/Assignment3/libwb/wbImport.cpp > CMakeFiles/wb.dir/libwb/wbImport.cpp.i
 
 CMakeFiles/wb.dir/libwb/wbImport.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/wb.dir/libwb/wbImport.cpp.s"
-	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/u16/joelmaldonado/HPC-GPU/Assignment2/libwb/wbImport.cpp -o CMakeFiles/wb.dir/libwb/wbImport.cpp.s
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/u16/joelmaldonado/HPC-GPU/Assignment3/libwb/wbImport.cpp -o CMakeFiles/wb.dir/libwb/wbImport.cpp.s
 
 CMakeFiles/wb.dir/libwb/wbInit.cpp.o: CMakeFiles/wb.dir/flags.make
-CMakeFiles/wb.dir/libwb/wbInit.cpp.o: /home/u16/joelmaldonado/HPC-GPU/Assignment2/libwb/wbInit.cpp
+CMakeFiles/wb.dir/libwb/wbInit.cpp.o: /home/u16/joelmaldonado/HPC-GPU/Assignment3/libwb/wbInit.cpp
 CMakeFiles/wb.dir/libwb/wbInit.cpp.o: CMakeFiles/wb.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/u16/joelmaldonado/HPC-GPU/ece569/build_dir/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/wb.dir/libwb/wbInit.cpp.o"
-	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/wb.dir/libwb/wbInit.cpp.o -MF CMakeFiles/wb.dir/libwb/wbInit.cpp.o.d -o CMakeFiles/wb.dir/libwb/wbInit.cpp.o -c /home/u16/joelmaldonado/HPC-GPU/Assignment2/libwb/wbInit.cpp
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/wb.dir/libwb/wbInit.cpp.o -MF CMakeFiles/wb.dir/libwb/wbInit.cpp.o.d -o CMakeFiles/wb.dir/libwb/wbInit.cpp.o -c /home/u16/joelmaldonado/HPC-GPU/Assignment3/libwb/wbInit.cpp
 
 CMakeFiles/wb.dir/libwb/wbInit.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/wb.dir/libwb/wbInit.cpp.i"
-	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/u16/joelmaldonado/HPC-GPU/Assignment2/libwb/wbInit.cpp > CMakeFiles/wb.dir/libwb/wbInit.cpp.i
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/u16/joelmaldonado/HPC-GPU/Assignment3/libwb/wbInit.cpp > CMakeFiles/wb.dir/libwb/wbInit.cpp.i
 
 CMakeFiles/wb.dir/libwb/wbInit.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/wb.dir/libwb/wbInit.cpp.s"
-	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/u16/joelmaldonado/HPC-GPU/Assignment2/libwb/wbInit.cpp -o CMakeFiles/wb.dir/libwb/wbInit.cpp.s
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/u16/joelmaldonado/HPC-GPU/Assignment3/libwb/wbInit.cpp -o CMakeFiles/wb.dir/libwb/wbInit.cpp.s
 
 CMakeFiles/wb.dir/libwb/wbLogger.cpp.o: CMakeFiles/wb.dir/flags.make
-CMakeFiles/wb.dir/libwb/wbLogger.cpp.o: /home/u16/joelmaldonado/HPC-GPU/Assignment2/libwb/wbLogger.cpp
+CMakeFiles/wb.dir/libwb/wbLogger.cpp.o: /home/u16/joelmaldonado/HPC-GPU/Assignment3/libwb/wbLogger.cpp
 CMakeFiles/wb.dir/libwb/wbLogger.cpp.o: CMakeFiles/wb.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/u16/joelmaldonado/HPC-GPU/ece569/build_dir/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/wb.dir/libwb/wbLogger.cpp.o"
-	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/wb.dir/libwb/wbLogger.cpp.o -MF CMakeFiles/wb.dir/libwb/wbLogger.cpp.o.d -o CMakeFiles/wb.dir/libwb/wbLogger.cpp.o -c /home/u16/joelmaldonado/HPC-GPU/Assignment2/libwb/wbLogger.cpp
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/wb.dir/libwb/wbLogger.cpp.o -MF CMakeFiles/wb.dir/libwb/wbLogger.cpp.o.d -o CMakeFiles/wb.dir/libwb/wbLogger.cpp.o -c /home/u16/joelmaldonado/HPC-GPU/Assignment3/libwb/wbLogger.cpp
 
 CMakeFiles/wb.dir/libwb/wbLogger.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/wb.dir/libwb/wbLogger.cpp.i"
-	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/u16/joelmaldonado/HPC-GPU/Assignment2/libwb/wbLogger.cpp > CMakeFiles/wb.dir/libwb/wbLogger.cpp.i
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/u16/joelmaldonado/HPC-GPU/Assignment3/libwb/wbLogger.cpp > CMakeFiles/wb.dir/libwb/wbLogger.cpp.i
 
 CMakeFiles/wb.dir/libwb/wbLogger.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/wb.dir/libwb/wbLogger.cpp.s"
-	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/u16/joelmaldonado/HPC-GPU/Assignment2/libwb/wbLogger.cpp -o CMakeFiles/wb.dir/libwb/wbLogger.cpp.s
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/u16/joelmaldonado/HPC-GPU/Assignment3/libwb/wbLogger.cpp -o CMakeFiles/wb.dir/libwb/wbLogger.cpp.s
 
 CMakeFiles/wb.dir/libwb/wbMPI.cpp.o: CMakeFiles/wb.dir/flags.make
-CMakeFiles/wb.dir/libwb/wbMPI.cpp.o: /home/u16/joelmaldonado/HPC-GPU/Assignment2/libwb/wbMPI.cpp
+CMakeFiles/wb.dir/libwb/wbMPI.cpp.o: /home/u16/joelmaldonado/HPC-GPU/Assignment3/libwb/wbMPI.cpp
 CMakeFiles/wb.dir/libwb/wbMPI.cpp.o: CMakeFiles/wb.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/u16/joelmaldonado/HPC-GPU/ece569/build_dir/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/wb.dir/libwb/wbMPI.cpp.o"
-	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/wb.dir/libwb/wbMPI.cpp.o -MF CMakeFiles/wb.dir/libwb/wbMPI.cpp.o.d -o CMakeFiles/wb.dir/libwb/wbMPI.cpp.o -c /home/u16/joelmaldonado/HPC-GPU/Assignment2/libwb/wbMPI.cpp
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/wb.dir/libwb/wbMPI.cpp.o -MF CMakeFiles/wb.dir/libwb/wbMPI.cpp.o.d -o CMakeFiles/wb.dir/libwb/wbMPI.cpp.o -c /home/u16/joelmaldonado/HPC-GPU/Assignment3/libwb/wbMPI.cpp
 
 CMakeFiles/wb.dir/libwb/wbMPI.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/wb.dir/libwb/wbMPI.cpp.i"
-	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/u16/joelmaldonado/HPC-GPU/Assignment2/libwb/wbMPI.cpp > CMakeFiles/wb.dir/libwb/wbMPI.cpp.i
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/u16/joelmaldonado/HPC-GPU/Assignment3/libwb/wbMPI.cpp > CMakeFiles/wb.dir/libwb/wbMPI.cpp.i
 
 CMakeFiles/wb.dir/libwb/wbMPI.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/wb.dir/libwb/wbMPI.cpp.s"
-	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/u16/joelmaldonado/HPC-GPU/Assignment2/libwb/wbMPI.cpp -o CMakeFiles/wb.dir/libwb/wbMPI.cpp.s
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/u16/joelmaldonado/HPC-GPU/Assignment3/libwb/wbMPI.cpp -o CMakeFiles/wb.dir/libwb/wbMPI.cpp.s
 
 CMakeFiles/wb.dir/libwb/wbPPM.cpp.o: CMakeFiles/wb.dir/flags.make
-CMakeFiles/wb.dir/libwb/wbPPM.cpp.o: /home/u16/joelmaldonado/HPC-GPU/Assignment2/libwb/wbPPM.cpp
+CMakeFiles/wb.dir/libwb/wbPPM.cpp.o: /home/u16/joelmaldonado/HPC-GPU/Assignment3/libwb/wbPPM.cpp
 CMakeFiles/wb.dir/libwb/wbPPM.cpp.o: CMakeFiles/wb.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/u16/joelmaldonado/HPC-GPU/ece569/build_dir/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/wb.dir/libwb/wbPPM.cpp.o"
-	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/wb.dir/libwb/wbPPM.cpp.o -MF CMakeFiles/wb.dir/libwb/wbPPM.cpp.o.d -o CMakeFiles/wb.dir/libwb/wbPPM.cpp.o -c /home/u16/joelmaldonado/HPC-GPU/Assignment2/libwb/wbPPM.cpp
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/wb.dir/libwb/wbPPM.cpp.o -MF CMakeFiles/wb.dir/libwb/wbPPM.cpp.o.d -o CMakeFiles/wb.dir/libwb/wbPPM.cpp.o -c /home/u16/joelmaldonado/HPC-GPU/Assignment3/libwb/wbPPM.cpp
 
 CMakeFiles/wb.dir/libwb/wbPPM.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/wb.dir/libwb/wbPPM.cpp.i"
-	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/u16/joelmaldonado/HPC-GPU/Assignment2/libwb/wbPPM.cpp > CMakeFiles/wb.dir/libwb/wbPPM.cpp.i
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/u16/joelmaldonado/HPC-GPU/Assignment3/libwb/wbPPM.cpp > CMakeFiles/wb.dir/libwb/wbPPM.cpp.i
 
 CMakeFiles/wb.dir/libwb/wbPPM.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/wb.dir/libwb/wbPPM.cpp.s"
-	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/u16/joelmaldonado/HPC-GPU/Assignment2/libwb/wbPPM.cpp -o CMakeFiles/wb.dir/libwb/wbPPM.cpp.s
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/u16/joelmaldonado/HPC-GPU/Assignment3/libwb/wbPPM.cpp -o CMakeFiles/wb.dir/libwb/wbPPM.cpp.s
 
 CMakeFiles/wb.dir/libwb/wbPath.cpp.o: CMakeFiles/wb.dir/flags.make
-CMakeFiles/wb.dir/libwb/wbPath.cpp.o: /home/u16/joelmaldonado/HPC-GPU/Assignment2/libwb/wbPath.cpp
+CMakeFiles/wb.dir/libwb/wbPath.cpp.o: /home/u16/joelmaldonado/HPC-GPU/Assignment3/libwb/wbPath.cpp
 CMakeFiles/wb.dir/libwb/wbPath.cpp.o: CMakeFiles/wb.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/u16/joelmaldonado/HPC-GPU/ece569/build_dir/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object CMakeFiles/wb.dir/libwb/wbPath.cpp.o"
-	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/wb.dir/libwb/wbPath.cpp.o -MF CMakeFiles/wb.dir/libwb/wbPath.cpp.o.d -o CMakeFiles/wb.dir/libwb/wbPath.cpp.o -c /home/u16/joelmaldonado/HPC-GPU/Assignment2/libwb/wbPath.cpp
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/wb.dir/libwb/wbPath.cpp.o -MF CMakeFiles/wb.dir/libwb/wbPath.cpp.o.d -o CMakeFiles/wb.dir/libwb/wbPath.cpp.o -c /home/u16/joelmaldonado/HPC-GPU/Assignment3/libwb/wbPath.cpp
 
 CMakeFiles/wb.dir/libwb/wbPath.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/wb.dir/libwb/wbPath.cpp.i"
-	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/u16/joelmaldonado/HPC-GPU/Assignment2/libwb/wbPath.cpp > CMakeFiles/wb.dir/libwb/wbPath.cpp.i
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/u16/joelmaldonado/HPC-GPU/Assignment3/libwb/wbPath.cpp > CMakeFiles/wb.dir/libwb/wbPath.cpp.i
 
 CMakeFiles/wb.dir/libwb/wbPath.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/wb.dir/libwb/wbPath.cpp.s"
-	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/u16/joelmaldonado/HPC-GPU/Assignment2/libwb/wbPath.cpp -o CMakeFiles/wb.dir/libwb/wbPath.cpp.s
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/u16/joelmaldonado/HPC-GPU/Assignment3/libwb/wbPath.cpp -o CMakeFiles/wb.dir/libwb/wbPath.cpp.s
 
 CMakeFiles/wb.dir/libwb/wbSolution.cpp.o: CMakeFiles/wb.dir/flags.make
-CMakeFiles/wb.dir/libwb/wbSolution.cpp.o: /home/u16/joelmaldonado/HPC-GPU/Assignment2/libwb/wbSolution.cpp
+CMakeFiles/wb.dir/libwb/wbSolution.cpp.o: /home/u16/joelmaldonado/HPC-GPU/Assignment3/libwb/wbSolution.cpp
 CMakeFiles/wb.dir/libwb/wbSolution.cpp.o: CMakeFiles/wb.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/u16/joelmaldonado/HPC-GPU/ece569/build_dir/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object CMakeFiles/wb.dir/libwb/wbSolution.cpp.o"
-	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/wb.dir/libwb/wbSolution.cpp.o -MF CMakeFiles/wb.dir/libwb/wbSolution.cpp.o.d -o CMakeFiles/wb.dir/libwb/wbSolution.cpp.o -c /home/u16/joelmaldonado/HPC-GPU/Assignment2/libwb/wbSolution.cpp
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/wb.dir/libwb/wbSolution.cpp.o -MF CMakeFiles/wb.dir/libwb/wbSolution.cpp.o.d -o CMakeFiles/wb.dir/libwb/wbSolution.cpp.o -c /home/u16/joelmaldonado/HPC-GPU/Assignment3/libwb/wbSolution.cpp
 
 CMakeFiles/wb.dir/libwb/wbSolution.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/wb.dir/libwb/wbSolution.cpp.i"
-	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/u16/joelmaldonado/HPC-GPU/Assignment2/libwb/wbSolution.cpp > CMakeFiles/wb.dir/libwb/wbSolution.cpp.i
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/u16/joelmaldonado/HPC-GPU/Assignment3/libwb/wbSolution.cpp > CMakeFiles/wb.dir/libwb/wbSolution.cpp.i
 
 CMakeFiles/wb.dir/libwb/wbSolution.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/wb.dir/libwb/wbSolution.cpp.s"
-	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/u16/joelmaldonado/HPC-GPU/Assignment2/libwb/wbSolution.cpp -o CMakeFiles/wb.dir/libwb/wbSolution.cpp.s
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/u16/joelmaldonado/HPC-GPU/Assignment3/libwb/wbSolution.cpp -o CMakeFiles/wb.dir/libwb/wbSolution.cpp.s
 
 CMakeFiles/wb.dir/libwb/wbSparse.cpp.o: CMakeFiles/wb.dir/flags.make
-CMakeFiles/wb.dir/libwb/wbSparse.cpp.o: /home/u16/joelmaldonado/HPC-GPU/Assignment2/libwb/wbSparse.cpp
+CMakeFiles/wb.dir/libwb/wbSparse.cpp.o: /home/u16/joelmaldonado/HPC-GPU/Assignment3/libwb/wbSparse.cpp
 CMakeFiles/wb.dir/libwb/wbSparse.cpp.o: CMakeFiles/wb.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/u16/joelmaldonado/HPC-GPU/ece569/build_dir/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object CMakeFiles/wb.dir/libwb/wbSparse.cpp.o"
-	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/wb.dir/libwb/wbSparse.cpp.o -MF CMakeFiles/wb.dir/libwb/wbSparse.cpp.o.d -o CMakeFiles/wb.dir/libwb/wbSparse.cpp.o -c /home/u16/joelmaldonado/HPC-GPU/Assignment2/libwb/wbSparse.cpp
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/wb.dir/libwb/wbSparse.cpp.o -MF CMakeFiles/wb.dir/libwb/wbSparse.cpp.o.d -o CMakeFiles/wb.dir/libwb/wbSparse.cpp.o -c /home/u16/joelmaldonado/HPC-GPU/Assignment3/libwb/wbSparse.cpp
 
 CMakeFiles/wb.dir/libwb/wbSparse.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/wb.dir/libwb/wbSparse.cpp.i"
-	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/u16/joelmaldonado/HPC-GPU/Assignment2/libwb/wbSparse.cpp > CMakeFiles/wb.dir/libwb/wbSparse.cpp.i
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/u16/joelmaldonado/HPC-GPU/Assignment3/libwb/wbSparse.cpp > CMakeFiles/wb.dir/libwb/wbSparse.cpp.i
 
 CMakeFiles/wb.dir/libwb/wbSparse.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/wb.dir/libwb/wbSparse.cpp.s"
-	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/u16/joelmaldonado/HPC-GPU/Assignment2/libwb/wbSparse.cpp -o CMakeFiles/wb.dir/libwb/wbSparse.cpp.s
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/u16/joelmaldonado/HPC-GPU/Assignment3/libwb/wbSparse.cpp -o CMakeFiles/wb.dir/libwb/wbSparse.cpp.s
 
 CMakeFiles/wb.dir/libwb/wbTimer.cpp.o: CMakeFiles/wb.dir/flags.make
-CMakeFiles/wb.dir/libwb/wbTimer.cpp.o: /home/u16/joelmaldonado/HPC-GPU/Assignment2/libwb/wbTimer.cpp
+CMakeFiles/wb.dir/libwb/wbTimer.cpp.o: /home/u16/joelmaldonado/HPC-GPU/Assignment3/libwb/wbTimer.cpp
 CMakeFiles/wb.dir/libwb/wbTimer.cpp.o: CMakeFiles/wb.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/u16/joelmaldonado/HPC-GPU/ece569/build_dir/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building CXX object CMakeFiles/wb.dir/libwb/wbTimer.cpp.o"
-	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/wb.dir/libwb/wbTimer.cpp.o -MF CMakeFiles/wb.dir/libwb/wbTimer.cpp.o.d -o CMakeFiles/wb.dir/libwb/wbTimer.cpp.o -c /home/u16/joelmaldonado/HPC-GPU/Assignment2/libwb/wbTimer.cpp
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/wb.dir/libwb/wbTimer.cpp.o -MF CMakeFiles/wb.dir/libwb/wbTimer.cpp.o.d -o CMakeFiles/wb.dir/libwb/wbTimer.cpp.o -c /home/u16/joelmaldonado/HPC-GPU/Assignment3/libwb/wbTimer.cpp
 
 CMakeFiles/wb.dir/libwb/wbTimer.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/wb.dir/libwb/wbTimer.cpp.i"
-	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/u16/joelmaldonado/HPC-GPU/Assignment2/libwb/wbTimer.cpp > CMakeFiles/wb.dir/libwb/wbTimer.cpp.i
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/u16/joelmaldonado/HPC-GPU/Assignment3/libwb/wbTimer.cpp > CMakeFiles/wb.dir/libwb/wbTimer.cpp.i
 
 CMakeFiles/wb.dir/libwb/wbTimer.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/wb.dir/libwb/wbTimer.cpp.s"
-	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/u16/joelmaldonado/HPC-GPU/Assignment2/libwb/wbTimer.cpp -o CMakeFiles/wb.dir/libwb/wbTimer.cpp.s
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/u16/joelmaldonado/HPC-GPU/Assignment3/libwb/wbTimer.cpp -o CMakeFiles/wb.dir/libwb/wbTimer.cpp.s
 
 CMakeFiles/wb.dir/libwb/wbUtils.cpp.o: CMakeFiles/wb.dir/flags.make
-CMakeFiles/wb.dir/libwb/wbUtils.cpp.o: /home/u16/joelmaldonado/HPC-GPU/Assignment2/libwb/wbUtils.cpp
+CMakeFiles/wb.dir/libwb/wbUtils.cpp.o: /home/u16/joelmaldonado/HPC-GPU/Assignment3/libwb/wbUtils.cpp
 CMakeFiles/wb.dir/libwb/wbUtils.cpp.o: CMakeFiles/wb.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/u16/joelmaldonado/HPC-GPU/ece569/build_dir/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building CXX object CMakeFiles/wb.dir/libwb/wbUtils.cpp.o"
-	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/wb.dir/libwb/wbUtils.cpp.o -MF CMakeFiles/wb.dir/libwb/wbUtils.cpp.o.d -o CMakeFiles/wb.dir/libwb/wbUtils.cpp.o -c /home/u16/joelmaldonado/HPC-GPU/Assignment2/libwb/wbUtils.cpp
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/wb.dir/libwb/wbUtils.cpp.o -MF CMakeFiles/wb.dir/libwb/wbUtils.cpp.o.d -o CMakeFiles/wb.dir/libwb/wbUtils.cpp.o -c /home/u16/joelmaldonado/HPC-GPU/Assignment3/libwb/wbUtils.cpp
 
 CMakeFiles/wb.dir/libwb/wbUtils.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/wb.dir/libwb/wbUtils.cpp.i"
-	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/u16/joelmaldonado/HPC-GPU/Assignment2/libwb/wbUtils.cpp > CMakeFiles/wb.dir/libwb/wbUtils.cpp.i
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/u16/joelmaldonado/HPC-GPU/Assignment3/libwb/wbUtils.cpp > CMakeFiles/wb.dir/libwb/wbUtils.cpp.i
 
 CMakeFiles/wb.dir/libwb/wbUtils.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/wb.dir/libwb/wbUtils.cpp.s"
-	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/u16/joelmaldonado/HPC-GPU/Assignment2/libwb/wbUtils.cpp -o CMakeFiles/wb.dir/libwb/wbUtils.cpp.s
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/u16/joelmaldonado/HPC-GPU/Assignment3/libwb/wbUtils.cpp -o CMakeFiles/wb.dir/libwb/wbUtils.cpp.s
 
 CMakeFiles/wb.dir/libwb/vendor/json11.cpp.o: CMakeFiles/wb.dir/flags.make
-CMakeFiles/wb.dir/libwb/vendor/json11.cpp.o: /home/u16/joelmaldonado/HPC-GPU/Assignment2/libwb/vendor/json11.cpp
+CMakeFiles/wb.dir/libwb/vendor/json11.cpp.o: /home/u16/joelmaldonado/HPC-GPU/Assignment3/libwb/vendor/json11.cpp
 CMakeFiles/wb.dir/libwb/vendor/json11.cpp.o: CMakeFiles/wb.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/u16/joelmaldonado/HPC-GPU/ece569/build_dir/CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Building CXX object CMakeFiles/wb.dir/libwb/vendor/json11.cpp.o"
-	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/wb.dir/libwb/vendor/json11.cpp.o -MF CMakeFiles/wb.dir/libwb/vendor/json11.cpp.o.d -o CMakeFiles/wb.dir/libwb/vendor/json11.cpp.o -c /home/u16/joelmaldonado/HPC-GPU/Assignment2/libwb/vendor/json11.cpp
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/wb.dir/libwb/vendor/json11.cpp.o -MF CMakeFiles/wb.dir/libwb/vendor/json11.cpp.o.d -o CMakeFiles/wb.dir/libwb/vendor/json11.cpp.o -c /home/u16/joelmaldonado/HPC-GPU/Assignment3/libwb/vendor/json11.cpp
 
 CMakeFiles/wb.dir/libwb/vendor/json11.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/wb.dir/libwb/vendor/json11.cpp.i"
-	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/u16/joelmaldonado/HPC-GPU/Assignment2/libwb/vendor/json11.cpp > CMakeFiles/wb.dir/libwb/vendor/json11.cpp.i
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/u16/joelmaldonado/HPC-GPU/Assignment3/libwb/vendor/json11.cpp > CMakeFiles/wb.dir/libwb/vendor/json11.cpp.i
 
 CMakeFiles/wb.dir/libwb/vendor/json11.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/wb.dir/libwb/vendor/json11.cpp.s"
-	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/u16/joelmaldonado/HPC-GPU/Assignment2/libwb/vendor/json11.cpp -o CMakeFiles/wb.dir/libwb/vendor/json11.cpp.s
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/u16/joelmaldonado/HPC-GPU/Assignment3/libwb/vendor/json11.cpp -o CMakeFiles/wb.dir/libwb/vendor/json11.cpp.s
 
 # Object files for target wb
 wb_OBJECTS = \
@@ -394,6 +394,6 @@ CMakeFiles/wb.dir/clean:
 .PHONY : CMakeFiles/wb.dir/clean
 
 CMakeFiles/wb.dir/depend:
-	cd /home/u16/joelmaldonado/HPC-GPU/ece569/build_dir && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/u16/joelmaldonado/HPC-GPU/Assignment2 /home/u16/joelmaldonado/HPC-GPU/Assignment2 /home/u16/joelmaldonado/HPC-GPU/ece569/build_dir /home/u16/joelmaldonado/HPC-GPU/ece569/build_dir /home/u16/joelmaldonado/HPC-GPU/ece569/build_dir/CMakeFiles/wb.dir/DependInfo.cmake "--color=$(COLOR)"
+	cd /home/u16/joelmaldonado/HPC-GPU/ece569/build_dir && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/u16/joelmaldonado/HPC-GPU/Assignment3 /home/u16/joelmaldonado/HPC-GPU/Assignment3 /home/u16/joelmaldonado/HPC-GPU/ece569/build_dir /home/u16/joelmaldonado/HPC-GPU/ece569/build_dir /home/u16/joelmaldonado/HPC-GPU/ece569/build_dir/CMakeFiles/wb.dir/DependInfo.cmake "--color=$(COLOR)"
 .PHONY : CMakeFiles/wb.dir/depend
 
