@@ -147,26 +147,13 @@ macro(add_lab NAME)
 	endif (BUILD_DESCRIPTION)
 endmacro(add_lab)
 
-set(LIBWB_DIR "${PROJECT_SOURCE_DIR}/libwb")
-if (NOT EXISTS "${LIBWB_DIR}/sources.cmake")
-  if (EXISTS "${PROJECT_SOURCE_DIR}/../labs/libwb/sources.cmake")
-    set(LIBWB_DIR "${PROJECT_SOURCE_DIR}/../labs/libwb")
-  elseif (EXISTS "${PROJECT_SOURCE_DIR}/../ece569/labs/libwb/sources.cmake")
-    set(LIBWB_DIR "${PROJECT_SOURCE_DIR}/../ece569/labs/libwb")
-  endif ()
-endif ()
-
-if (NOT EXISTS "${LIBWB_DIR}/sources.cmake")
-  message(FATAL_ERROR "Could not find libwb/sources.cmake. Expected at ${PROJECT_SOURCE_DIR}/libwb, ../labs/libwb, or ../ece569/labs/libwb.")
-endif ()
-
-include_directories(${LIBWB_DIR})
+include_directories(${PROJECT_SOURCE_DIR}/libwb)
 
 if (BUILD_LIBWB_LIBRARY)
-  include(${LIBWB_DIR}/sources.cmake)
+  include(libwb/sources.cmake)
   cuda_add_library(${WBLIB} ${LIBWB_SOURCE_FILES} STATIC)
   set_property(TARGET ${WBLIB} PROPERTY CXX_STANDARD 11)
 endif (BUILD_LIBWB_LIBRARY)
 
 
-include(hw2/sources.cmake)
+include(hw3/sources.cmake)
