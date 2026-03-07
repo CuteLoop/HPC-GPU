@@ -10,7 +10,7 @@
 ### Set the number of nodes, cores and memory that will be used for this job
 #SBATCH --nodes=1
 #SBATCH --ntasks=1
-#SBATCH --cpus-per-task=2
+#SBATCH --cpus-per-atask=2
 #SBATCH --gres=gpu:1
 #SBATCH --mem=12gb
 ### Specify "wallclock time"

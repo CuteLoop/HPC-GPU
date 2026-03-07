@@ -21,16 +21,12 @@ module load cuda11/11.0
 module load cmake/3.28.3
 
 ### Run from build_dir (submit with: sbatch run_hw3_perf.slurm)
-hw_path=$(pwd)
+hw_path=/home/u16/joelmaldonado/HPC-GPU/ece569/build_dir
 cd "$hw_path"
 
-### Output and organization folders
-mkdir -p BasicMatrixMultiplication_output
-mkdir -p TiledMatrixMultiplication_output
-mkdir -p BasicPerformance
-mkdir -p BasicPerformance_output
-mkdir -p TiledPerformance
-mkdir -p TiledPerformance_output
+### Output folders used by this script
+rm -rf BasicPerformance_output TiledPerformance_output
+mkdir -p BasicPerformance_output TiledPerformance_output
 
 ### Generate performance datasets (cases 10-13)
 ./BasicPerformance_DatasetGenerator

@@ -2,6 +2,7 @@
 
 static char *base_dir;
 
+
 #define value(arry, i, j, width) arry[(i)*width + (j)]
 
 static void compute(float *output, float *input0, float *input1,
