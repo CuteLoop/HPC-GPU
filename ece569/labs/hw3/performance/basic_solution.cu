@@ -1,0 +1,142 @@
+#include <wb.h>
+#include <cstdlib>
+
+#define wbCheck(stmt)                                                     \
+  do {                                                                    \
+    cudaError_t err = stmt;                                               \
+    if (err != cudaSuccess) {                                             \
+      wbLog(ERROR, "Failed to run stmt ", #stmt);                         \
+      wbLog(ERROR, "Got CUDA error ...  ", cudaGetErrorString(err));      \
+      return -1;                                                          \
+    }                                                                     \
+  } while (0)
+
+static int getBlockSizeFromEnv() {
+  const char *env = std::getenv("BLOCK_SIZE");
+  int blockSize = 16;
+  if (env != nullptr) {
+    int candidate = std::atoi(env);
+    if (candidate == 4 || candidate == 8 || candidate == 16 || candidate == 32) {
+      blockSize = candidate;
+    } else {
+      wbLog(WARNING, "Invalid BLOCK_SIZE=", candidate,
+            ". Using default BLOCK_SIZE=16");
+    }
+  }
+  return blockSize;
+}
+
+// Compute C = A * B
+// Each thread computes one element of the output matrix C
+// by calculating the dot product of the corresponding row of A
+// and column of B using global memory accesses.
+__global__ void matrixMultiply(float *A, float *B, float *C, int numARows,
+                               int numAColumns, int numBRows,
+                               int numBColumns, int numCRows,
+                               int numCColumns) {
+  //@@ Insert code to implement basic matrix multiplication for
+  //@@ arbitrary size using global memory.
+
+  // Calculate the row and column index for this thread
+  int row = blockIdx.y * blockDim.y + threadIdx.y;
+  int col = blockIdx.x * blockDim.x + threadIdx.x;
+
+  // Bounds check: only compute if within valid output dimensions
+  if (row < numCRows && col < numCColumns) {
+    float sum = 0.0f;
+    // Dot product of row of A and column of B
+    for (int k = 0; k < numAColumns; k++) {
+      sum += A[row * numAColumns + k] * B[k * numBColumns + col];
+    }
+    C[row * numCColumns + col] = sum;
+  }
+}
+
+int main(int argc, char **argv) {
+  wbArg_t args;
+  float *hostA; // The A matrix
+  float *hostB; // The B matrix
+  float *hostC; // The output C matrix
+  float *deviceA; // A matrix on device
+  float *deviceB; // B matrix on device
+  float *deviceC; // C matrix on device
+  int numARows;    // number of rows in the matrix A
+  int numAColumns; // number of columns in the matrix A
+  int numBRows;    // number of rows in the matrix B
+  int numBColumns; // number of columns in the matrix B
+  int numCRows;    // number of rows in the matrix C
+  int numCColumns; // number of columns in the matrix C
+
+  args = wbArg_read(argc, argv);
+
+  wbTime_start(Generic, "Importing data and creating memory on host");
+  hostA = (float *)wbImport(wbArg_getInputFile(args, 0), &numARows,
+                            &numAColumns);
+  hostB = (float *)wbImport(wbArg_getInputFile(args, 1), &numBRows,
+                            &numBColumns);
+
+  //@@ Set numCRows and numCColumns
+  numCRows    = numARows;     // C has same number of rows as A
+  numCColumns = numBColumns;  // C has same number of columns as B
+
+  //@@ Allocate the hostC matrix
+  hostC = (float *)malloc(numCRows * numCColumns * sizeof(float));
+
+  wbTime_stop(Generic, "Importing data and creating memory on host");
+
+  wbLog(TRACE, "The dimensions of A are ", numARows, " x ", numAColumns);
+  wbLog(TRACE, "The dimensions of B are ", numBRows, " x ", numBColumns);
+  wbLog(TRACE, "The dimensions of C are ", numCRows, " x ", numCColumns);
+
+  wbTime_start(GPU, "Allocating GPU memory.");
+  //@@ Allocate GPU memory here for A, B and C
+  wbCheck(cudaMalloc((void **)&deviceA, numARows * numAColumns * sizeof(float)));
+  wbCheck(cudaMalloc((void **)&deviceB, numBRows * numBColumns * sizeof(float)));
+  wbCheck(cudaMalloc((void **)&deviceC, numCRows * numCColumns * sizeof(float)));
+  wbTime_stop(GPU, "Allocating GPU memory.");
+
+  wbTime_start(GPU, "Copying input memory to the GPU.");
+  //@@ Copy memory to the GPU here for A and B
+  wbCheck(cudaMemcpy(deviceA, hostA, numARows * numAColumns * sizeof(float),
+                     cudaMemcpyHostToDevice));
+  wbCheck(cudaMemcpy(deviceB, hostB, numBRows * numBColumns * sizeof(float),
+                     cudaMemcpyHostToDevice));
+  wbTime_stop(GPU, "Copying input memory to the GPU.");
+
+  //@@ Initialize the grid and block dimensions here
+  int blockSize = getBlockSizeFromEnv();
+  wbLog(TRACE, "Using block size ", blockSize, "x", blockSize);
+  dim3 dimBlock(blockSize, blockSize);
+  dim3 dimGrid((numCColumns + blockSize - 1) / blockSize,
+               (numCRows + blockSize - 1) / blockSize);
+
+  wbTime_start(Compute, "Performing CUDA computation");
+  //@@ Launch the GPU Kernel here
+  matrixMultiply<<<dimGrid, dimBlock>>>(deviceA, deviceB, deviceC,
+                                        numARows, numAColumns,
+                                        numBRows, numBColumns,
+                                        numCRows, numCColumns);
+  cudaDeviceSynchronize();
+  wbTime_stop(Compute, "Performing CUDA computation");
+
+  wbTime_start(Copy, "Copying output memory to the CPU");
+  //@@ Copy the GPU memory back to the CPU here
+  wbCheck(cudaMemcpy(hostC, deviceC, numCRows * numCColumns * sizeof(float),
+                     cudaMemcpyDeviceToHost));
+  wbTime_stop(Copy, "Copying output memory to the CPU");
+
+  wbTime_start(GPU, "Freeing GPU Memory");
+  //@@ Free the GPU memory here
+  wbCheck(cudaFree(deviceA));
+  wbCheck(cudaFree(deviceB));
+  wbCheck(cudaFree(deviceC));
+  wbTime_stop(GPU, "Freeing GPU Memory");
+
+  wbSolution(args, hostC, numCRows, numCColumns);
+
+  free(hostA);
+  free(hostB);
+  free(hostC);
+
+  return 0;
+}

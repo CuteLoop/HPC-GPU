@@ -1,3 +1,27 @@
 {
-    "cmake.sourceDirectory": "/home/samantha/Documents/HPC-GPU/Assignment2"
+    "cmake.sourceDirectory": "/home/samantha/Documents/HPC-GPU/Assignment2",
+    "latex-workshop.latex.tools": [
+        {
+            "name": "tinytex-pdflatex",
+            "command": "C:\\Users\\ual-laptop\\scoop\\apps\\tinytex\\current\\bin\\windows\\pdflatex.exe",
+            "args": [
+                "-synctex=1",
+                "-interaction=nonstopmode",
+                "-file-line-error",
+                "%DOC%"
+            ]
+        }
+    ],
+    "latex-workshop.latex.recipes": [
+        {
+            "name": "tinytex pdflatex",
+            "tools": [
+                "tinytex-pdflatex"
+            ]
+        }
+    ],
+    "latex-workshop.latex.recipe.default": "tinytex pdflatex",
+    "terminal.integrated.env.windows": {
+        "PATH": "C:\\Users\\ual-laptop\\scoop\\apps\\tinytex\\current\\bin\\windows;${env:PATH}"
+    }
 }

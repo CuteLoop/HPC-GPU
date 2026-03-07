@@ -16,10 +16,10 @@ $ ./myatomics
 #include <stdio.h>
 #include "gputimer.h"
 
-#define NUM_THREADS 1000000
-#define ARRAY_SIZE  10
+#define NUM_THREADS 2048
+#define ARRAY_SIZE  256
 
-#define BLOCK_WIDTH 1000
+#define BLOCK_WIDTH 512
 
 void print_array(int *array, int size)
 {
@@ -69,7 +69,7 @@ int main(int argc,char **argv)
     timer.Start();
     for (runs=0;runs<100;runs++){
     increment_naive<<<NUM_THREADS/BLOCK_WIDTH, BLOCK_WIDTH>>>(d_array);
-    //increment_atomic<<<NUM_THREADS/BLOCK_WIDTH, BLOCK_WIDTH>>>(d_array);
+    increment_atomic<<<NUM_THREADS/BLOCK_WIDTH, BLOCK_WIDTH>>>(d_array);
     }
     timer.Stop();
     
