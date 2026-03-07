@@ -79,7 +79,7 @@ endif()
 
 
 
-set(CMAKE_CXX_IMPLICIT_INCLUDE_DIRECTORIES "/opt/ohpc/pub/apps/cuda/11.8/Linux_x86_64/22.11/comm_libs/nvshmem/include;/opt/ohpc/pub/apps/cuda/11.8/Linux_x86_64/22.11/comm_libs/nccl/include;/opt/ohpc/pub/apps/cuda/11.8/Linux_x86_64/22.11/comm_libs/mpi/include;/opt/ohpc/pub/apps/cuda/11.8/Linux_x86_64/22.11/math_libs/include;/opt/ohpc/pub/apps/cuda/11.8/Linux_x86_64/22.11/compilers/include;/opt/ohpc/pub/apps/cuda/11.8/Linux_x86_64/22.11/cuda/include;/usr/include/c++/4.8.5;/usr/include/c++/4.8.5/x86_64-redhat-linux;/usr/include/c++/4.8.5/backward;/usr/lib/gcc/x86_64-redhat-linux/4.8.5/include;/usr/local/include;/usr/include")
+set(CMAKE_CXX_IMPLICIT_INCLUDE_DIRECTORIES "/usr/include/c++/4.8.5;/usr/include/c++/4.8.5/x86_64-redhat-linux;/usr/include/c++/4.8.5/backward;/usr/lib/gcc/x86_64-redhat-linux/4.8.5/include;/usr/local/include;/usr/include")
 set(CMAKE_CXX_IMPLICIT_LINK_LIBRARIES "stdc++;m;gcc_s;gcc;c;gcc_s;gcc")
 set(CMAKE_CXX_IMPLICIT_LINK_DIRECTORIES "/opt/ohpc/pub/apps/python/3.11.4/lib;/usr/lib/gcc/x86_64-redhat-linux/4.8.5;/usr/lib64;/lib64;/usr/lib")
 set(CMAKE_CXX_IMPLICIT_LINK_FRAMEWORK_DIRECTORIES "")

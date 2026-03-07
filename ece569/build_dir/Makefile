@@ -57,7 +57,7 @@ RM = /opt/ohpc/pub/apps/cmake/3.28.3/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/u16/joelmaldonado/HPC-GPU/Assignment3
+CMAKE_SOURCE_DIR = /home/u16/joelmaldonado/HPC-GPU/ece569/labs
 
 # The top-level build directory on which CMake was run.
 CMAKE_BINARY_DIR = /home/u16/joelmaldonado/HPC-GPU/ece569/build_dir
@@ -181,6 +181,58 @@ TiledMatrixMultiplication_DatasetGenerator/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/TiledMatrixMultiplication_DatasetGenerator.dir/build.make CMakeFiles/TiledMatrixMultiplication_DatasetGenerator.dir/build
 .PHONY : TiledMatrixMultiplication_DatasetGenerator/fast
 
+#=============================================================================
+# Target rules for targets named BasicPerformance_Solution
+
+# Build rule for target.
+BasicPerformance_Solution: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 BasicPerformance_Solution
+.PHONY : BasicPerformance_Solution
+
+# fast build rule for target.
+BasicPerformance_Solution/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/BasicPerformance_Solution.dir/build.make CMakeFiles/BasicPerformance_Solution.dir/build
+.PHONY : BasicPerformance_Solution/fast
+
+#=============================================================================
+# Target rules for targets named TiledPerformance_Solution
+
+# Build rule for target.
+TiledPerformance_Solution: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 TiledPerformance_Solution
+.PHONY : TiledPerformance_Solution
+
+# fast build rule for target.
+TiledPerformance_Solution/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TiledPerformance_Solution.dir/build.make CMakeFiles/TiledPerformance_Solution.dir/build
+.PHONY : TiledPerformance_Solution/fast
+
+#=============================================================================
+# Target rules for targets named BasicPerformance_DatasetGenerator
+
+# Build rule for target.
+BasicPerformance_DatasetGenerator: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 BasicPerformance_DatasetGenerator
+.PHONY : BasicPerformance_DatasetGenerator
+
+# fast build rule for target.
+BasicPerformance_DatasetGenerator/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/BasicPerformance_DatasetGenerator.dir/build.make CMakeFiles/BasicPerformance_DatasetGenerator.dir/build
+.PHONY : BasicPerformance_DatasetGenerator/fast
+
+#=============================================================================
+# Target rules for targets named TiledPerformance_DatasetGenerator
+
+# Build rule for target.
+TiledPerformance_DatasetGenerator: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 TiledPerformance_DatasetGenerator
+.PHONY : TiledPerformance_DatasetGenerator
+
+# fast build rule for target.
+TiledPerformance_DatasetGenerator/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TiledPerformance_DatasetGenerator.dir/build.make CMakeFiles/TiledPerformance_DatasetGenerator.dir/build
+.PHONY : TiledPerformance_DatasetGenerator/fast
+
 hw3/BasicMatrixMultiplication/dataset_generator.o: hw3/BasicMatrixMultiplication/dataset_generator.cpp.o
 .PHONY : hw3/BasicMatrixMultiplication/dataset_generator.o
 
@@ -228,6 +280,54 @@ hw3/TiledMatrixMultiplication/dataset_generator.s: hw3/TiledMatrixMultiplication
 hw3/TiledMatrixMultiplication/dataset_generator.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/TiledMatrixMultiplication_DatasetGenerator.dir/build.make CMakeFiles/TiledMatrixMultiplication_DatasetGenerator.dir/hw3/TiledMatrixMultiplication/dataset_generator.cpp.s
 .PHONY : hw3/TiledMatrixMultiplication/dataset_generator.cpp.s
+
+hw3/performance/basic_generator.o: hw3/performance/basic_generator.cpp.o
+.PHONY : hw3/performance/basic_generator.o
+
+# target to build an object file
+hw3/performance/basic_generator.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/BasicPerformance_DatasetGenerator.dir/build.make CMakeFiles/BasicPerformance_DatasetGenerator.dir/hw3/performance/basic_generator.cpp.o
+.PHONY : hw3/performance/basic_generator.cpp.o
+
+hw3/performance/basic_generator.i: hw3/performance/basic_generator.cpp.i
+.PHONY : hw3/performance/basic_generator.i
+
+# target to preprocess a source file
+hw3/performance/basic_generator.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/BasicPerformance_DatasetGenerator.dir/build.make CMakeFiles/BasicPerformance_DatasetGenerator.dir/hw3/performance/basic_generator.cpp.i
+.PHONY : hw3/performance/basic_generator.cpp.i
+
+hw3/performance/basic_generator.s: hw3/performance/basic_generator.cpp.s
+.PHONY : hw3/performance/basic_generator.s
+
+# target to generate assembly for a file
+hw3/performance/basic_generator.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/BasicPerformance_DatasetGenerator.dir/build.make CMakeFiles/BasicPerformance_DatasetGenerator.dir/hw3/performance/basic_generator.cpp.s
+.PHONY : hw3/performance/basic_generator.cpp.s
+
+hw3/performance/tiled_generator.o: hw3/performance/tiled_generator.cpp.o
+.PHONY : hw3/performance/tiled_generator.o
+
+# target to build an object file
+hw3/performance/tiled_generator.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TiledPerformance_DatasetGenerator.dir/build.make CMakeFiles/TiledPerformance_DatasetGenerator.dir/hw3/performance/tiled_generator.cpp.o
+.PHONY : hw3/performance/tiled_generator.cpp.o
+
+hw3/performance/tiled_generator.i: hw3/performance/tiled_generator.cpp.i
+.PHONY : hw3/performance/tiled_generator.i
+
+# target to preprocess a source file
+hw3/performance/tiled_generator.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TiledPerformance_DatasetGenerator.dir/build.make CMakeFiles/TiledPerformance_DatasetGenerator.dir/hw3/performance/tiled_generator.cpp.i
+.PHONY : hw3/performance/tiled_generator.cpp.i
+
+hw3/performance/tiled_generator.s: hw3/performance/tiled_generator.cpp.s
+.PHONY : hw3/performance/tiled_generator.s
+
+# target to generate assembly for a file
+hw3/performance/tiled_generator.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TiledPerformance_DatasetGenerator.dir/build.make CMakeFiles/TiledPerformance_DatasetGenerator.dir/hw3/performance/tiled_generator.cpp.s
+.PHONY : hw3/performance/tiled_generator.cpp.s
 
 libwb/vendor/json11.o: libwb/vendor/json11.cpp.o
 .PHONY : libwb/vendor/json11.o
@@ -695,8 +795,12 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... BasicMatrixMultiplication_DatasetGenerator"
 	@echo "... BasicMatrixMultiplication_Solution"
+	@echo "... BasicPerformance_DatasetGenerator"
+	@echo "... BasicPerformance_Solution"
 	@echo "... TiledMatrixMultiplication_DatasetGenerator"
 	@echo "... TiledMatrixMultiplication_Solution"
+	@echo "... TiledPerformance_DatasetGenerator"
+	@echo "... TiledPerformance_Solution"
 	@echo "... wb"
 	@echo "... hw3/BasicMatrixMultiplication/dataset_generator.o"
 	@echo "... hw3/BasicMatrixMultiplication/dataset_generator.i"
@@ -704,6 +808,12 @@ help:
 	@echo "... hw3/TiledMatrixMultiplication/dataset_generator.o"
 	@echo "... hw3/TiledMatrixMultiplication/dataset_generator.i"
 	@echo "... hw3/TiledMatrixMultiplication/dataset_generator.s"
+	@echo "... hw3/performance/basic_generator.o"
+	@echo "... hw3/performance/basic_generator.i"
+	@echo "... hw3/performance/basic_generator.s"
+	@echo "... hw3/performance/tiled_generator.o"
+	@echo "... hw3/performance/tiled_generator.i"
+	@echo "... hw3/performance/tiled_generator.s"
 	@echo "... libwb/vendor/json11.o"
 	@echo "... libwb/vendor/json11.i"
 	@echo "... libwb/vendor/json11.s"

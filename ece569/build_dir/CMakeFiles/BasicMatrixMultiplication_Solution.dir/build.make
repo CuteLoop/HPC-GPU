@@ -53,7 +53,7 @@ RM = /opt/ohpc/pub/apps/cmake/3.28.3/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/u16/joelmaldonado/HPC-GPU/Assignment3
+CMAKE_SOURCE_DIR = /home/u16/joelmaldonado/HPC-GPU/ece569/labs
 
 # The top-level build directory on which CMake was run.
 CMAKE_BINARY_DIR = /home/u16/joelmaldonado/HPC-GPU/ece569/build_dir
@@ -69,7 +69,7 @@ include CMakeFiles/BasicMatrixMultiplication_Solution.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/BasicMatrixMultiplication_Solution.dir/flags.make
 
-CMakeFiles/BasicMatrixMultiplication_Solution.dir/hw3/BasicMatrixMultiplication/BasicMatrixMultiplication_Solution_generated_solution.cu.o: /home/u16/joelmaldonado/HPC-GPU/Assignment3/hw3/BasicMatrixMultiplication/solution.cu
+CMakeFiles/BasicMatrixMultiplication_Solution.dir/hw3/BasicMatrixMultiplication/BasicMatrixMultiplication_Solution_generated_solution.cu.o: /home/u16/joelmaldonado/HPC-GPU/ece569/labs/hw3/BasicMatrixMultiplication/solution.cu
 CMakeFiles/BasicMatrixMultiplication_Solution.dir/hw3/BasicMatrixMultiplication/BasicMatrixMultiplication_Solution_generated_solution.cu.o: CMakeFiles/BasicMatrixMultiplication_Solution.dir/hw3/BasicMatrixMultiplication/BasicMatrixMultiplication_Solution_generated_solution.cu.o.depend
 CMakeFiles/BasicMatrixMultiplication_Solution.dir/hw3/BasicMatrixMultiplication/BasicMatrixMultiplication_Solution_generated_solution.cu.o: CMakeFiles/BasicMatrixMultiplication_Solution.dir/hw3/BasicMatrixMultiplication/BasicMatrixMultiplication_Solution_generated_solution.cu.o.Release.cmake
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/u16/joelmaldonado/HPC-GPU/ece569/build_dir/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building NVCC (Device) object CMakeFiles/BasicMatrixMultiplication_Solution.dir/hw3/BasicMatrixMultiplication/BasicMatrixMultiplication_Solution_generated_solution.cu.o"
@@ -103,6 +103,6 @@ CMakeFiles/BasicMatrixMultiplication_Solution.dir/clean:
 .PHONY : CMakeFiles/BasicMatrixMultiplication_Solution.dir/clean
 
 CMakeFiles/BasicMatrixMultiplication_Solution.dir/depend: CMakeFiles/BasicMatrixMultiplication_Solution.dir/hw3/BasicMatrixMultiplication/BasicMatrixMultiplication_Solution_generated_solution.cu.o
-	cd /home/u16/joelmaldonado/HPC-GPU/ece569/build_dir && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/u16/joelmaldonado/HPC-GPU/Assignment3 /home/u16/joelmaldonado/HPC-GPU/Assignment3 /home/u16/joelmaldonado/HPC-GPU/ece569/build_dir /home/u16/joelmaldonado/HPC-GPU/ece569/build_dir /home/u16/joelmaldonado/HPC-GPU/ece569/build_dir/CMakeFiles/BasicMatrixMultiplication_Solution.dir/DependInfo.cmake "--color=$(COLOR)"
+	cd /home/u16/joelmaldonado/HPC-GPU/ece569/build_dir && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/u16/joelmaldonado/HPC-GPU/ece569/labs /home/u16/joelmaldonado/HPC-GPU/ece569/labs /home/u16/joelmaldonado/HPC-GPU/ece569/build_dir /home/u16/joelmaldonado/HPC-GPU/ece569/build_dir /home/u16/joelmaldonado/HPC-GPU/ece569/build_dir/CMakeFiles/BasicMatrixMultiplication_Solution.dir/DependInfo.cmake "--color=$(COLOR)"
 .PHONY : CMakeFiles/BasicMatrixMultiplication_Solution.dir/depend
 
