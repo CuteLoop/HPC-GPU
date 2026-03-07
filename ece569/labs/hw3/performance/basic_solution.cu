@@ -19,7 +19,7 @@ static int getBlockSizeFromEnv() {
     if (candidate == 4 || candidate == 8 || candidate == 16 || candidate == 32) {
       blockSize = candidate;
     } else {
-      wbLog(WARNING, "Invalid BLOCK_SIZE=", candidate,
+      wbLog(TRACE, "Invalid BLOCK_SIZE=", candidate,
             ". Using default BLOCK_SIZE=16");
     }
   }
