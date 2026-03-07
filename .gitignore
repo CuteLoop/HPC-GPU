@@ -1,1 +1,8 @@
 Assignment1/labs/libwb/
+
+# Generated dataset binaries
+*.raw
+
+# Local build outputs
+ece569/build_dir/
+

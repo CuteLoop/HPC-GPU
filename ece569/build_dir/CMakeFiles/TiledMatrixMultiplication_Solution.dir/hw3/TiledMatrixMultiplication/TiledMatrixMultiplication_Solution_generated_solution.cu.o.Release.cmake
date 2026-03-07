@@ -58,7 +58,7 @@ endif()
 
 # Set these up as variables to make reading the generated file easier
 set(CMAKE_COMMAND "/opt/ohpc/pub/apps/cmake/3.28.3/bin/cmake") # path
-set(source_file "/home/u16/joelmaldonado/HPC-GPU/Assignment3/hw3/TiledMatrixMultiplication/solution.cu") # path
+set(source_file "/home/u16/joelmaldonado/HPC-GPU/ece569/labs/hw3/TiledMatrixMultiplication/solution.cu") # path
 set(NVCC_generated_dependency_file "/home/u16/joelmaldonado/HPC-GPU/ece569/build_dir/CMakeFiles/TiledMatrixMultiplication_Solution.dir/hw3/TiledMatrixMultiplication/TiledMatrixMultiplication_Solution_generated_solution.cu.o.NVCC-depend") # path
 set(cmake_dependency_file "/home/u16/joelmaldonado/HPC-GPU/ece569/build_dir/CMakeFiles/TiledMatrixMultiplication_Solution.dir/hw3/TiledMatrixMultiplication/TiledMatrixMultiplication_Solution_generated_solution.cu.o.depend") # path
 set(CUDA_make2cmake "/opt/ohpc/pub/apps/cmake/3.28.3/share/cmake-3.28/Modules/FindCUDA/make2cmake.cmake") # path
@@ -79,7 +79,7 @@ set(CUDA_NVCC_FLAGS_DEBUG -G ; )
 set(CUDA_NVCC_FLAGS_MINSIZEREL  ; )
 set(CUDA_NVCC_FLAGS_RELWITHDEBINFO  ; )
 set(nvcc_flags -m64) # list
-set(CUDA_NVCC_INCLUDE_DIRS [==[/opt/ohpc/pub/apps/cuda/11.8/include;/home/u16/joelmaldonado/HPC-GPU/Assignment3/libwb;/home/u16/joelmaldonado/HPC-GPU/Assignment3/libwb;/opt/ohpc/pub/apps/cuda/11.8/include]==]) # list (needs to be in lua quotes to address backslashes)
+set(CUDA_NVCC_INCLUDE_DIRS [==[/opt/ohpc/pub/apps/cuda/11.8/include;/home/u16/joelmaldonado/HPC-GPU/ece569/labs/libwb;/home/u16/joelmaldonado/HPC-GPU/ece569/labs/libwb;/opt/ohpc/pub/apps/cuda/11.8/include]==]) # list (needs to be in lua quotes to address backslashes)
 string(REPLACE "\\" "/" CUDA_NVCC_INCLUDE_DIRS "${CUDA_NVCC_INCLUDE_DIRS}")
 set(CUDA_NVCC_COMPILE_DEFINITIONS [==[]==]) # list (needs to be in lua quotes see #16510 ).
 set(format_flag "-c") # string

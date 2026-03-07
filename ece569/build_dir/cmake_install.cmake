@@ -1,4 +1,4 @@
-# Install script for directory: /home/u16/joelmaldonado/HPC-GPU/Assignment3
+# Install script for directory: /home/u16/joelmaldonado/HPC-GPU/ece569/labs
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

@@ -4,7 +4,7 @@
 # compile CXX with /usr/bin/g++
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/home/u16/joelmaldonado/HPC-GPU/Assignment3/libwb -I/opt/ohpc/pub/apps/cuda/11.8/include
+CXX_INCLUDES = -I/home/u16/joelmaldonado/HPC-GPU/ece569/labs/libwb -I/opt/ohpc/pub/apps/cuda/11.8/include
 
 CXX_FLAGS =  -Wall -Wno-unused-function -Wno-unused-parameter -Wextra -std=c++11 -Wno-dollar-in-identifier-extension -O3 -DNDEBUG -std=gnu++11
 

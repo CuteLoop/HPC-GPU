@@ -58,7 +58,7 @@ endif()
 
 # Set these up as variables to make reading the generated file easier
 set(CMAKE_COMMAND "/opt/ohpc/pub/apps/cmake/3.28.3/bin/cmake") # path
-set(source_file "/home/u16/joelmaldonado/HPC-GPU/Assignment3/hw3/BasicMatrixMultiplication/solution.cu") # path
+set(source_file "/home/u16/joelmaldonado/HPC-GPU/ece569/labs/hw3/BasicMatrixMultiplication/solution.cu") # path
 set(NVCC_generated_dependency_file "/home/u16/joelmaldonado/HPC-GPU/ece569/build_dir/CMakeFiles/BasicMatrixMultiplication_Solution.dir/hw3/BasicMatrixMultiplication/BasicMatrixMultiplication_Solution_generated_solution.cu.o.NVCC-depend") # path
 set(cmake_dependency_file "/home/u16/joelmaldonado/HPC-GPU/ece569/build_dir/CMakeFiles/BasicMatrixMultiplication_Solution.dir/hw3/BasicMatrixMultiplication/BasicMatrixMultiplication_Solution_generated_solution.cu.o.depend") # path
 set(CUDA_make2cmake "/opt/ohpc/pub/apps/cmake/3.28.3/share/cmake-3.28/Modules/FindCUDA/make2cmake.cmake") # path
