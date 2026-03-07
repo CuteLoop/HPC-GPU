@@ -14,7 +14,7 @@
 #SBATCH --gres=gpu:1
 #SBATCH --mem=12gb
 ### Specify "wallclock time"
-#SBATCH --time 00:10:00
+#SBATCH --time 00:45:00
 
 ### Load required modules
 module load cuda11/11.0
