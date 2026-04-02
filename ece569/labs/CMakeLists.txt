@@ -156,4 +156,7 @@ if (BUILD_LIBWB_LIBRARY)
 endif (BUILD_LIBWB_LIBRARY)
 
 
+include(hw2/sources.cmake)
 include(hw3/sources.cmake)
+include(hw4/sources.cmake)
+
