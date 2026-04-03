@@ -1,58 +1,102 @@
-Generating uniform dataset...
-Generated uniform dataset: 500000 elements, all = 42
-  input.raw  -> /home/u16/joelmaldonado/HPC-GPU/ece569/build_dir/Histogram/Dataset/uniform/input.raw
-  output.raw -> /home/u16/joelmaldonado/HPC-GPU/ece569/build_dir/Histogram/Dataset/uniform/output.raw
-  bin[42] = 127 (clipped from 500000), all other bins = 0
+Uniform dataset already exists, skipping generation.
 ===== Experiment 2: Uniform dataset (500k elements, all = bin 42) =====
 10 runs per version — stresses atomic contention on a single bin
 
 --- Version 0: global memory interleaved ---
-  run 1: Total compute time (ms) 0.605536 for version 0
-  run 2: Total compute time (ms) 0.599104 for version 0
-  run 3: Total compute time (ms) 0.603488 for version 0
-  run 4: Total compute time (ms) 0.598624 for version 0
-  run 5: Total compute time (ms) 0.600064 for version 0
-  run 6: Total compute time (ms) 0.602112 for version 0
-  run 7: Total compute time (ms) 0.601056 for version 0
-  run 8: Total compute time (ms) 0.600128 for version 0
-  run 9: Total compute time (ms) 0.616480 for version 0
-  run 10: Total compute time (ms) 0.604064 for version 0
+  run 1: Total compute time (ms) 0.990624 for version 0
+  run 2: Total compute time (ms) 0.998624 for version 0
+  run 3: Total compute time (ms) 0.986688 for version 0
+  run 4: Total compute time (ms) 0.993280 for version 0
+  run 5: Total compute time (ms) 0.993568 for version 0
+  run 6: Total compute time (ms) 0.991008 for version 0
+  run 7: Total compute time (ms) 0.993792 for version 0
+  run 8: Total compute time (ms) 0.982816 for version 0
+  run 9: Total compute time (ms) 0.994688 for version 0
+  run 10: Total compute time (ms) 1.021536 for version 0
 
 --- Version 1: shared memory privatized ---
-  run 1: Total compute time (ms) 0.183072 for version 1
-  run 2: Total compute time (ms) 0.194624 for version 1
-  run 3: Total compute time (ms) 0.191872 for version 1
-  run 4: Total compute time (ms) 0.183200 for version 1
-  run 5: Total compute time (ms) 0.195680 for version 1
-  run 6: Total compute time (ms) 0.183040 for version 1
-  run 7: Total compute time (ms) 0.182976 for version 1
-  run 8: Total compute time (ms) 0.182880 for version 1
-  run 9: Total compute time (ms) 0.185440 for version 1
-  run 10: Total compute time (ms) 0.183680 for version 1
+  run 1: Total compute time (ms) 0.570656 for version 1
+  run 2: Total compute time (ms) 0.574368 for version 1
+  run 3: Total compute time (ms) 0.571424 for version 1
+  run 4: Total compute time (ms) 0.597952 for version 1
+  run 5: Total compute time (ms) 0.583360 for version 1
+  run 6: Total compute time (ms) 0.573152 for version 1
+  run 7: Total compute time (ms) 0.588288 for version 1
+  run 8: Total compute time (ms) 0.590432 for version 1
+  run 9: Total compute time (ms) 0.570368 for version 1
+  run 10: Total compute time (ms) 0.586496 for version 1
 
---- Version 2: warp aggregation (uint4 + RLE) ---
-  run 1: Total compute time (ms) 0.204864 for version 2
-  run 2: Total compute time (ms) 0.173248 for version 2
-  run 3: Total compute time (ms) 0.171616 for version 2
-  run 4: Total compute time (ms) 0.174048 for version 2
-  run 5: Total compute time (ms) 0.172928 for version 2
-  run 6: Total compute time (ms) 0.174272 for version 2
-  run 7: Total compute time (ms) 0.176480 for version 2
-  run 8: Total compute time (ms) 0.175552 for version 2
-  run 9: Total compute time (ms) 0.181536 for version 2
-  run 10: Total compute time (ms) 0.172096 for version 2
+--- Version 2: THE GOAT (R=2 per-block + RLE + uint4) ---
+  run 1: Total compute time (ms) 0.568320 for version 2
+  run 2: Total compute time (ms) 0.561984 for version 2
+  run 3: Total compute time (ms) 0.575616 for version 2
+  run 4: Total compute time (ms) 0.579168 for version 2
+  run 5: Total compute time (ms) 0.579584 for version 2
+  run 6: Total compute time (ms) 0.576576 for version 2
+  run 7: Total compute time (ms) 0.579648 for version 2
+  run 8: Total compute time (ms) 0.575072 for version 2
+  run 9: Total compute time (ms) 0.576608 for version 2
+  run 10: Total compute time (ms) 0.571232 for version 2
 
---- Version 3: bin-centric gather (zero atomics) ---
-  run 1: Total compute time (ms) 10.993568 for version 3
-  run 2: Total compute time (ms) 11.014944 for version 3
-  run 3: Total compute time (ms) 11.055072 for version 3
-  run 4: Total compute time (ms) 11.094240 for version 3
-  run 5: Total compute time (ms) 11.019456 for version 3
-  run 6: Total compute time (ms) 11.033696 for version 3
-  run 7: Total compute time (ms) 11.004224 for version 3
-  run 8: Total compute time (ms) 11.075328 for version 3
-  run 9: Total compute time (ms) 11.007680 for version 3
-  run 10: Total compute time (ms) 11.057248 for version 3
+--- Version 3: ablation (R=2 + uint4, no RLE) ---
+  run 1: Total compute time (ms) 0.565376 for version 3
+  run 2: Total compute time (ms) 0.576576 for version 3
+  run 3: Total compute time (ms) 0.576448 for version 3
+  run 4: Total compute time (ms) 0.573088 for version 3
+  run 5: Total compute time (ms) 0.564672 for version 3
+  run 6: Total compute time (ms) 0.567520 for version 3
+  run 7: Total compute time (ms) 0.563552 for version 3
+  run 8: Total compute time (ms) 0.578880 for version 3
+  run 9: Total compute time (ms) 0.577024 for version 3
+  run 10: Total compute time (ms) 0.574144 for version 3
+
+--- Version 4: warp aggregation (__ballot_sync/__popc) ---
+  run 1: Total compute time (ms) 0.587040 for version 4
+  run 2: Total compute time (ms) 0.570496 for version 4
+  run 3: Total compute time (ms) 0.587488 for version 4
+  run 4: Total compute time (ms) 0.600000 for version 4
+  run 5: Total compute time (ms) 0.579712 for version 4
+  run 6: Total compute time (ms) 0.573504 for version 4
+  run 7: Total compute time (ms) 0.580512 for version 4
+  run 8: Total compute time (ms) 0.580480 for version 4
+  run 9: Total compute time (ms) 0.582176 for version 4
+  run 10: Total compute time (ms) 0.568768 for version 4
+
+--- Version 5: bin-centric gather (zero atomics) ---
+  run 1: Total compute time (ms) 11.992512 for version 5
+  run 2: Total compute time (ms) 11.992704 for version 5
+  run 3: Total compute time (ms) 11.983936 for version 5
+  run 4: Total compute time (ms) 11.990944 for version 5
+  run 5: Total compute time (ms) 12.000704 for version 5
+  run 6: Total compute time (ms) 11.985184 for version 5
+  run 7: Total compute time (ms) 11.988512 for version 5
+  run 8: Total compute time (ms) 12.004000 for version 5
+  run 9: Total compute time (ms) 11.989952 for version 5
+  run 10: Total compute time (ms) 11.992576 for version 5
+
+--- Version 6: sort & reduce-by-key (Thrust) ---
+  run 1: Total compute time (ms) 1.466080 for version 6
+  run 2: Total compute time (ms) 1.445280 for version 6
+  run 3: Total compute time (ms) 1.462336 for version 6
+  run 4: Total compute time (ms) 1.445408 for version 6
+  run 5: Total compute time (ms) 1.436352 for version 6
+  run 6: Total compute time (ms) 1.452608 for version 6
+  run 7: Total compute time (ms) 1.469088 for version 6
+  run 8: Total compute time (ms) 1.441600 for version 6
+  run 9: Total compute time (ms) 1.459776 for version 6
+  run 10: Total compute time (ms) 1.463232 for version 6
+
+--- Version 7: multi-split hierarchical bucketing ---
+  run 1: Total compute time (ms) 0.570144 for version 7
+  run 2: Total compute time (ms) 0.572832 for version 7
+  run 3: Total compute time (ms) 0.579840 for version 7
+  run 4: Total compute time (ms) 0.572640 for version 7
+  run 5: Total compute time (ms) 0.583808 for version 7
+  run 6: Total compute time (ms) 0.578720 for version 7
+  run 7: Total compute time (ms) 0.583392 for version 7
+  run 8: Total compute time (ms) 0.583808 for version 7
+  run 9: Total compute time (ms) 0.573856 for version 7
+  run 10: Total compute time (ms) 0.578496 for version 7
 
 ===== Experiment 2 DONE =====
 Outputs in Histogram_output/exp2/
