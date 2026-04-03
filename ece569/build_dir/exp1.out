@@ -1,0 +1,53 @@
+===== Experiment 1: Dataset 6 (random, 500k elements) =====
+10 runs per version — reading kernel time from each output file
+
+--- Version 0: global memory interleaved ---
+  run 1: Total compute time (ms) 0.192544 for version 0
+  run 2: Total compute time (ms) 0.198400 for version 0
+  run 3: Total compute time (ms) 0.197568 for version 0
+  run 4: Total compute time (ms) 0.202112 for version 0
+  run 5: Total compute time (ms) 0.191392 for version 0
+  run 6: Total compute time (ms) 0.208864 for version 0
+  run 7: Total compute time (ms) 0.197568 for version 0
+  run 8: Total compute time (ms) 0.192992 for version 0
+  run 9: Total compute time (ms) 0.192960 for version 0
+  run 10: Total compute time (ms) 0.194240 for version 0
+
+--- Version 1: shared memory privatized ---
+  run 1: Total compute time (ms) 0.181248 for version 1
+  run 2: Total compute time (ms) 0.178720 for version 1
+  run 3: Total compute time (ms) 0.177824 for version 1
+  run 4: Total compute time (ms) 0.182176 for version 1
+  run 5: Total compute time (ms) 0.177536 for version 1
+  run 6: Total compute time (ms) 0.178016 for version 1
+  run 7: Total compute time (ms) 0.191712 for version 1
+  run 8: Total compute time (ms) 0.183776 for version 1
+  run 9: Total compute time (ms) 0.185248 for version 1
+  run 10: Total compute time (ms) 0.177024 for version 1
+
+--- Version 2: warp aggregation (uint4 + RLE) ---
+  run 1: Total compute time (ms) 0.191776 for version 2
+  run 2: Total compute time (ms) 0.177408 for version 2
+  run 3: Total compute time (ms) 0.175808 for version 2
+  run 4: Total compute time (ms) 0.178784 for version 2
+  run 5: Total compute time (ms) 0.200416 for version 2
+  run 6: Total compute time (ms) 0.177664 for version 2
+  run 7: Total compute time (ms) 0.185312 for version 2
+  run 8: Total compute time (ms) 0.182016 for version 2
+  run 9: Total compute time (ms) 0.184512 for version 2
+  run 10: Total compute time (ms) 0.188512 for version 2
+
+--- Version 3: bin-centric gather (zero atomics) ---
+  run 1: Total compute time (ms) 10.961152 for version 3
+  run 2: Total compute time (ms) 10.969408 for version 3
+  run 3: Total compute time (ms) 11.031520 for version 3
+  run 4: Total compute time (ms) 10.990816 for version 3
+  run 5: Total compute time (ms) 10.966400 for version 3
+  run 6: Total compute time (ms) 11.025216 for version 3
+  run 7: Total compute time (ms) 10.980416 for version 3
+  run 8: Total compute time (ms) 11.018080 for version 3
+  run 9: Total compute time (ms) 10.988256 for version 3
+  run 10: Total compute time (ms) 10.986304 for version 3
+
+===== Experiment 1 DONE =====
+Outputs in Histogram_output/exp1/

@@ -1,0 +1,58 @@
+Generating uniform dataset...
+Generated uniform dataset: 500000 elements, all = 42
+  input.raw  -> /home/u16/joelmaldonado/HPC-GPU/ece569/build_dir/Histogram/Dataset/uniform/input.raw
+  output.raw -> /home/u16/joelmaldonado/HPC-GPU/ece569/build_dir/Histogram/Dataset/uniform/output.raw
+  bin[42] = 127 (clipped from 500000), all other bins = 0
+===== Experiment 2: Uniform dataset (500k elements, all = bin 42) =====
+10 runs per version — stresses atomic contention on a single bin
+
+--- Version 0: global memory interleaved ---
+  run 1: Total compute time (ms) 0.605536 for version 0
+  run 2: Total compute time (ms) 0.599104 for version 0
+  run 3: Total compute time (ms) 0.603488 for version 0
+  run 4: Total compute time (ms) 0.598624 for version 0
+  run 5: Total compute time (ms) 0.600064 for version 0
+  run 6: Total compute time (ms) 0.602112 for version 0
+  run 7: Total compute time (ms) 0.601056 for version 0
+  run 8: Total compute time (ms) 0.600128 for version 0
+  run 9: Total compute time (ms) 0.616480 for version 0
+  run 10: Total compute time (ms) 0.604064 for version 0
+
+--- Version 1: shared memory privatized ---
+  run 1: Total compute time (ms) 0.183072 for version 1
+  run 2: Total compute time (ms) 0.194624 for version 1
+  run 3: Total compute time (ms) 0.191872 for version 1
+  run 4: Total compute time (ms) 0.183200 for version 1
+  run 5: Total compute time (ms) 0.195680 for version 1
+  run 6: Total compute time (ms) 0.183040 for version 1
+  run 7: Total compute time (ms) 0.182976 for version 1
+  run 8: Total compute time (ms) 0.182880 for version 1
+  run 9: Total compute time (ms) 0.185440 for version 1
+  run 10: Total compute time (ms) 0.183680 for version 1
+
+--- Version 2: warp aggregation (uint4 + RLE) ---
+  run 1: Total compute time (ms) 0.204864 for version 2
+  run 2: Total compute time (ms) 0.173248 for version 2
+  run 3: Total compute time (ms) 0.171616 for version 2
+  run 4: Total compute time (ms) 0.174048 for version 2
+  run 5: Total compute time (ms) 0.172928 for version 2
+  run 6: Total compute time (ms) 0.174272 for version 2
+  run 7: Total compute time (ms) 0.176480 for version 2
+  run 8: Total compute time (ms) 0.175552 for version 2
+  run 9: Total compute time (ms) 0.181536 for version 2
+  run 10: Total compute time (ms) 0.172096 for version 2
+
+--- Version 3: bin-centric gather (zero atomics) ---
+  run 1: Total compute time (ms) 10.993568 for version 3
+  run 2: Total compute time (ms) 11.014944 for version 3
+  run 3: Total compute time (ms) 11.055072 for version 3
+  run 4: Total compute time (ms) 11.094240 for version 3
+  run 5: Total compute time (ms) 11.019456 for version 3
+  run 6: Total compute time (ms) 11.033696 for version 3
+  run 7: Total compute time (ms) 11.004224 for version 3
+  run 8: Total compute time (ms) 11.075328 for version 3
+  run 9: Total compute time (ms) 11.007680 for version 3
+  run 10: Total compute time (ms) 11.057248 for version 3
+
+===== Experiment 2 DONE =====
+Outputs in Histogram_output/exp2/
