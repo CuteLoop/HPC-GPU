@@ -150,20 +150,19 @@ print_table("Experiment 2 — Uniform data (500k same-value elements)", e2)
 def plot_runs(data, title, filename):
     fig, ax = plt.subplots(figsize=(7, 4))
     for v in range(NUM_VERSIONS):
-        muted = v in MUTED_VERSIONS
+        if v in MUTED_VERSIONS:
+            continue
         ax.plot(RUNS, nan_list(data[v]),
                 marker=VERSION_MARKS[v],
-                color=_vc(v),
+                color=VERSION_COLORS[v],
                 label=VERSION_LABELS[v],
-                linewidth=1.0 if muted else 1.6,
-                markersize=4 if muted else 6,
-                alpha=0.4 if muted else 1.0,
-                linestyle="--" if muted else "-",
-                zorder=1 if muted else 2)
+                linewidth=1.6,
+                markersize=6)
     ax.set_xlabel("Run number")
     ax.set_ylabel("Kernel execution time (ms)")
     ax.set_title(title)
     ax.set_xticks(RUNS)
+    ax.margins(y=0.15)
     ax.legend(loc="upper right")
     ax.xaxis.set_minor_locator(ticker.NullLocator())
     fig.tight_layout()
@@ -183,21 +182,20 @@ plot_runs(e2, "Experiment 2 — Kernel time per run (uniform data)", "fig_exp2_r
 def plot_runs_log(data, title, filename):
     fig, ax = plt.subplots(figsize=(7, 4))
     for v in range(NUM_VERSIONS):
-        muted = v in MUTED_VERSIONS
+        if v in MUTED_VERSIONS:
+            continue
         ax.plot(RUNS, nan_list(data[v]),
                 marker=VERSION_MARKS[v],
-                color=_vc(v),
+                color=VERSION_COLORS[v],
                 label=VERSION_LABELS[v],
-                linewidth=1.0 if muted else 1.6,
-                markersize=4 if muted else 6,
-                alpha=0.4 if muted else 1.0,
-                linestyle="--" if muted else "-",
-                zorder=1 if muted else 2)
+                linewidth=1.6,
+                markersize=6)
     ax.set_yscale("log")
     ax.set_xlabel("Run number")
     ax.set_ylabel("Kernel execution time (ms, log scale)")
     ax.set_title(title)
     ax.set_xticks(RUNS)
+    ax.margins(y=0.15)
     ax.legend(loc="upper right", fontsize=9)
     ax.xaxis.set_minor_locator(ticker.NullLocator())
     ax.yaxis.set_major_formatter(ticker.FuncFormatter(lambda y, _: f"{y:g}"))
@@ -292,7 +290,7 @@ print(f"  Saved: {out}")
 # ════════════════════════════════════════════════════════════
 #  FIG 6 & 7 — Speedup over V0 baseline
 # ════════════════════════════════════════════════════════════
-def plot_speedup(data, title, filename):
+def plot_speedup(data, title, filename, outside_legend=False):
     vlist        = [v for v in range(NUM_VERSIONS) if v not in MUTED_VERSIONS]
     baseline     = vavg(data[0])
     baseline_std = vstdev(data[0])
@@ -323,7 +321,10 @@ def plot_speedup(data, title, filename):
     ax.set_xticklabels(xlbls)
     ax.set_ylabel("Speedup relative to V0")
     ax.set_title(title)
-    ax.legend(loc="upper left")
+    if outside_legend:
+        ax.legend(loc="upper center", bbox_to_anchor=(0.5, -0.18), ncol=1, fontsize=9)
+    else:
+        ax.legend(loc="lower right")
     for bar, val in zip(bars, speedups):
         if not np.isnan(val):
             ax.text(bar.get_x() + bar.get_width() / 2,
@@ -336,7 +337,7 @@ def plot_speedup(data, title, filename):
     print(f"  Saved: {out}")
 
 plot_speedup(e1, "Experiment 1 — Speedup relative to V0 (random data)",  "fig_exp1_speedup.pdf")
-plot_speedup(e2, "Experiment 2 — Speedup relative to V0 (uniform data)", "fig_exp2_speedup.pdf")
+plot_speedup(e2, "Experiment 2 — Speedup relative to V0 (uniform data)", "fig_exp2_speedup.pdf", outside_legend=True)
 
 # ════════════════════════════════════════════════════════════
 #  NO-SLOW variants: exclude V5 (Bin-Centric Gather, O(N*B)) and
@@ -524,6 +525,135 @@ def plot_v5_context(e1_data, e2_data, filename):
     print(f"  Saved: {out}")
 
 plot_v5_context(e1, e2, "fig_v5_gather_overhead.pdf")
+
+# ════════════════════════════════════════════════════════════
+#  SCALING EXPERIMENTS — V0, V1, V2 across input sizes
+#  Reads from Histogram_output/scaling/v{V}_ds{DS}_run{R}.txt
+#  Datasets: 6=500k, 8=1M, 9=10M, 10=50M (random, 4096 bins)
+# ════════════════════════════════════════════════════════════
+SCALING_DIR      = OUTPUT_ROOT / "scaling"
+SCALING_DS_ORDER = [11, 12, 13, 14, 6, 8, 9, 10]
+SCALING_DS_SIZES = {
+    11:      2_000,
+    12:     10_000,
+    13:     50_000,
+    14:    200_000,
+    6:     500_000,
+    8:   1_000_000,
+    9:  10_000_000,
+    10: 50_000_000,
+}
+SCALING_VERSIONS = list(range(NUM_VERSIONS))   # V0–V7
+SCALING_RUNS     = 5
+
+def collect_scaling():
+    sc = {}
+    for v in SCALING_VERSIONS:
+        sc[v] = {}
+        for ds in SCALING_DS_ORDER:
+            times = []
+            for run in range(1, SCALING_RUNS + 1):
+                f = SCALING_DIR / f"v{v}_ds{ds}_run{run}.txt"
+                t = extract_time(f)
+                if t is None:
+                    print(f"  WARNING: missing {f.name}")
+                times.append(t)
+            sc[v][ds] = times
+    return sc
+
+def _fmt_n(n):
+    if n >= 1_000_000:
+        return f"{int(n / 1_000_000)}M"
+    return f"{int(n / 1_000)}k"
+
+def plot_scaling_time(sc, filename):
+    fig, ax = plt.subplots(figsize=(7, 4))
+    xs = [SCALING_DS_SIZES[ds] for ds in SCALING_DS_ORDER]
+    for v in SCALING_VERSIONS:
+        ys = [vavg(sc[v][ds])   for ds in SCALING_DS_ORDER]
+        es = [vstdev(sc[v][ds]) for ds in SCALING_DS_ORDER]
+        mask = [not np.isnan(y) for y in ys]
+        xp = [x for x, m in zip(xs, mask) if m]
+        yp = [y for y, m in zip(ys, mask) if m]
+        ep = [e for e, m in zip(es, mask) if m]
+        if xp:
+            ax.errorbar(xp, yp, yerr=ep,
+                        marker=VERSION_MARKS[v], color=VERSION_COLORS[v],
+                        label=VERSION_LABELS[v], linewidth=1.6, markersize=6, capsize=4)
+    ax.set_xlabel("Input size $N$")
+    ax.set_ylabel("Average kernel time (ms)")
+    ax.set_title("Scaling: Kernel Time vs. Input Size (V0, V1, V2)")
+    ax.set_xticks(xs)
+    ax.set_xticklabels([_fmt_n(n) for n in xs])
+    ax.margins(y=0.15)
+    ax.legend(loc="upper left")
+    fig.tight_layout()
+    out = FIG_DIR / filename
+    fig.savefig(out, format="pdf", bbox_inches="tight")
+    plt.close(fig)
+    print(f"  Saved: {out}")
+
+def plot_scaling_loglog(sc, filename):
+    fig, ax = plt.subplots(figsize=(7, 4))
+    xs = [SCALING_DS_SIZES[ds] for ds in SCALING_DS_ORDER]
+    for v in SCALING_VERSIONS:
+        ys = [vavg(sc[v][ds]) for ds in SCALING_DS_ORDER]
+        mask = [not np.isnan(y) and y > 0 for y in ys]
+        xp = [x for x, m in zip(xs, mask) if m]
+        yp = [y for y, m in zip(ys, mask) if m]
+        if xp:
+            ax.plot(xp, yp,
+                    marker=VERSION_MARKS[v], color=VERSION_COLORS[v],
+                    label=VERSION_LABELS[v], linewidth=1.6, markersize=6)
+    ax.set_xscale("log")
+    ax.set_yscale("log")
+    ax.set_xlabel("Input size $N$ (log scale)")
+    ax.set_ylabel("Kernel time (ms, log scale)")
+    ax.set_title("Scaling: Log-Log Kernel Time vs. Input Size")
+    ax.set_xticks(xs)
+    ax.set_xticklabels([_fmt_n(n) for n in xs])
+    ax.yaxis.set_major_formatter(ticker.FuncFormatter(lambda y, _: f"{y:g}"))
+    ax.legend(loc="upper left")
+    fig.tight_layout()
+    out = FIG_DIR / filename
+    fig.savefig(out, format="pdf", bbox_inches="tight")
+    plt.close(fig)
+    print(f"  Saved: {out}")
+
+def plot_scaling_bandwidth(sc, filename):
+    fig, ax = plt.subplots(figsize=(7, 4))
+    xs = [SCALING_DS_SIZES[ds] for ds in SCALING_DS_ORDER]
+    for v in SCALING_VERSIONS:
+        bws = [calculate_bandwidth(SCALING_DS_SIZES[ds], vavg(sc[v][ds]))
+               for ds in SCALING_DS_ORDER]
+        mask = [not np.isnan(b) for b in bws]
+        xp = [x for x, m in zip(xs, mask) if m]
+        bp = [b for b, m in zip(bws, mask) if m]
+        if xp:
+            ax.plot(xp, bp,
+                    marker=VERSION_MARKS[v], color=VERSION_COLORS[v],
+                    label=VERSION_LABELS[v], linewidth=1.6, markersize=6)
+    ax.set_xlabel("Input size $N$")
+    ax.set_ylabel("Effective bandwidth (GB/s)")
+    ax.set_title("Scaling: Effective Memory Bandwidth vs. Input Size")
+    ax.set_xticks(xs)
+    ax.set_xticklabels([_fmt_n(n) for n in xs])
+    ax.margins(y=0.15)
+    ax.legend(loc="upper left")
+    fig.tight_layout()
+    out = FIG_DIR / filename
+    fig.savefig(out, format="pdf", bbox_inches="tight")
+    plt.close(fig)
+    print(f"  Saved: {out}")
+
+if SCALING_DIR.exists() and any(SCALING_DIR.iterdir()):
+    print("\nGenerating scaling experiment graphs...")
+    sc_data = collect_scaling()
+    plot_scaling_time(sc_data,      "fig_scaling_time.pdf")
+    plot_scaling_loglog(sc_data,    "fig_scaling_loglog.pdf")
+    plot_scaling_bandwidth(sc_data, "fig_scaling_bandwidth.pdf")
+else:
+    print(f"\nScaling data not found in {SCALING_DIR}/ — run sbatch run_scaling.slurm on HPC first.")
 
 print(f"\nAll figures saved to {FIG_DIR}/\n")
 

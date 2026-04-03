@@ -79,5 +79,11 @@ int main() {
   create_dataset(9,  10000000, NUM_BINS, 0); // 10M  Random
   create_dataset(10, 50000000, NUM_BINS, 0); // 50M  Random (stress test)
 
+  // ── Fine-grained Scaling Datasets (Random, small end) ─────────────────
+  create_dataset(11,   2000, NUM_BINS, 0); //  2k  Random
+  create_dataset(12,  10000, NUM_BINS, 0); // 10k  Random
+  create_dataset(13,  50000, NUM_BINS, 0); // 50k  Random
+  create_dataset(14, 200000, NUM_BINS, 0); // 200k Random
+
   return 0;
 }

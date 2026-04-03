@@ -19,8 +19,8 @@
 #SBATCH --gres=gpu:1
 #SBATCH --mem=12gb
 
-### Specify "wallclock time" — generous for 50M dataset across 3 versions x 5 runs
-#SBATCH --time 00:30:00
+### Specify "wallclock time" — all 8 versions x 8 dataset sizes x 5 runs
+#SBATCH --time 01:00:00
 
 ### Load required modules
 module load cuda11/11.0
@@ -40,9 +40,9 @@ mkdir -p Histogram_output/scaling
 echo "--- Step 1: Generating datasets (~1 GB, temporary) ---"
 ./Histogram_DatasetGenerator
 
-# Dataset IDs → sizes: 6=500k, 8=1M, 9=10M, 10=50M
-DATASETS=(6 8 9 10)
-VERSIONS=(0 1 2)   # V0 Global Scatter, V1 Block Privatization, V2 R=2+RLE (GOAT)
+# Dataset IDs → sizes: 11=2k, 12=10k, 13=50k, 14=200k, 6=500k, 8=1M, 9=10M, 10=50M
+DATASETS=(11 12 13 14 6 8 9 10)
+VERSIONS=(0 1 2 3 4 5 6 7)   # All histogram versions
 N_RUNS=5
 
 echo "--- Step 2: Running benchmarks ---"
@@ -60,10 +60,13 @@ for V in "${VERSIONS[@]}"; do
 done
 
 echo "--- Step 3: Deleting large dataset files to recover quota ---"
-rm -rf Histogram/Dataset/7
 rm -rf Histogram/Dataset/8
 rm -rf Histogram/Dataset/9
 rm -rf Histogram/Dataset/10
+rm -rf Histogram/Dataset/11
+rm -rf Histogram/Dataset/12
+rm -rf Histogram/Dataset/13
+rm -rf Histogram/Dataset/14
 
 echo "Cleanup complete."
 echo "Timing results saved to: Histogram_output/scaling/"
