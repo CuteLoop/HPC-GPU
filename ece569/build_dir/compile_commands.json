@@ -115,6 +115,18 @@
 },
 {
   "directory": "/home/u16/joelmaldonado/HPC-GPU/ece569/build_dir",
+  "command": "/usr/bin/g++  -I/home/u16/joelmaldonado/HPC-GPU/ece569/labs/libwb -I/opt/ohpc/pub/apps/cuda/11.8/include  -Wall -Wno-unused-function -Wno-unused-parameter -Wextra -std=c++11 -Wno-dollar-in-identifier-extension -O3 -DNDEBUG -std=gnu++11 -o CMakeFiles/VectorAdd_DatasetGenerator.dir/hw2/VectorAdd/dataset_generator.cpp.o -c /home/u16/joelmaldonado/HPC-GPU/ece569/labs/hw2/VectorAdd/dataset_generator.cpp",
+  "file": "/home/u16/joelmaldonado/HPC-GPU/ece569/labs/hw2/VectorAdd/dataset_generator.cpp",
+  "output": "CMakeFiles/VectorAdd_DatasetGenerator.dir/hw2/VectorAdd/dataset_generator.cpp.o"
+},
+{
+  "directory": "/home/u16/joelmaldonado/HPC-GPU/ece569/build_dir",
+  "command": "/usr/bin/g++  -I/home/u16/joelmaldonado/HPC-GPU/ece569/labs/libwb -I/opt/ohpc/pub/apps/cuda/11.8/include  -Wall -Wno-unused-function -Wno-unused-parameter -Wextra -std=c++11 -Wno-dollar-in-identifier-extension -O3 -DNDEBUG -std=gnu++11 -o CMakeFiles/ImageColorToGrayscale_DatasetGenerator.dir/hw2/ImageColorToGrayscale/dataset_generator.cpp.o -c /home/u16/joelmaldonado/HPC-GPU/ece569/labs/hw2/ImageColorToGrayscale/dataset_generator.cpp",
+  "file": "/home/u16/joelmaldonado/HPC-GPU/ece569/labs/hw2/ImageColorToGrayscale/dataset_generator.cpp",
+  "output": "CMakeFiles/ImageColorToGrayscale_DatasetGenerator.dir/hw2/ImageColorToGrayscale/dataset_generator.cpp.o"
+},
+{
+  "directory": "/home/u16/joelmaldonado/HPC-GPU/ece569/build_dir",
   "command": "/usr/bin/g++  -I/home/u16/joelmaldonado/HPC-GPU/ece569/labs/libwb -I/opt/ohpc/pub/apps/cuda/11.8/include  -Wall -Wno-unused-function -Wno-unused-parameter -Wextra -std=c++11 -Wno-dollar-in-identifier-extension -O3 -DNDEBUG -std=gnu++11 -o CMakeFiles/BasicMatrixMultiplication_DatasetGenerator.dir/hw3/BasicMatrixMultiplication/dataset_generator.cpp.o -c /home/u16/joelmaldonado/HPC-GPU/ece569/labs/hw3/BasicMatrixMultiplication/dataset_generator.cpp",
   "file": "/home/u16/joelmaldonado/HPC-GPU/ece569/labs/hw3/BasicMatrixMultiplication/dataset_generator.cpp",
   "output": "CMakeFiles/BasicMatrixMultiplication_DatasetGenerator.dir/hw3/BasicMatrixMultiplication/dataset_generator.cpp.o"
@@ -136,5 +148,11 @@
   "command": "/usr/bin/g++  -I/home/u16/joelmaldonado/HPC-GPU/ece569/labs/libwb -I/opt/ohpc/pub/apps/cuda/11.8/include  -Wall -Wno-unused-function -Wno-unused-parameter -Wextra -std=c++11 -Wno-dollar-in-identifier-extension -O3 -DNDEBUG -std=gnu++11 -o CMakeFiles/TiledPerformance_DatasetGenerator.dir/hw3/performance/tiled_generator.cpp.o -c /home/u16/joelmaldonado/HPC-GPU/ece569/labs/hw3/performance/tiled_generator.cpp",
   "file": "/home/u16/joelmaldonado/HPC-GPU/ece569/labs/hw3/performance/tiled_generator.cpp",
   "output": "CMakeFiles/TiledPerformance_DatasetGenerator.dir/hw3/performance/tiled_generator.cpp.o"
+},
+{
+  "directory": "/home/u16/joelmaldonado/HPC-GPU/ece569/build_dir",
+  "command": "/usr/bin/g++  -I/home/u16/joelmaldonado/HPC-GPU/ece569/labs/libwb -I/opt/ohpc/pub/apps/cuda/11.8/include  -Wall -Wno-unused-function -Wno-unused-parameter -Wextra -std=c++11 -Wno-dollar-in-identifier-extension -O3 -DNDEBUG -std=gnu++11 -o CMakeFiles/Histogram_DatasetGenerator.dir/hw4/Histogram/dataset_generator.cpp.o -c /home/u16/joelmaldonado/HPC-GPU/ece569/labs/hw4/Histogram/dataset_generator.cpp",
+  "file": "/home/u16/joelmaldonado/HPC-GPU/ece569/labs/hw4/Histogram/dataset_generator.cpp",
+  "output": "CMakeFiles/Histogram_DatasetGenerator.dir/hw4/Histogram/dataset_generator.cpp.o"
 }
 ]

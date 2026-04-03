@@ -1,4 +1,8 @@
 /home/u16/joelmaldonado/HPC-GPU/ece569/build_dir/CMakeFiles/wb.dir
+/home/u16/joelmaldonado/HPC-GPU/ece569/build_dir/CMakeFiles/VectorAdd_Solution.dir
+/home/u16/joelmaldonado/HPC-GPU/ece569/build_dir/CMakeFiles/VectorAdd_DatasetGenerator.dir
+/home/u16/joelmaldonado/HPC-GPU/ece569/build_dir/CMakeFiles/ImageColorToGrayscale_Solution.dir
+/home/u16/joelmaldonado/HPC-GPU/ece569/build_dir/CMakeFiles/ImageColorToGrayscale_DatasetGenerator.dir
 /home/u16/joelmaldonado/HPC-GPU/ece569/build_dir/CMakeFiles/BasicMatrixMultiplication_Solution.dir
 /home/u16/joelmaldonado/HPC-GPU/ece569/build_dir/CMakeFiles/BasicMatrixMultiplication_DatasetGenerator.dir
 /home/u16/joelmaldonado/HPC-GPU/ece569/build_dir/CMakeFiles/TiledMatrixMultiplication_Solution.dir
@@ -7,5 +11,7 @@
 /home/u16/joelmaldonado/HPC-GPU/ece569/build_dir/CMakeFiles/TiledPerformance_Solution.dir
 /home/u16/joelmaldonado/HPC-GPU/ece569/build_dir/CMakeFiles/BasicPerformance_DatasetGenerator.dir
 /home/u16/joelmaldonado/HPC-GPU/ece569/build_dir/CMakeFiles/TiledPerformance_DatasetGenerator.dir
+/home/u16/joelmaldonado/HPC-GPU/ece569/build_dir/CMakeFiles/Histogram_Solution.dir
+/home/u16/joelmaldonado/HPC-GPU/ece569/build_dir/CMakeFiles/Histogram_DatasetGenerator.dir
 /home/u16/joelmaldonado/HPC-GPU/ece569/build_dir/CMakeFiles/edit_cache.dir
 /home/u16/joelmaldonado/HPC-GPU/ece569/build_dir/CMakeFiles/rebuild_cache.dir

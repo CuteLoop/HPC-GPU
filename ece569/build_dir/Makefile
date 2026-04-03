@@ -130,6 +130,58 @@ wb/fast:
 .PHONY : wb/fast
 
 #=============================================================================
+# Target rules for targets named VectorAdd_Solution
+
+# Build rule for target.
+VectorAdd_Solution: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 VectorAdd_Solution
+.PHONY : VectorAdd_Solution
+
+# fast build rule for target.
+VectorAdd_Solution/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorAdd_Solution.dir/build.make CMakeFiles/VectorAdd_Solution.dir/build
+.PHONY : VectorAdd_Solution/fast
+
+#=============================================================================
+# Target rules for targets named VectorAdd_DatasetGenerator
+
+# Build rule for target.
+VectorAdd_DatasetGenerator: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 VectorAdd_DatasetGenerator
+.PHONY : VectorAdd_DatasetGenerator
+
+# fast build rule for target.
+VectorAdd_DatasetGenerator/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorAdd_DatasetGenerator.dir/build.make CMakeFiles/VectorAdd_DatasetGenerator.dir/build
+.PHONY : VectorAdd_DatasetGenerator/fast
+
+#=============================================================================
+# Target rules for targets named ImageColorToGrayscale_Solution
+
+# Build rule for target.
+ImageColorToGrayscale_Solution: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 ImageColorToGrayscale_Solution
+.PHONY : ImageColorToGrayscale_Solution
+
+# fast build rule for target.
+ImageColorToGrayscale_Solution/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ImageColorToGrayscale_Solution.dir/build.make CMakeFiles/ImageColorToGrayscale_Solution.dir/build
+.PHONY : ImageColorToGrayscale_Solution/fast
+
+#=============================================================================
+# Target rules for targets named ImageColorToGrayscale_DatasetGenerator
+
+# Build rule for target.
+ImageColorToGrayscale_DatasetGenerator: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 ImageColorToGrayscale_DatasetGenerator
+.PHONY : ImageColorToGrayscale_DatasetGenerator
+
+# fast build rule for target.
+ImageColorToGrayscale_DatasetGenerator/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ImageColorToGrayscale_DatasetGenerator.dir/build.make CMakeFiles/ImageColorToGrayscale_DatasetGenerator.dir/build
+.PHONY : ImageColorToGrayscale_DatasetGenerator/fast
+
+#=============================================================================
 # Target rules for targets named BasicMatrixMultiplication_Solution
 
 # Build rule for target.
@@ -233,6 +285,80 @@ TiledPerformance_DatasetGenerator/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/TiledPerformance_DatasetGenerator.dir/build.make CMakeFiles/TiledPerformance_DatasetGenerator.dir/build
 .PHONY : TiledPerformance_DatasetGenerator/fast
 
+#=============================================================================
+# Target rules for targets named Histogram_Solution
+
+# Build rule for target.
+Histogram_Solution: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 Histogram_Solution
+.PHONY : Histogram_Solution
+
+# fast build rule for target.
+Histogram_Solution/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Histogram_Solution.dir/build.make CMakeFiles/Histogram_Solution.dir/build
+.PHONY : Histogram_Solution/fast
+
+#=============================================================================
+# Target rules for targets named Histogram_DatasetGenerator
+
+# Build rule for target.
+Histogram_DatasetGenerator: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 Histogram_DatasetGenerator
+.PHONY : Histogram_DatasetGenerator
+
+# fast build rule for target.
+Histogram_DatasetGenerator/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Histogram_DatasetGenerator.dir/build.make CMakeFiles/Histogram_DatasetGenerator.dir/build
+.PHONY : Histogram_DatasetGenerator/fast
+
+hw2/ImageColorToGrayscale/dataset_generator.o: hw2/ImageColorToGrayscale/dataset_generator.cpp.o
+.PHONY : hw2/ImageColorToGrayscale/dataset_generator.o
+
+# target to build an object file
+hw2/ImageColorToGrayscale/dataset_generator.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ImageColorToGrayscale_DatasetGenerator.dir/build.make CMakeFiles/ImageColorToGrayscale_DatasetGenerator.dir/hw2/ImageColorToGrayscale/dataset_generator.cpp.o
+.PHONY : hw2/ImageColorToGrayscale/dataset_generator.cpp.o
+
+hw2/ImageColorToGrayscale/dataset_generator.i: hw2/ImageColorToGrayscale/dataset_generator.cpp.i
+.PHONY : hw2/ImageColorToGrayscale/dataset_generator.i
+
+# target to preprocess a source file
+hw2/ImageColorToGrayscale/dataset_generator.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ImageColorToGrayscale_DatasetGenerator.dir/build.make CMakeFiles/ImageColorToGrayscale_DatasetGenerator.dir/hw2/ImageColorToGrayscale/dataset_generator.cpp.i
+.PHONY : hw2/ImageColorToGrayscale/dataset_generator.cpp.i
+
+hw2/ImageColorToGrayscale/dataset_generator.s: hw2/ImageColorToGrayscale/dataset_generator.cpp.s
+.PHONY : hw2/ImageColorToGrayscale/dataset_generator.s
+
+# target to generate assembly for a file
+hw2/ImageColorToGrayscale/dataset_generator.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ImageColorToGrayscale_DatasetGenerator.dir/build.make CMakeFiles/ImageColorToGrayscale_DatasetGenerator.dir/hw2/ImageColorToGrayscale/dataset_generator.cpp.s
+.PHONY : hw2/ImageColorToGrayscale/dataset_generator.cpp.s
+
+hw2/VectorAdd/dataset_generator.o: hw2/VectorAdd/dataset_generator.cpp.o
+.PHONY : hw2/VectorAdd/dataset_generator.o
+
+# target to build an object file
+hw2/VectorAdd/dataset_generator.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorAdd_DatasetGenerator.dir/build.make CMakeFiles/VectorAdd_DatasetGenerator.dir/hw2/VectorAdd/dataset_generator.cpp.o
+.PHONY : hw2/VectorAdd/dataset_generator.cpp.o
+
+hw2/VectorAdd/dataset_generator.i: hw2/VectorAdd/dataset_generator.cpp.i
+.PHONY : hw2/VectorAdd/dataset_generator.i
+
+# target to preprocess a source file
+hw2/VectorAdd/dataset_generator.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorAdd_DatasetGenerator.dir/build.make CMakeFiles/VectorAdd_DatasetGenerator.dir/hw2/VectorAdd/dataset_generator.cpp.i
+.PHONY : hw2/VectorAdd/dataset_generator.cpp.i
+
+hw2/VectorAdd/dataset_generator.s: hw2/VectorAdd/dataset_generator.cpp.s
+.PHONY : hw2/VectorAdd/dataset_generator.s
+
+# target to generate assembly for a file
+hw2/VectorAdd/dataset_generator.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorAdd_DatasetGenerator.dir/build.make CMakeFiles/VectorAdd_DatasetGenerator.dir/hw2/VectorAdd/dataset_generator.cpp.s
+.PHONY : hw2/VectorAdd/dataset_generator.cpp.s
+
 hw3/BasicMatrixMultiplication/dataset_generator.o: hw3/BasicMatrixMultiplication/dataset_generator.cpp.o
 .PHONY : hw3/BasicMatrixMultiplication/dataset_generator.o
 
@@ -328,6 +454,30 @@ hw3/performance/tiled_generator.s: hw3/performance/tiled_generator.cpp.s
 hw3/performance/tiled_generator.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/TiledPerformance_DatasetGenerator.dir/build.make CMakeFiles/TiledPerformance_DatasetGenerator.dir/hw3/performance/tiled_generator.cpp.s
 .PHONY : hw3/performance/tiled_generator.cpp.s
+
+hw4/Histogram/dataset_generator.o: hw4/Histogram/dataset_generator.cpp.o
+.PHONY : hw4/Histogram/dataset_generator.o
+
+# target to build an object file
+hw4/Histogram/dataset_generator.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Histogram_DatasetGenerator.dir/build.make CMakeFiles/Histogram_DatasetGenerator.dir/hw4/Histogram/dataset_generator.cpp.o
+.PHONY : hw4/Histogram/dataset_generator.cpp.o
+
+hw4/Histogram/dataset_generator.i: hw4/Histogram/dataset_generator.cpp.i
+.PHONY : hw4/Histogram/dataset_generator.i
+
+# target to preprocess a source file
+hw4/Histogram/dataset_generator.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Histogram_DatasetGenerator.dir/build.make CMakeFiles/Histogram_DatasetGenerator.dir/hw4/Histogram/dataset_generator.cpp.i
+.PHONY : hw4/Histogram/dataset_generator.cpp.i
+
+hw4/Histogram/dataset_generator.s: hw4/Histogram/dataset_generator.cpp.s
+.PHONY : hw4/Histogram/dataset_generator.s
+
+# target to generate assembly for a file
+hw4/Histogram/dataset_generator.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Histogram_DatasetGenerator.dir/build.make CMakeFiles/Histogram_DatasetGenerator.dir/hw4/Histogram/dataset_generator.cpp.s
+.PHONY : hw4/Histogram/dataset_generator.cpp.s
 
 libwb/vendor/json11.o: libwb/vendor/json11.cpp.o
 .PHONY : libwb/vendor/json11.o
@@ -797,11 +947,23 @@ help:
 	@echo "... BasicMatrixMultiplication_Solution"
 	@echo "... BasicPerformance_DatasetGenerator"
 	@echo "... BasicPerformance_Solution"
+	@echo "... Histogram_DatasetGenerator"
+	@echo "... Histogram_Solution"
+	@echo "... ImageColorToGrayscale_DatasetGenerator"
+	@echo "... ImageColorToGrayscale_Solution"
 	@echo "... TiledMatrixMultiplication_DatasetGenerator"
 	@echo "... TiledMatrixMultiplication_Solution"
 	@echo "... TiledPerformance_DatasetGenerator"
 	@echo "... TiledPerformance_Solution"
+	@echo "... VectorAdd_DatasetGenerator"
+	@echo "... VectorAdd_Solution"
 	@echo "... wb"
+	@echo "... hw2/ImageColorToGrayscale/dataset_generator.o"
+	@echo "... hw2/ImageColorToGrayscale/dataset_generator.i"
+	@echo "... hw2/ImageColorToGrayscale/dataset_generator.s"
+	@echo "... hw2/VectorAdd/dataset_generator.o"
+	@echo "... hw2/VectorAdd/dataset_generator.i"
+	@echo "... hw2/VectorAdd/dataset_generator.s"
 	@echo "... hw3/BasicMatrixMultiplication/dataset_generator.o"
 	@echo "... hw3/BasicMatrixMultiplication/dataset_generator.i"
 	@echo "... hw3/BasicMatrixMultiplication/dataset_generator.s"
@@ -814,6 +976,9 @@ help:
 	@echo "... hw3/performance/tiled_generator.o"
 	@echo "... hw3/performance/tiled_generator.i"
 	@echo "... hw3/performance/tiled_generator.s"
+	@echo "... hw4/Histogram/dataset_generator.o"
+	@echo "... hw4/Histogram/dataset_generator.i"
+	@echo "... hw4/Histogram/dataset_generator.s"
 	@echo "... libwb/vendor/json11.o"
 	@echo "... libwb/vendor/json11.i"
 	@echo "... libwb/vendor/json11.s"
