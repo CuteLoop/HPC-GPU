@@ -46,161 +46,109 @@
 
 % ── timing values injected by parse_times.py ─────────────────────────────────
 % Experiment 1 — Version 0
-\newcommand{\EOneVZeroOne}{0.1925}
-\newcommand{\EOneVZeroTwo}{0.1984}
-\newcommand{\EOneVZeroThree}{0.1976}
-\newcommand{\EOneVZeroFour}{0.2021}
-\newcommand{\EOneVZeroFive}{0.1914}
-\newcommand{\EOneVZeroSix}{0.2089}
-\newcommand{\EOneVZeroSeven}{0.1976}
-\newcommand{\EOneVZeroEight}{0.1930}
-\newcommand{\EOneVZeroNine}{0.1930}
-\newcommand{\EOneVZeroTen}{0.1942}
-\newcommand{\EOneVZeroAvg}{0.1969}
-\newcommand{\EOneVZeroStdev}{0.0054}
+\newcommand{\EOneVZeroOne}{TODO}
+\newcommand{\EOneVZeroTwo}{TODO}
+\newcommand{\EOneVZeroThree}{TODO}
+\newcommand{\EOneVZeroFour}{TODO}
+\newcommand{\EOneVZeroFive}{TODO}
+\newcommand{\EOneVZeroSix}{TODO}
+\newcommand{\EOneVZeroSeven}{TODO}
+\newcommand{\EOneVZeroEight}{TODO}
+\newcommand{\EOneVZeroNine}{TODO}
+\newcommand{\EOneVZeroTen}{TODO}
+\newcommand{\EOneVZeroAvg}{TODO}
+\newcommand{\EOneVZeroStdev}{TODO}
 % Experiment 1 — Version 1
-\newcommand{\EOneVOneOne}{0.1812}
-\newcommand{\EOneVOneTwo}{0.1787}
-\newcommand{\EOneVOneThree}{0.1778}
-\newcommand{\EOneVOneFour}{0.1822}
-\newcommand{\EOneVOneFive}{0.1775}
-\newcommand{\EOneVOneSix}{0.1780}
-\newcommand{\EOneVOneSeven}{0.1917}
-\newcommand{\EOneVOneEight}{0.1838}
-\newcommand{\EOneVOneNine}{0.1852}
-\newcommand{\EOneVOneTen}{0.1770}
-\newcommand{\EOneVOneAvg}{0.1813}
-\newcommand{\EOneVOneStdev}{0.0046}
+\newcommand{\EOneVOneOne}{TODO}
+\newcommand{\EOneVOneTwo}{TODO}
+\newcommand{\EOneVOneThree}{TODO}
+\newcommand{\EOneVOneFour}{TODO}
+\newcommand{\EOneVOneFive}{TODO}
+\newcommand{\EOneVOneSix}{TODO}
+\newcommand{\EOneVOneSeven}{TODO}
+\newcommand{\EOneVOneEight}{TODO}
+\newcommand{\EOneVOneNine}{TODO}
+\newcommand{\EOneVOneTen}{TODO}
+\newcommand{\EOneVOneAvg}{TODO}
+\newcommand{\EOneVOneStdev}{TODO}
 % Experiment 1 — Version 2
-\newcommand{\EOneVTwoOne}{0.1918}
-\newcommand{\EOneVTwoTwo}{0.1774}
-\newcommand{\EOneVTwoThree}{0.1758}
-\newcommand{\EOneVTwoFour}{0.1788}
-\newcommand{\EOneVTwoFive}{0.2004}
-\newcommand{\EOneVTwoSix}{0.1777}
-\newcommand{\EOneVTwoSeven}{0.1853}
-\newcommand{\EOneVTwoEight}{0.1820}
-\newcommand{\EOneVTwoNine}{0.1845}
-\newcommand{\EOneVTwoTen}{0.1885}
-\newcommand{\EOneVTwoAvg}{0.1842}
-\newcommand{\EOneVTwoStdev}{0.0077}
+\newcommand{\EOneVTwoOne}{TODO}
+\newcommand{\EOneVTwoTwo}{TODO}
+\newcommand{\EOneVTwoThree}{TODO}
+\newcommand{\EOneVTwoFour}{TODO}
+\newcommand{\EOneVTwoFive}{TODO}
+\newcommand{\EOneVTwoSix}{TODO}
+\newcommand{\EOneVTwoSeven}{TODO}
+\newcommand{\EOneVTwoEight}{TODO}
+\newcommand{\EOneVTwoNine}{TODO}
+\newcommand{\EOneVTwoTen}{TODO}
+\newcommand{\EOneVTwoAvg}{TODO}
+\newcommand{\EOneVTwoStdev}{TODO}
 % Experiment 1 — Version 3
-\newcommand{\EOneVThreeOne}{10.9612}
-\newcommand{\EOneVThreeTwo}{10.9694}
-\newcommand{\EOneVThreeThree}{11.0315}
-\newcommand{\EOneVThreeFour}{10.9908}
-\newcommand{\EOneVThreeFive}{10.9664}
-\newcommand{\EOneVThreeSix}{11.0252}
-\newcommand{\EOneVThreeSeven}{10.9804}
-\newcommand{\EOneVThreeEight}{11.0181}
-\newcommand{\EOneVThreeNine}{10.9883}
-\newcommand{\EOneVThreeTen}{10.9863}
-\newcommand{\EOneVThreeAvg}{10.9918}
-\newcommand{\EOneVThreeStdev}{0.0250}
+\newcommand{\EOneVThreeOne}{TODO}
+\newcommand{\EOneVThreeTwo}{TODO}
+\newcommand{\EOneVThreeThree}{TODO}
+\newcommand{\EOneVThreeFour}{TODO}
+\newcommand{\EOneVThreeFive}{TODO}
+\newcommand{\EOneVThreeSix}{TODO}
+\newcommand{\EOneVThreeSeven}{TODO}
+\newcommand{\EOneVThreeEight}{TODO}
+\newcommand{\EOneVThreeNine}{TODO}
+\newcommand{\EOneVThreeTen}{TODO}
+\newcommand{\EOneVThreeAvg}{TODO}
+\newcommand{\EOneVThreeStdev}{TODO}
 % Experiment 2 — Version 0
-\newcommand{\ETwoVZeroOne}{0.6055}
-\newcommand{\ETwoVZeroTwo}{0.5991}
-\newcommand{\ETwoVZeroThree}{0.6035}
-\newcommand{\ETwoVZeroFour}{0.5986}
-\newcommand{\ETwoVZeroFive}{0.6001}
-\newcommand{\ETwoVZeroSix}{0.6021}
-\newcommand{\ETwoVZeroSeven}{0.6011}
-\newcommand{\ETwoVZeroEight}{0.6001}
-\newcommand{\ETwoVZeroNine}{0.6165}
-\newcommand{\ETwoVZeroTen}{0.6041}
-\newcommand{\ETwoVZeroAvg}{0.6031}
-\newcommand{\ETwoVZeroStdev}{0.0052}
+\newcommand{\ETwoVZeroOne}{TODO}
+\newcommand{\ETwoVZeroTwo}{TODO}
+\newcommand{\ETwoVZeroThree}{TODO}
+\newcommand{\ETwoVZeroFour}{TODO}
+\newcommand{\ETwoVZeroFive}{TODO}
+\newcommand{\ETwoVZeroSix}{TODO}
+\newcommand{\ETwoVZeroSeven}{TODO}
+\newcommand{\ETwoVZeroEight}{TODO}
+\newcommand{\ETwoVZeroNine}{TODO}
+\newcommand{\ETwoVZeroTen}{TODO}
+\newcommand{\ETwoVZeroAvg}{TODO}
+\newcommand{\ETwoVZeroStdev}{TODO}
 % Experiment 2 — Version 1
-\newcommand{\ETwoVOneOne}{0.1831}
-\newcommand{\ETwoVOneTwo}{0.1946}
-\newcommand{\ETwoVOneThree}{0.1919}
-\newcommand{\ETwoVOneFour}{0.1832}
-\newcommand{\ETwoVOneFive}{0.1957}
-\newcommand{\ETwoVOneSix}{0.1830}
-\newcommand{\ETwoVOneSeven}{0.1830}
-\newcommand{\ETwoVOneEight}{0.1829}
-\newcommand{\ETwoVOneNine}{0.1854}
-\newcommand{\ETwoVOneTen}{0.1837}
-\newcommand{\ETwoVOneAvg}{0.1866}
-\newcommand{\ETwoVOneStdev}{0.0053}
+\newcommand{\ETwoVOneOne}{TODO}
+\newcommand{\ETwoVOneTwo}{TODO}
+\newcommand{\ETwoVOneThree}{TODO}
+\newcommand{\ETwoVOneFour}{TODO}
+\newcommand{\ETwoVOneFive}{TODO}
+\newcommand{\ETwoVOneSix}{TODO}
+\newcommand{\ETwoVOneSeven}{TODO}
+\newcommand{\ETwoVOneEight}{TODO}
+\newcommand{\ETwoVOneNine}{TODO}
+\newcommand{\ETwoVOneTen}{TODO}
+\newcommand{\ETwoVOneAvg}{TODO}
+\newcommand{\ETwoVOneStdev}{TODO}
 % Experiment 2 — Version 2
-\newcommand{\ETwoVTwoOne}{0.2049}
-\newcommand{\ETwoVTwoTwo}{0.1732}
-\newcommand{\ETwoVTwoThree}{0.1716}
-\newcommand{\ETwoVTwoFour}{0.1740}
-\newcommand{\ETwoVTwoFive}{0.1729}
-\newcommand{\ETwoVTwoSix}{0.1743}
-\newcommand{\ETwoVTwoSeven}{0.1765}
-\newcommand{\ETwoVTwoEight}{0.1756}
-\newcommand{\ETwoVTwoNine}{0.1815}
-\newcommand{\ETwoVTwoTen}{0.1721}
-\newcommand{\ETwoVTwoAvg}{0.1777}
-\newcommand{\ETwoVTwoStdev}{0.0100}
+\newcommand{\ETwoVTwoOne}{TODO}
+\newcommand{\ETwoVTwoTwo}{TODO}
+\newcommand{\ETwoVTwoThree}{TODO}
+\newcommand{\ETwoVTwoFour}{TODO}
+\newcommand{\ETwoVTwoFive}{TODO}
+\newcommand{\ETwoVTwoSix}{TODO}
+\newcommand{\ETwoVTwoSeven}{TODO}
+\newcommand{\ETwoVTwoEight}{TODO}
+\newcommand{\ETwoVTwoNine}{TODO}
+\newcommand{\ETwoVTwoTen}{TODO}
+\newcommand{\ETwoVTwoAvg}{TODO}
+\newcommand{\ETwoVTwoStdev}{TODO}
 % Experiment 2 — Version 3
-\newcommand{\ETwoVThreeOne}{10.9936}
-\newcommand{\ETwoVThreeTwo}{11.0149}
-\newcommand{\ETwoVThreeThree}{11.0551}
-\newcommand{\ETwoVThreeFour}{11.0942}
-\newcommand{\ETwoVThreeFive}{11.0195}
-\newcommand{\ETwoVThreeSix}{11.0337}
-\newcommand{\ETwoVThreeSeven}{11.0042}
-\newcommand{\ETwoVThreeEight}{11.0753}
-\newcommand{\ETwoVThreeNine}{11.0077}
-\newcommand{\ETwoVThreeTen}{11.0572}
-\newcommand{\ETwoVThreeAvg}{11.0355}
-\newcommand{\ETwoVThreeStdev}{0.0335}
-% Experiment 1 — Version 4 (RLE Scalar)
-\newcommand{\EOneVFourOne}{TODO}
-\newcommand{\EOneVFourTwo}{TODO}
-\newcommand{\EOneVFourThree}{TODO}
-\newcommand{\EOneVFourFour}{TODO}
-\newcommand{\EOneVFourFive}{TODO}
-\newcommand{\EOneVFourSix}{TODO}
-\newcommand{\EOneVFourSeven}{TODO}
-\newcommand{\EOneVFourEight}{TODO}
-\newcommand{\EOneVFourNine}{TODO}
-\newcommand{\EOneVFourTen}{TODO}
-\newcommand{\EOneVFourAvg}{TODO}
-\newcommand{\EOneVFourStdev}{TODO}
-% Experiment 1 — Version 5 (CPU Host-Side Reduction)
-\newcommand{\EOneVFiveOne}{TODO}
-\newcommand{\EOneVFiveTwo}{TODO}
-\newcommand{\EOneVFiveThree}{TODO}
-\newcommand{\EOneVFiveFour}{TODO}
-\newcommand{\EOneVFiveFive}{TODO}
-\newcommand{\EOneVFiveSix}{TODO}
-\newcommand{\EOneVFiveSeven}{TODO}
-\newcommand{\EOneVFiveEight}{TODO}
-\newcommand{\EOneVFiveNine}{TODO}
-\newcommand{\EOneVFiveTen}{TODO}
-\newcommand{\EOneVFiveAvg}{TODO}
-\newcommand{\EOneVFiveStdev}{TODO}
-% Experiment 2 — Version 4 (RLE Scalar)
-\newcommand{\ETwoVFourOne}{TODO}
-\newcommand{\ETwoVFourTwo}{TODO}
-\newcommand{\ETwoVFourThree}{TODO}
-\newcommand{\ETwoVFourFour}{TODO}
-\newcommand{\ETwoVFourFive}{TODO}
-\newcommand{\ETwoVFourSix}{TODO}
-\newcommand{\ETwoVFourSeven}{TODO}
-\newcommand{\ETwoVFourEight}{TODO}
-\newcommand{\ETwoVFourNine}{TODO}
-\newcommand{\ETwoVFourTen}{TODO}
-\newcommand{\ETwoVFourAvg}{TODO}
-\newcommand{\ETwoVFourStdev}{TODO}
-% Experiment 2 — Version 5 (CPU Host-Side Reduction)
-\newcommand{\ETwoVFiveOne}{TODO}
-\newcommand{\ETwoVFiveTwo}{TODO}
-\newcommand{\ETwoVFiveThree}{TODO}
-\newcommand{\ETwoVFiveFour}{TODO}
-\newcommand{\ETwoVFiveFive}{TODO}
-\newcommand{\ETwoVFiveSix}{TODO}
-\newcommand{\ETwoVFiveSeven}{TODO}
-\newcommand{\ETwoVFiveEight}{TODO}
-\newcommand{\ETwoVFiveNine}{TODO}
-\newcommand{\ETwoVFiveTen}{TODO}
-\newcommand{\ETwoVFiveAvg}{TODO}
-\newcommand{\ETwoVFiveStdev}{TODO}
+\newcommand{\ETwoVThreeOne}{TODO}
+\newcommand{\ETwoVThreeTwo}{TODO}
+\newcommand{\ETwoVThreeThree}{TODO}
+\newcommand{\ETwoVThreeFour}{TODO}
+\newcommand{\ETwoVThreeFive}{TODO}
+\newcommand{\ETwoVThreeSix}{TODO}
+\newcommand{\ETwoVThreeSeven}{TODO}
+\newcommand{\ETwoVThreeEight}{TODO}
+\newcommand{\ETwoVThreeNine}{TODO}
+\newcommand{\ETwoVThreeTen}{TODO}
+\newcommand{\ETwoVThreeAvg}{TODO}
+\newcommand{\ETwoVThreeStdev}{TODO}
 
 % ── document ──────────────────────────────────────────────────────────────────
 \begin{document}
@@ -213,36 +161,6 @@
 \end{center}
 \vspace{0.5em}\hrule\vspace{1.5em}
 
-\section*{Introduction}
-In this lab we set up to compare different implementations of histogram 
-generation on GPU.  The histogram is a fundamental data structure that counts the frequency
-of appearances of a certain data value in a dataset, commonly used to estimate 
-the probability distribution of such data. Histograms find applications 
-in computer vision, data analytics and scientific computing. The fundamental
-challenge of histogram generation on GPU is that when multiple threads
-attempt to update the same memory location (bin) a memory conflict may occur.
-Avoiding this conflicts are the main optimization ideas we will explore in this lab,
-followed by efficient data communication and probably efficient encoding.
-
-In this Lab we we have coded multiple implementations of histogram generation,
-from a global memory version with atomic operations (V0),
-to a shared memory version (V1),
- to a warp-aggregated version (V2),
- finally to a bin-centric gather version (V3)
- ...
-
-\section*{Phase 1: Hypotheses \& Mental Models}
-Before running a single line of code, an optimization engineer builds a mental model of what \textit{should} happen. Read through these core concepts and form your hypotheses.
-
-\textbf{Deep-Dive Concepts to Understand Optimization:}
-\begin{itemize}
-    \item \textbf{Warp Mechanics (The 4x4 Problem):} GPUs execute threads in groups of 32 called ``warps.'' If you launch a thread block of 4x4 (16 threads), you are launching half-empty warps. \textit{Hypothesis to test: Will 4x4 blocks show severely degraded performance across all tests?}
-    \item \textbf{Hardware Limits (The 32x32 Problem):} A 32x32 block contains 1024 threads. This is the maximum number of threads allowed in a single block on modern GPUs. While it maximizes threads, it might use too many registers or too much shared memory per multiprocessor, causing ``occupancy'' to drop. \textit{Hypothesis to test: Is 16x16 the ``Goldilocks'' zone compared to 32x32?}
-    \item \textbf{Edge Effects (Powers of 2 vs. Odd Numbers):} Case 1 uses 2048 (a power of 2). Case 2 uses 2051. For 2051, your kernels must include boundary checks (\texttt{if row < height \&\& col < width}) to prevent memory out-of-bounds errors. \textit{Hypothesis to test: How much overhead does branch divergence add to the execution time?}
-    \item \textbf{Memory Bandwidth (Basic vs. Tiled):} Basic matrix multiplication reads from slow Global Memory for every single calculation. Tiled multiplication loads ``tiles'' into ultra-fast Shared Memory, drastically reducing Global Memory reads. \textit{Hypothesis to test: At what matrix size does the overhead of setting up shared memory tiles actually make the Tiled version slower than the Basic version?}
-\end{itemize}
-
-
 % ── Version Overview Table ────────────────────────────────────────────────────
 \begin{table}[htbp]
 \centering
@@ -254,7 +172,7 @@ Before running a single line of code, an optimization engineer builds a mental m
 \midrule
 V0 & Global Scatter       & Global ($N$ times)       & 32-bit coalesced       \\
 V1 & Block Privatization  & Shared ($N$ times)       & 32-bit coalesced       \\
-V2 & $\mathcal{R}$-per-Block ($\mathcal{R}{=}2$) & Shared ($N$ times, 2 copies) & 128-bit \texttt{uint4} \\
+V2 & Warp Aggregation     & Shared (max $N/32$)      & 128-bit \texttt{uint4} \\
 V3 & Bin-Centric Gather   & None (zero)              & Collaborative tiling   \\
 \bottomrule
 \end{tabular}
@@ -423,58 +341,45 @@ than in V0.  Expect Exp2 to be only modestly slower than Exp1 for V1,
 in contrast to the larger delta seen in V0.  Discuss the ratio.]
 
 % ════════════════════════════════════════════════════════════
-\section{Analysis 2: Version 2 — Vectorized $\mathcal{R}$-per-Block Privatization}
+\section{Analysis 2: Version 2 — Warp Aggregation \& Vectorization}
 % ════════════════════════════════════════════════════════════
 
 \subsection*{Implementation approach}
 
-Version 2 combines \emph{$\mathcal{R}$-per-Block Histogram Replication} ($\mathcal{R}=2$)
-with \emph{Vectorized 128-bit Loads}.
-Two copies of the shared-memory histogram (\texttt{multi\_histo[0]} and
-\texttt{multi\_histo[1]}) are allocated, each padded by one element (4097
-\texttt{unsigned int}s per copy) to break the 32-bank stride alignment that
-arises when \texttt{num\_bins} is a power of two.
-Even-indexed threads scatter into copy~0; odd-indexed threads scatter into
-copy~1, so every 32-thread warp splits its atomic traffic evenly across two
-physical bank regions.
-After the accumulation phase, a single \texttt{\_\_syncthreads()} separates
-the per-block merge: each thread sums its two copies and issues \emph{one}
-global \texttt{atomicAdd} only when the total is non-zero (sparsity filter).
+Version 2 combines \emph{Warp Aggregation} with \emph{Data Packing}.
+Threads within a warp use intrinsic operations (\texttt{\_\_ballot\_sync},
+\texttt{\_\_shfl\_sync}, and \texttt{\_\_popc}) to elect a single leader for each
+target bin.  The leader calculates the total number of lanes aiming at that bin
+and issues exactly one \texttt{atomicAdd} to shared memory for the entire
+coalition --- dropping shared atomics from 32 per bin per warp (in V1) to 1.
 Simultaneously, V2 casts the 32-bit input array to \texttt{uint4}, loading
 four integers per 128-bit global memory transaction and quadrupling effective
 bandwidth over V0/V1's scalar 32-bit reads.
 
 \subsection*{Superiority over V0 and V1}
 
-V0 issues $N$ \emph{global} atomic operations at DRAM latency.
-V1 migrates these to low-latency shared memory but uses a single histogram
-copy: in a 32-wide warp, if $k$ threads map to the same 32-wide bank group,
-those $k$ atomics are serialised in hardware.
-V2 halves that contention by distributing 32 warp lanes across two buffer
-copies, reducing the maximum same-bank collision count from 32 (V1) to 16.
-The $+1$ padding ensures the two arrays start on different bank offsets,
-preventing the second copy from merely replicating the same conflict pattern.
-For the global flush, the sparsity filter eliminates all-zero bins entirely,
-reducing PCIe/L2 pressure at the per-block merge step.
+V0 issues $N$ global atomic operations.
+V1 migrates these to low-latency shared memory but still issues $N$ shared
+atomics, with potential serialisation when multiple threads in a warp target
+the same shared-memory bank.
+V2 compresses atomics \emph{before} they reach shared memory via warp-level
+leader election in registers.
+The number of \texttt{atomicAdd} calls issued by one warp drops from 32
+(V1) to $U$, the number of \emph{unique} bins targeted by that warp
+($1 \le U \le 32$).
 
 \subsection*{Performance vs.\ data distribution}
 
 \begin{itemize}[noitemsep]
-  \item \textbf{Random (Experiment 1):} Bank conflicts are already rare when
-        4096 bins are addressed randomly; both the \texttt{uint4} bandwidth gain
-        and the sparsity filter contribute.
+  \item \textbf{Random (Experiment 1):} Warp coalitions are small on average;
+        V2 advantage over V1 comes mainly from the \texttt{uint4} bandwidth gain.
         See Figure~\ref{fig:exp1_speedup}.
-  \item \textbf{Uniform (Experiment 2):} All 32 warp lanes target the same bin.
-        In V1 all 32 hit the same bank — 32-way serialisation.
-        In V2 they split: 16 go to \texttt{multi\_histo[0]} and 16 to
-        \texttt{multi\_histo[1]}, immediately halving the hardware serialisation
-        penalty.  The sparsity filter then ensures exactly \emph{one} global
-        atomic fires at the end, regardless of how many thousands of identical
-        elements the block processed.
+  \item \textbf{Uniform (Experiment 2):} All 32 warp lanes target the same bin;
+        the leader issues exactly 1 shared atomic instead of 32 --- maximum compression.
+        The $O(N)$ serialisation bottleneck of V0/V1 is mathematically eliminated.
         See Figure~\ref{fig:exp2_speedup}.
-  \item \textbf{Static shared memory footprint:}
-        $2 \times 4097 \times 4\,\text{B} = 32{,}776\,\text{B}$, well within
-        P100's 64\,KB shared memory limit per SM.
+  \item \textbf{Skewed data:} Performance scales gracefully between the two extremes
+        as warp coalitions grow with increasing data skew.
 \end{itemize}
 
 [TODO: After data collection, replace the bullet descriptions above with
@@ -519,74 +424,6 @@ comparisons.  This is arithmetic-bound rather than memory-bandwidth-bound.
 and \ETwoVThreeAvg{} ms (Exp2) and compare against V0--V2.]
 
 % ════════════════════════════════════════════════════════════
-\section{Additional Kernel Variants}
-% ════════════════════════════════════════════════════════════
-
-\subsection*{V4 — RLE Scalar: Isolating the Vectorization Contribution}
-
-Version 4 is identical to V2 in its RLE register-compression logic but uses
-standard 32-bit scalar loads instead of 128-bit \texttt{uint4} loads.
-Comparing V4 vs.\ V2 directly isolates how much of V2's speedup comes from
-wider memory transactions vs.\ from the atomic compression itself.
-
-\begin{table}[htbp]
-\centering
-\caption{V4 (RLE Scalar) vs.\ V2 (uint4+RLE) — average time isolates vectorization gain}
-\label{tab:v4v2}
-\begin{tabular}{lcccc}
-\toprule
- & \multicolumn{2}{c}{\textbf{Experiment 1 (random)}} & \multicolumn{2}{c}{\textbf{Experiment 2 (uniform)}} \\
-\cmidrule(lr){2-3}\cmidrule(lr){4-5}
-\textbf{Version} & \textbf{Avg (ms)} & \textbf{Stdev} & \textbf{Avg (ms)} & \textbf{Stdev} \\
-\midrule
-V2 — uint4+RLE & \EOneVTwoAvg & \EOneVTwoStdev & \ETwoVTwoAvg & \ETwoVTwoStdev \\
-V4 — Scalar RLE & \EOneVFourAvg & \EOneVFourStdev & \ETwoVFourAvg & \ETwoVFourStdev \\
-\bottomrule
-\end{tabular}
-\end{table}
-
-\begin{figure}[htbp]
-  \centering
-  \includegraphics[width=0.6\textwidth]{fig_v2_v4_vectorization.pdf}
-  \caption{uint4 vectorization impact: V4 (scalar RLE) vs.\ V2 (uint4+RLE) across both experiments}
-  \label{fig:v2v4}
-\end{figure}
-
-\subsection*{V5 — CPU Host-Side Reduction: PCIe Bottleneck Demonstration}
-
-Version 5 performs the per-block shared-memory accumulation on the GPU (same
-as V1's accumulation phase) but instead of merging partial histograms on the
-GPU with global atomics, it transfers all block histograms to the CPU via
-PCIe, performs a serial CPU merge, and sends the result back for GPU clipping.
-This demonstrates the \emph{host-side reduction} pattern used in multi-GPU
-or heterogeneous workloads --- and why it is slower here due to PCIe latency
-and serial CPU reduction replacing thousands of parallel GPU cores.
-
-\begin{table}[htbp]
-\centering
-\caption{V5 (CPU Host-Side Reduction) vs.\ V0/V1 — PCIe overhead}
-\label{tab:v5}
-\begin{tabular}{lcccc}
-\toprule
- & \multicolumn{2}{c}{\textbf{Experiment 1 (random)}} & \multicolumn{2}{c}{\textbf{Experiment 2 (uniform)}} \\
-\cmidrule(lr){2-3}\cmidrule(lr){4-5}
-\textbf{Version} & \textbf{Avg (ms)} & \textbf{Stdev} & \textbf{Avg (ms)} & \textbf{Stdev} \\
-\midrule
-V0 — Global Scatter   & \EOneVZeroAvg & \EOneVZeroStdev & \ETwoVZeroAvg & \ETwoVZeroStdev \\
-V1 — Block Privatized & \EOneVOneAvg  & \EOneVOneStdev  & \ETwoVOneAvg  & \ETwoVOneStdev  \\
-V5 — CPU Host-Side    & \EOneVFiveAvg & \EOneVFiveStdev & \ETwoVFiveAvg & \ETwoVFiveStdev \\
-\bottomrule
-\end{tabular}
-\end{table}
-
-\begin{figure}[htbp]
-  \centering
-  \includegraphics[width=0.6\textwidth]{fig_v5_pcie_overhead.pdf}
-  \caption{V5 CPU host-side reduction vs.\ V0/V1: PCIe transfer overhead cost}
-  \label{fig:v5pcie}
-\end{figure}
-
-% ════════════════════════════════════════════════════════════
 \section{Short Answer Questions}
 % ════════════════════════════════════════════════════════════
 
@@ -616,10 +453,10 @@ elements is loaded by exactly one thread on one iteration.
   \item \textbf{V1:} $N$ shared atomics (accumulation) $+$ up to
         $B \times K$ global atomics (merge).
         Total: $N + B \cdot K$.
-  \item \textbf{V2:} $N$ shared atomics (accumulation, split across $\mathcal{R}{=}2$ copies)
-        $+$ up to $B \times K$ global atomics for the sparsity-filtered merge phase.
-        The two-copy split halves per-bank serialisation versus V1 for any distribution;
-        the sparsity filter skips zero bins entirely during the global flush.
+  \item \textbf{V2:} $(N/32) \times U$ shared atomics, where $U$ is the average
+        number of unique bins targeted per warp ($1 \le U \le 32$).
+        Plus up to $B \times K$ global atomics for the merge phase.
+        For uniform data $U = 1$, reducing shared atomics to exactly $N/32$.
   \item \textbf{V3:} \textbf{Zero} — no \texttt{atomicAdd} anywhere.
         Each bin is owned by exactly one thread; no concurrent writes occur.
 \end{itemize}

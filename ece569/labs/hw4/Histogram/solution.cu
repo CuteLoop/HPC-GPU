@@ -4,8 +4,13 @@
 // tests for functional verification
 
 #include <cuda_runtime.h>
-#include<stdlib.h>
+#include <stdlib.h>
 #include <wb.h>
+#include <thrust/sort.h>
+#include <thrust/reduce.h>
+#include <thrust/device_ptr.h>
+#include <thrust/device_vector.h>
+#include <thrust/scatter.h>
 #include "kernel.cu"
 #define NUM_BINS 4096
 
@@ -75,8 +80,7 @@ else if (kernel_version==2) {
   // Launch histogram kernel on the bins
   {
     dim3 blockDim(512), gridDim(30);
-    histogram_shared_optimized<<<gridDim, blockDim,
-                       num_bins * sizeof(unsigned int)>>>(
+    histogram_shared_optimized<<<gridDim, blockDim, 0>>>( // static __shared__, no dynamic alloc
         input, bins, num_elements, num_bins);
     CUDA_CHECK(cudaGetLastError());
     CUDA_CHECK(cudaDeviceSynchronize());
@@ -93,28 +97,122 @@ else if (kernel_version==2) {
  }
 
 else if (kernel_version==3) {
-  // Version 3: bin-centric gather — zero atomics
-  // Each thread owns one bin. gridDim must cover all num_bins exactly.
-  // NO cudaMemset needed: every bin is written once with local_count (includes clipping).
+  // Version 3: R-per-Block without RLE (ablation — same arch as V2, no temporal compression)
+  CUDA_CHECK(cudaMemset(bins, 0, num_bins * sizeof(unsigned int)));
+  {
+    dim3 blockDim(512), gridDim(30);
+    histogram_v3_no_rle<<<gridDim, blockDim, 0>>>(  // static __shared__, no dynamic alloc
+        input, bins, num_elements, num_bins);
+    CUDA_CHECK(cudaGetLastError());
+    CUDA_CHECK(cudaDeviceSynchronize());
+  }
+  {
+    dim3 blockDim(512);
+    dim3 gridDim((num_bins + blockDim.x - 1) / blockDim.x);
+    convert_kernel<<<gridDim, blockDim>>>(bins, num_bins);
+    CUDA_CHECK(cudaGetLastError());
+    CUDA_CHECK(cudaDeviceSynchronize());
+  }
+ }
+
+else if (kernel_version==4) {
+  // Version 4: Warp Aggregation — __ballot_sync + __shfl_sync + __popc leader election
+  CUDA_CHECK(cudaMemset(bins, 0, num_bins * sizeof(unsigned int)));
+  {
+    dim3 blockDim(512), gridDim(30);
+    histogram_v4_warp_agg<<<gridDim, blockDim,
+                       num_bins * sizeof(unsigned int)>>>(
+        input, bins, num_elements, num_bins);
+    CUDA_CHECK(cudaGetLastError());
+    CUDA_CHECK(cudaDeviceSynchronize());
+  }
+  {
+    dim3 blockDim(512);
+    dim3 gridDim((num_bins + blockDim.x - 1) / blockDim.x);
+    convert_kernel<<<gridDim, blockDim>>>(bins, num_bins);
+    CUDA_CHECK(cudaGetLastError());
+    CUDA_CHECK(cudaDeviceSynchronize());
+  }
+ }
+
+else if (kernel_version==5) {
+  // Version 5: Bin-Centric Gather — zero atomics; each thread owns one bin
+  // Launch exactly num_bins threads: 16 blocks × 256 threads = 4096 threads
+  // No cudaMemset needed — every bin is written once by its owner thread
   {
     dim3 blockDim(256);
-    dim3 gridDim(num_bins / 256); // num_bins=4096, so gridDim=16
-    histogram_gather_kernel<<<gridDim, blockDim,
+    dim3 gridDim(num_bins / 256); // num_bins=4096 → gridDim=16
+    histogram_v5_gather<<<gridDim, blockDim,
                        blockDim.x * sizeof(unsigned int)>>>(
         input, bins, num_elements, num_bins);
     CUDA_CHECK(cudaGetLastError());
     CUDA_CHECK(cudaDeviceSynchronize());
   }
-  // convert_kernel not needed: clipping done inside gather kernel
+  // convert_kernel needed: clipping not done inside gather kernel
+  {
+    dim3 blockDim(512);
+    dim3 gridDim((num_bins + blockDim.x - 1) / blockDim.x);
+    convert_kernel<<<gridDim, blockDim>>>(bins, num_bins);
+    CUDA_CHECK(cudaGetLastError());
+    CUDA_CHECK(cudaDeviceSynchronize());
+  }
  }
 
-else if (kernel_version==4) {
-  // Version 4: Sequential — single-thread GPU kernel (CPU algorithm ported to GPU)
-  // Launched <<<1,1>>>: one block, one thread — true sequential execution on GPU.
-  // Bins zeroed and clipping applied inside the kernel; no convert_kernel pass needed.
+else if (kernel_version==6) {
+  // Version 6: Sort & Reduce-by-Key via Thrust — completely different paradigm
+  // Sorts the input to group identical values, then reduce_by_key counts each group.
+  // NOTE: thrust::sort modifies d_input in-place. The sort is O(N log N) on GPU.
   CUDA_CHECK(cudaMemset(bins, 0, num_bins * sizeof(unsigned int)));
   {
-    histogram_sequential_kernel<<<1, 1>>>(input, bins, num_elements, num_bins);
+    thrust::device_ptr<unsigned int> dev_keys(input);
+    thrust::device_vector<unsigned int> dev_vals(num_elements, 1);
+    thrust::device_vector<unsigned int> out_keys(num_bins);
+    thrust::device_vector<unsigned int> out_counts(num_bins);
+
+    // Sort in-place (groups identical bins together)
+    thrust::sort(dev_keys, dev_keys + num_elements);
+
+    // Reduce by key (count each group; no atomics)
+    auto new_end = thrust::reduce_by_key(
+        dev_keys, dev_keys + num_elements,
+        dev_vals.begin(),
+        out_keys.begin(),
+        out_counts.begin());
+
+    int num_unique = (int)(new_end.first - out_keys.begin());
+
+    // Scatter counts back into d_bins at the correct key positions (all on device)
+    thrust::scatter(out_counts.begin(), out_counts.begin() + num_unique,
+                    out_keys.begin(),
+                    thrust::device_pointer_cast(bins));
+  }
+  // Clip on GPU
+  {
+    dim3 blockDim(512);
+    dim3 gridDim((num_bins + blockDim.x - 1) / blockDim.x);
+    convert_kernel<<<gridDim, blockDim>>>(bins, num_bins);
+    CUDA_CHECK(cudaGetLastError());
+    CUDA_CHECK(cudaDeviceSynchronize());
+  }
+ }
+
+else if (kernel_version==7) {
+  // Version 7: Multi-split / Hierarchical Bucketing
+  // Hierarchical two-level address decomposition (super-bucket + fine offset)
+  // improving cache locality of shared memory atomics vs flat V1.
+  CUDA_CHECK(cudaMemset(bins, 0, num_bins * sizeof(unsigned int)));
+  {
+    dim3 blockDim(512), gridDim(30);
+    histogram_v7_multisplit<<<gridDim, blockDim,
+                       num_bins * sizeof(unsigned int)>>>(
+        input, bins, num_elements, num_bins);
+    CUDA_CHECK(cudaGetLastError());
+    CUDA_CHECK(cudaDeviceSynchronize());
+  }
+  {
+    dim3 blockDim(512);
+    dim3 gridDim((num_bins + blockDim.x - 1) / blockDim.x);
+    convert_kernel<<<gridDim, blockDim>>>(bins, num_bins);
     CUDA_CHECK(cudaGetLastError());
     CUDA_CHECK(cudaDeviceSynchronize());
   }
@@ -197,11 +295,17 @@ int main(int argc, char *argv[]) {
   else if (version == 1) 
      wbLog(TRACE, "Checking shared memory kernel");
   else if (version == 2) 
-     wbLog(TRACE, "Checking v2 kernel: vectorized uint4 + register RLE");
+     wbLog(TRACE, "Checking v2 kernel: R=2 per-block + RLE compression (THE GOAT)");
   else if (version == 3)
-     wbLog(TRACE, "Checking v3 kernel: bin-centric gather, zero atomics");
+     wbLog(TRACE, "Checking v3 kernel: R=2 per-block, no RLE (ablation of V2)");
   else if (version == 4)
-     wbLog(TRACE, "Checking v4 kernel: sequential single-thread GPU baseline");
+     wbLog(TRACE, "Checking v4 kernel: warp aggregation (__ballot_sync/__popc leader election)");
+  else if (version == 5)
+     wbLog(TRACE, "Checking v5 kernel: bin-centric gather, zero atomics");
+  else if (version == 6)
+     wbLog(TRACE, "Checking v6 kernel: sort & reduce-by-key via Thrust");
+  else if (version == 7)
+     wbLog(TRACE, "Checking v7 kernel: multi-split hierarchical bucketing");
   wbSolution(args, hostBins, NUM_BINS);
 
   wbTime_start(GPU, "Freeing GPU Memory");

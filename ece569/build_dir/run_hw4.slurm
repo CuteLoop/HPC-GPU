@@ -67,7 +67,7 @@ do
    count=$((count+1))
 done
 
-### Version 2: shared memory optimized kernel
+### Version 2: THE GOAT — R=2 per-block + RLE + uint4
 count=0
 for j in ${PATHS[@]}
 do
@@ -76,12 +76,48 @@ do
    count=$((count+1))
 done
 
-### Version 3: bin-centric gather kernel (zero atomics)
+### Version 3: ablation — R=2 per-block + uint4, no RLE
 count=0
 for j in ${PATHS[@]}
 do
    file=output_v3_$((count)).txt
    /usr/bin/time ./Histogram_Solution -e $j/output.raw -i $j/input.raw 3 -t integral_vector > Histogram_output/$file
+   count=$((count+1))
+done
+
+### Version 4: warp aggregation (__ballot_sync/__popc)
+count=0
+for j in ${PATHS[@]}
+do
+   file=output_v4_$((count)).txt
+   /usr/bin/time ./Histogram_Solution -e $j/output.raw -i $j/input.raw 4 -t integral_vector > Histogram_output/$file
+   count=$((count+1))
+done
+
+### Version 5: bin-centric gather (zero atomics)
+count=0
+for j in ${PATHS[@]}
+do
+   file=output_v5_$((count)).txt
+   /usr/bin/time ./Histogram_Solution -e $j/output.raw -i $j/input.raw 5 -t integral_vector > Histogram_output/$file
+   count=$((count+1))
+done
+
+### Version 6: sort & reduce-by-key via Thrust (sorts d_input in-place; fresh load each run)
+count=0
+for j in ${PATHS[@]}
+do
+   file=output_v6_$((count)).txt
+   /usr/bin/time ./Histogram_Solution -e $j/output.raw -i $j/input.raw 6 -t integral_vector > Histogram_output/$file
+   count=$((count+1))
+done
+
+### Version 7: multi-split hierarchical bucketing
+count=0
+for j in ${PATHS[@]}
+do
+   file=output_v7_$((count)).txt
+   /usr/bin/time ./Histogram_Solution -e $j/output.raw -i $j/input.raw 7 -t integral_vector > Histogram_output/$file
    count=$((count+1))
 done
 

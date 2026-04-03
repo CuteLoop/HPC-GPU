@@ -50,16 +50,20 @@ plt.rcParams.update({
     "grid.linestyle":    "--",
 })
 
-VERSION_COLORS = ["#2E86AB", "#A23B72", "#F18F01", "#3BB273"]
+VERSION_COLORS = ["#2E86AB", "#A23B72", "#F18F01", "#3BB273", "#C0392B", "#8E44AD", "#1ABC9C", "#E67E22"]
 VERSION_LABELS = [
-    "V0 — Global Scatter",
-    "V1 — Block Privatization",
-    "V2 — Warp Aggregation (uint4+RLE)",
-    "V3 — Bin-Centric Gather",
+    "V0 \u2014 Global Scatter",
+    "V1 \u2014 Block Privatization",
+    "V2 \u2014 R=2 + RLE (GOAT)",
+    "V3 \u2014 R=2 Ablation (no RLE)",
+    "V4 \u2014 Warp Aggregation",
+    "V5 \u2014 Bin-Centric Gather",
+    "V6 \u2014 Sort & Reduce-by-Key",
+    "V7 \u2014 Multi-split",
 ]
-VERSION_MARKS  = ["o", "s", "^", "D"]
+VERSION_MARKS  = ["o", "s", "^", "D", "v", "P", "X", "*"]
 RUNS           = list(range(1, 11))
-NUM_VERSIONS   = 4   # V0, V1, V2, V3
+NUM_VERSIONS   = 8   # V0 through V7
 
 # ── time extraction ───────────────────────────────────────────────────────────
 # Matches the actual output line from solution.cu:
@@ -110,14 +114,14 @@ def print_table(label, data):
     print(f"{'='*85}")
     print(f"  {label}")
     print(f"{'='*85}")
-    print(f"  {'Run':<5} {'V0 (ms)':<14} {'V1 (ms)':<14} {'V2 (ms)':<14} {'V3 (ms)':<14}")
-    print(f"  {'-'*60}")
+    print(f"  {'Run':<5} {'V0 (ms)':<14} {'V1 (ms)':<14} {'V2 (ms)':<14} {'V3 (ms)':<14} {'V4 (ms)':<14} {'V5 (ms)':<14} {'V6 (ms)':<14} {'V7 (ms)':<14}")
+    print(f"  {'-'*110}")
     for i in range(10):
         row = [fmt(data[v][i]) if i < len(data[v]) else "N/A" for v in range(NUM_VERSIONS)]
-        print(f"  {i+1:<5} {row[0]:<14} {row[1]:<14} {row[2]:<14} {row[3]:<14}")
-    print(f"  {'-'*60}")
+        print(f"  {i+1:<5} {row[0]:<14} {row[1]:<14} {row[2]:<14} {row[3]:<14} {row[4]:<14} {row[5]:<14} {row[6]:<14} {row[7]:<14}")
+    print(f"  {'-'*110}")
     avgs = [f"{vavg(data[v]):.4f}" for v in range(NUM_VERSIONS)]
-    print(f"  {'Avg':<5} {avgs[0]:<14} {avgs[1]:<14} {avgs[2]:<14} {avgs[3]:<14}")
+    print(f"  {'Avg':<5} {avgs[0]:<14} {avgs[1]:<14} {avgs[2]:<14} {avgs[3]:<14} {avgs[4]:<14} {avgs[5]:<14} {avgs[6]:<14} {avgs[7]:<14}")
     print()
 
 print_table("Experiment 1 — Random data (dataset 6, 500k elements)", e1)
@@ -150,9 +154,48 @@ plot_runs(e1, "Experiment 1 — Kernel time per run (random data)",  "fig_exp1_r
 plot_runs(e2, "Experiment 2 — Kernel time per run (uniform data)", "fig_exp2_runs.pdf")
 
 # ════════════════════════════════════════════════════════════
+#  FIG 1b & 2b — Run-by-run line charts, LOG-SCALE (all versions)
+#  Logarithmic y-axis lets V3 (~11 ms) and V0-V2 (~0.18 ms)
+#  coexist on the same plot without one dominating the scale.
+# ════════════════════════════════════════════════════════════
+def plot_runs_log(data, title, filename):
+    fig, ax = plt.subplots(figsize=(7, 4))
+    for v in range(NUM_VERSIONS):
+        ax.plot(RUNS, nan_list(data[v]),
+                marker=VERSION_MARKS[v],
+                color=VERSION_COLORS[v],
+                label=VERSION_LABELS[v],
+                linewidth=1.6, markersize=6)
+    ax.set_yscale("log")
+    ax.set_xlabel("Run number")
+    ax.set_ylabel("Kernel execution time (ms, log scale)")
+    ax.set_title(title)
+    ax.set_xticks(RUNS)
+    ax.legend(loc="upper right", fontsize=9)
+    ax.xaxis.set_minor_locator(ticker.NullLocator())
+    ax.yaxis.set_major_formatter(ticker.FuncFormatter(lambda y, _: f"{y:g}"))
+    fig.tight_layout()
+    out = FIG_DIR / filename
+    fig.savefig(out, format="pdf", bbox_inches="tight")
+    plt.close(fig)
+    print(f"  Saved: {out}")
+
+plot_runs_log(e1, "Experiment 1 — Kernel time per run, log scale (all versions, random)",  "fig_exp1_runs_log.pdf")
+plot_runs_log(e2, "Experiment 2 — Kernel time per run, log scale (all versions, uniform)", "fig_exp2_runs_log.pdf")
+
+# ════════════════════════════════════════════════════════════
 #  FIG 3 & 4 — Average bar charts with std dev error bars
 # ════════════════════════════════════════════════════════════
-XLABELS = ["V0\nGlobal\nScatter", "V1\nBlock\nPrivatization", "V2\nWarp\nAggregation", "V3\nBin-Centric\nGather"]
+XLABELS = [
+    "V0\nGlobal\nScatter",
+    "V1\nBlock\nPrivatization",
+    "V2\nR=2+RLE\n(GOAT)",
+    "V3\nR=2\nAblation",
+    "V4\nWarp\nAggregation",
+    "V5\nBin-Centric\nGather",
+    "V6\nSort &\nReduce",
+    "V7\nMulti-\nsplit",
+]
 
 def plot_avg_bar(data, title, filename):
     avgs = [vavg(data[v])   for v in range(NUM_VERSIONS)]
@@ -246,6 +289,193 @@ def plot_speedup(data, title, filename):
 plot_speedup(e1, "Experiment 1 — Speedup relative to V0 (random data)",  "fig_exp1_speedup.pdf")
 plot_speedup(e2, "Experiment 2 — Speedup relative to V0 (uniform data)", "fig_exp2_speedup.pdf")
 
+# ════════════════════════════════════════════════════════════
+#  NO-SLOW variants: exclude V5 (Bin-Centric Gather, O(N*B)) and
+#  optionally V6 (Thrust sort, includes O(N log N) sort overhead).
+#  V2/V3/V4/V7 all have similar ms-range times to V0/V1.
+# ════════════════════════════════════════════════════════════
+NOV3_VERSIONS = [0, 1, 2, 3, 4, 6, 7]  # exclude V5 (Gather, ~O(N*B) — different timescale)
+NOV3_COLORS   = [VERSION_COLORS[v] for v in NOV3_VERSIONS]
+NOV3_LABELS   = [VERSION_LABELS[v] for v in NOV3_VERSIONS]
+NOV3_MARKS    = [VERSION_MARKS[v]  for v in NOV3_VERSIONS]
+NOV3_XLABELS  = [XLABELS[v]        for v in NOV3_VERSIONS]
+
+def plot_runs_nov3(data, title, filename):
+    fig, ax = plt.subplots(figsize=(7, 4))
+    for idx, v in enumerate(NOV3_VERSIONS):
+        ax.plot(RUNS, nan_list(data[v]),
+                marker=NOV3_MARKS[idx],
+                color=NOV3_COLORS[idx],
+                label=NOV3_LABELS[idx],
+                linewidth=1.6, markersize=6)
+    ax.set_xlabel("Run number")
+    ax.set_ylabel("Kernel execution time (ms)")
+    ax.set_title(title)
+    ax.set_xticks(RUNS)
+    ax.legend(loc="upper right")
+    ax.xaxis.set_minor_locator(ticker.NullLocator())
+    fig.tight_layout()
+    out = FIG_DIR / filename
+    fig.savefig(out, format="pdf", bbox_inches="tight")
+    plt.close(fig)
+    print(f"  Saved: {out}")
+
+def plot_avg_bar_nov3(data, title, filename):
+    avgs = [vavg(data[v])   for v in NOV3_VERSIONS]
+    errs = [vstdev(data[v]) for v in NOV3_VERSIONS]
+    fig, ax = plt.subplots(figsize=(6, 4))
+    x    = np.arange(len(NOV3_VERSIONS))
+    bars = ax.bar(x, avgs, yerr=errs,
+                  color=NOV3_COLORS, width=0.5,
+                  capsize=5, error_kw={"linewidth": 1.2})
+    ax.set_xticks(x)
+    ax.set_xticklabels(NOV3_XLABELS)
+    ax.set_ylabel("Average kernel time (ms)")
+    ax.set_title(title)
+    err_max = max((e for e in errs if not np.isnan(e)), default=0)
+    for bar, val in zip(bars, avgs):
+        if not np.isnan(val):
+            ax.text(bar.get_x() + bar.get_width() / 2,
+                    bar.get_height() + err_max * 0.08 + 0.001,
+                    f"{val:.3f} ms", ha="center", va="bottom", fontsize=9)
+    fig.tight_layout()
+    out = FIG_DIR / filename
+    fig.savefig(out, format="pdf", bbox_inches="tight")
+    plt.close(fig)
+    print(f"  Saved: {out}")
+
+def plot_speedup_nov3(data, title, filename):
+    baseline = vavg(data[0])
+    if np.isnan(baseline) or baseline == 0:
+        print(f"  SKIP speedup chart (no V0 baseline): {filename}")
+        return
+    speedups = [baseline / vavg(data[v]) if not np.isnan(vavg(data[v])) and vavg(data[v]) > 0
+                else float("nan") for v in NOV3_VERSIONS]
+    fig, ax = plt.subplots(figsize=(6, 4))
+    x    = np.arange(len(NOV3_VERSIONS))
+    bars = ax.bar(x, speedups, color=NOV3_COLORS, width=0.5)
+    ax.axhline(1.0, color="black", linewidth=0.9, linestyle="--", alpha=0.5, label="V0 baseline")
+    ax.set_xticks(x)
+    ax.set_xticklabels(NOV3_XLABELS)
+    ax.set_ylabel("Speedup relative to V0")
+    ax.set_title(title)
+    ax.legend(loc="upper left")
+    for bar, val in zip(bars, speedups):
+        if not np.isnan(val):
+            ax.text(bar.get_x() + bar.get_width() / 2,
+                    bar.get_height() + 0.01,
+                    f"{val:.2f}\u00d7", ha="center", va="bottom", fontsize=9)
+    fig.tight_layout()
+    out = FIG_DIR / filename
+    fig.savefig(out, format="pdf", bbox_inches="tight")
+    plt.close(fig)
+    print(f"  Saved: {out}")
+
+def plot_comparison_nov3(e1_data, e2_data, title, filename):
+    avgs1  = [vavg(e1_data[v])   for v in NOV3_VERSIONS]
+    avgs2  = [vavg(e2_data[v])   for v in NOV3_VERSIONS]
+    errs1  = [vstdev(e1_data[v]) for v in NOV3_VERSIONS]
+    errs2  = [vstdev(e2_data[v]) for v in NOV3_VERSIONS]
+    fig, ax = plt.subplots(figsize=(7, 4))
+    x     = np.arange(len(NOV3_VERSIONS))
+    width = 0.32
+    ax.bar(x - width/2, avgs1, width, yerr=errs1,
+           color=NOV3_COLORS, alpha=0.90,
+           capsize=4, error_kw={"linewidth": 1.1})
+    ax.bar(x + width/2, avgs2, width, yerr=errs2,
+           color=NOV3_COLORS, alpha=0.45,
+           capsize=4, error_kw={"linewidth": 1.1}, hatch="//")
+    ax.legend(handles=[
+        Patch(facecolor="#888", alpha=0.90, label="Experiment 1 \u2014 random"),
+        Patch(facecolor="#888", alpha=0.45, hatch="//", label="Experiment 2 \u2014 uniform"),
+    ], loc="upper right")
+    ax.set_xticks(x)
+    ax.set_xticklabels(NOV3_XLABELS)
+    ax.set_ylabel("Average kernel time (ms)")
+    ax.set_title(title)
+    fig.tight_layout()
+    out = FIG_DIR / filename
+    fig.savefig(out, format="pdf", bbox_inches="tight")
+    plt.close(fig)
+    print(f"  Saved: {out}")
+
+print("\nGenerating V0/V1/V2-only variants (no V3 for readable y-axis scale)...")
+plot_runs_nov3(e1, "Experiment 1 — Kernel time per run (V0–V2, random)",   "fig_exp1_runs_nov3.pdf")
+plot_runs_nov3(e2, "Experiment 2 — Kernel time per run (V0–V2, uniform)",  "fig_exp2_runs_nov3.pdf")
+plot_avg_bar_nov3(e1, "Experiment 1 — Average kernel time (V0–V2, random)",  "fig_exp1_bar_nov3.pdf")
+plot_avg_bar_nov3(e2, "Experiment 2 — Average kernel time (V0–V2, uniform)", "fig_exp2_bar_nov3.pdf")
+plot_speedup_nov3(e1, "Experiment 1 — Speedup V0–V2 (random)",  "fig_exp1_speedup_nov3.pdf")
+plot_speedup_nov3(e2, "Experiment 2 — Speedup V0–V2 (uniform)", "fig_exp2_speedup_nov3.pdf")
+plot_comparison_nov3(e1, e2, "Exp 1 vs. 2 — V0–V2 average kernel time", "fig_avg_comparison_nov3.pdf")
+
+# ════════════════════════════════════════════════════════════
+#  FIG: V2 vs V3 ablation — isolates RLE compression contribution
+# ════════════════════════════════════════════════════════════
+def plot_v2_v3_ablation(e1_data, e2_data, filename):
+    """Bar chart: V3 (no RLE) vs V2 (with RLE) for Exp1 and Exp2.
+    Difference isolates the pure RLE temporal compression speedup."""
+    v2_e1 = vavg(e1_data[2]); v3_e1 = vavg(e1_data[3])
+    v2_e2 = vavg(e2_data[2]); v3_e2 = vavg(e2_data[3])
+    vals   = [v3_e1, v2_e1, v3_e2, v2_e2]
+    colors = [VERSION_COLORS[3], VERSION_COLORS[2], VERSION_COLORS[3], VERSION_COLORS[2]]
+    labels = ["V3 R=2, no RLE\n(Exp1 random)",  "V2 R=2+RLE\n(Exp1 random)",
+              "V3 R=2, no RLE\n(Exp2 uniform)", "V2 R=2+RLE\n(Exp2 uniform)"]
+    fig, ax = plt.subplots(figsize=(7, 4))
+    x    = np.arange(4)
+    bars = ax.bar(x, vals, color=colors, width=0.5)
+    ax.set_xticks(x)
+    ax.set_xticklabels(labels, fontsize=9)
+    ax.set_ylabel("Average kernel time (ms)")
+    ax.set_title("RLE Compression Impact: V3 (no RLE) vs V2 (R=2+RLE)")
+    for bar, val in zip(bars, vals):
+        if not np.isnan(val):
+            ax.text(bar.get_x() + bar.get_width()/2, bar.get_height() + 0.001,
+                    f"{val:.4f} ms", ha="center", va="bottom", fontsize=8)
+    fig.tight_layout()
+    out = FIG_DIR / filename
+    fig.savefig(out, format="pdf", bbox_inches="tight")
+    plt.close(fig)
+    print(f"  Saved: {out}")
+
+plot_v2_v3_ablation(e1, e2, "fig_v2_v3_ablation.pdf")
+
+# ════════════════════════════════════════════════════════════
+#  FIG: V5 Gather — O(N*B) arithmetic overhead visualization
+# ════════════════════════════════════════════════════════════
+def plot_v5_context(e1_data, e2_data, filename):
+    """Bar chart: V0, V1, V5 side-by-side for Exp1 and Exp2.
+    Shows that Bin-Centric Gather (V5) has far higher latency
+    due to O(N*B) comparisons despite zero atomics."""
+    versions   = [0, 1, 5]
+    labels_ctx = ["V0 Global\nScatter", "V1 Block\nPrivatization", "V5 Bin-Centric\nGather"]
+    colors_ctx = [VERSION_COLORS[v] for v in versions]
+    avgs1 = [vavg(e1_data[v]) for v in versions]
+    avgs2 = [vavg(e2_data[v]) for v in versions]
+    errs1 = [vstdev(e1_data[v]) for v in versions]
+    errs2 = [vstdev(e2_data[v]) for v in versions]
+    fig, ax = plt.subplots(figsize=(7, 4))
+    x = np.arange(len(versions))
+    width = 0.32
+    ax.bar(x - width/2, avgs1, width, yerr=errs1, color=colors_ctx, alpha=0.90,
+           capsize=4, error_kw={"linewidth": 1.1})
+    ax.bar(x + width/2, avgs2, width, yerr=errs2, color=colors_ctx, alpha=0.45,
+           capsize=4, error_kw={"linewidth": 1.1}, hatch="//")
+    ax.legend(handles=[
+        Patch(facecolor="#888", alpha=0.90, label="Experiment 1 \u2014 random"),
+        Patch(facecolor="#888", alpha=0.45, hatch="//", label="Experiment 2 \u2014 uniform"),
+    ], loc="upper left")
+    ax.set_xticks(x)
+    ax.set_xticklabels(labels_ctx)
+    ax.set_ylabel("Average kernel time (ms)")
+    ax.set_title("O(N\u00d7B) Cost: V5 Bin-Centric Gather vs. V0/V1")
+    fig.tight_layout()
+    out = FIG_DIR / filename
+    fig.savefig(out, format="pdf", bbox_inches="tight")
+    plt.close(fig)
+    print(f"  Saved: {out}")
+
+plot_v5_context(e1, e2, "fig_v5_gather_overhead.pdf")
+
 print(f"\nAll figures saved to {FIG_DIR}/\n")
 
 # ── LaTeX substitution map ────────────────────────────────────────────────────
@@ -261,8 +491,10 @@ def build_subs(prefix, times):
 
 substitutions = {}
 for prefix, times in [
-    ("EOneVZero", e1[0]), ("EOneVOne", e1[1]), ("EOneVTwo", e1[2]), ("EOneVThree", e1[3]),
-    ("ETwoVZero", e2[0]), ("ETwoVOne", e2[1]), ("ETwoVTwo", e2[2]), ("ETwoVThree", e2[3]),
+    ("EOneVZero",  e1[0]), ("EOneVOne",   e1[1]), ("EOneVTwo",   e1[2]), ("EOneVThree", e1[3]),
+    ("EOneVFour",  e1[4]), ("EOneVFive",  e1[5]), ("EOneVSix",   e1[6]), ("EOneVSeven", e1[7]),
+    ("ETwoVZero",  e2[0]), ("ETwoVOne",   e2[1]), ("ETwoVTwo",   e2[2]), ("ETwoVThree", e2[3]),
+    ("ETwoVFour",  e2[4]), ("ETwoVFive",  e2[5]), ("ETwoVSix",   e2[6]), ("ETwoVSeven", e2[7]),
 ]:
     substitutions.update(build_subs(prefix, times))
 
@@ -276,7 +508,7 @@ if "--inject" in sys.argv:
         print(f"ERROR: {tex_path} not found.")
         sys.exit(1)
 
-    content  = tex_path.read_text()
+    content  = tex_path.read_text(encoding="utf-8")
     replaced = 0
 
     def replacer(m):
@@ -291,7 +523,7 @@ if "--inject" in sys.argv:
     new_content = pattern.sub(replacer, content)
     backup      = tex_path.with_suffix(".tex.bak")
     tex_path.rename(backup)
-    tex_path.write_text(new_content)
+    tex_path.write_text(new_content, encoding="utf-8")
     print(f"Injected {replaced} values into {tex_path}")
     print(f"Backup saved to {backup}")
 else:
