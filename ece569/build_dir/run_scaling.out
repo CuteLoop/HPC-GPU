@@ -1,0 +1,13 @@
+=========================================================
+ ECE 569 - HW4 Asymptotic Scaling Profiling
+=========================================================
+--- Step 1: Generating datasets (~1 GB, temporary) ---
+--- Step 2: Running benchmarks ---
+  V0  Dataset 6
+  V0  Dataset 8
+  V0  Dataset 9
+  V0  Dataset 10
+  V1  Dataset 6
+  V1  Dataset 8
+  V1  Dataset 9
+  V1  Dataset 10

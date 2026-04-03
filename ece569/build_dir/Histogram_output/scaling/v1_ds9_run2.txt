@@ -1,0 +1,36 @@
+{"data": {"elapsed_time": 44801579406, "end_file": "/home/u16/joelmaldonado/HPC-GPU/ece569/labs/hw4/Histogram/solution.cu", "end_function": "main", "end_line": 244, "end_time": 5505756634991554, "id": "8894cd47-6727-4f17-a9ff-0c8dcf6709c5", "idx": 0, "kind": "Generic", "message": "Importing data and creating memory on host", "mpi_rank": 0, "parent_id": -1, "session_id": "session_id_disabled", "start_file": "/home/u16/joelmaldonado/HPC-GPU/ece569/labs/hw4/Histogram/solution.cu", "start_function": "main", "start_line": 240, "start_time": 5505711833412148, "stopped": true}, "id": "8894cd47-6727-4f17-a9ff-0c8dcf6709c5", "session_id": "session_id_disabled", "type": "timer"}
+{"data": {"file": "/home/u16/joelmaldonado/HPC-GPU/ece569/labs/hw4/Histogram/solution.cu", "function": "main", "id": "ee15aa96-c616-461e-92a9-83d09fcb766c", "level": "Trace", "line": 246, "message": "The input length is 10000000", "mpi_rank": 0, "session_id": "session_id_disabled", "time": 5505756635498515}, "id": "ee15aa96-c616-461e-92a9-83d09fcb766c", "session_id": "session_id_disabled", "type": "logger"}
+{"data": {"file": "/home/u16/joelmaldonado/HPC-GPU/ece569/labs/hw4/Histogram/solution.cu", "function": "main", "id": "5943a93e-2530-440b-9b39-e64d179959aa", "level": "Trace", "line": 247, "message": "The number of bins is 4096", "mpi_rank": 0, "session_id": "session_id_disabled", "time": 5505756635521670}, "id": "5943a93e-2530-440b-9b39-e64d179959aa", "session_id": "session_id_disabled", "type": "logger"}
+{"data": {"elapsed_time": 485233, "end_file": "/home/u16/joelmaldonado/HPC-GPU/ece569/labs/hw4/Histogram/solution.cu", "end_function": "main", "end_line": 256, "end_time": 5505756636018687, "id": "a9449b76-a4eb-4faf-ad4d-9aabb73167f4", "idx": 1, "kind": "GPU", "message": "Allocating GPU memory.", "mpi_rank": 0, "parent_id": -1, "session_id": "session_id_disabled", "start_file": "/home/u16/joelmaldonado/HPC-GPU/ece569/labs/hw4/Histogram/solution.cu", "start_function": "main", "start_line": 249, "start_time": 5505756635533454, "stopped": true}, "id": "a9449b76-a4eb-4faf-ad4d-9aabb73167f4", "session_id": "session_id_disabled", "type": "timer"}
+{"data": {"elapsed_time": 4845179, "end_file": "/home/u16/joelmaldonado/HPC-GPU/ece569/labs/hw4/Histogram/solution.cu", "end_function": "main", "end_line": 264, "end_time": 5505756640895142, "id": "2dfdcddb-bafc-4812-af1d-46ab3ecad9ad", "idx": 2, "kind": "GPU", "message": "Copying input memory to the GPU.", "mpi_rank": 0, "parent_id": -1, "session_id": "session_id_disabled", "start_file": "/home/u16/joelmaldonado/HPC-GPU/ece569/labs/hw4/Histogram/solution.cu", "start_function": "main", "start_line": 258, "start_time": 5505756636049963, "stopped": true}, "id": "2dfdcddb-bafc-4812-af1d-46ab3ecad9ad", "session_id": "session_id_disabled", "type": "timer"}
+
+Total compute time (ms) 1.251840 for version 1
+
+{"data": {"elapsed_time": 43184, "end_file": "/home/u16/joelmaldonado/HPC-GPU/ece569/labs/hw4/Histogram/solution.cu", "end_function": "main", "end_line": 288, "end_time": 5505756642270524, "id": "e5cb259b-2f2f-4c53-8696-a772abc2a0b8", "idx": 3, "kind": "Copy", "message": "Copying output memory to the CPU", "mpi_rank": 0, "parent_id": -1, "session_id": "session_id_disabled", "start_file": "/home/u16/joelmaldonado/HPC-GPU/ece569/labs/hw4/Histogram/solution.cu", "start_function": "main", "start_line": 282, "start_time": 5505756642227340, "stopped": true}, "id": "e5cb259b-2f2f-4c53-8696-a772abc2a0b8", "session_id": "session_id_disabled", "type": "timer"}
+Ran version 1
+{"data": {"file": "/home/u16/joelmaldonado/HPC-GPU/ece569/labs/hw4/Histogram/solution.cu", "function": "main", "id": "db1c492d-fa19-4fb3-9a09-b173479d91b4", "level": "Trace", "line": 296, "message": "Checking shared memory kernel", "mpi_rank": 0, "session_id": "session_id_disabled", "time": 5505756642304921}, "id": "db1c492d-fa19-4fb3-9a09-b173479d91b4", "session_id": "session_id_disabled", "type": "logger"}
+{"data": {"correctq": true, "message": "The solution is correct"}, "type": "solution"}
+{"data": {"elapsed_time": 1762271, "end_file": "/home/u16/joelmaldonado/HPC-GPU/ece569/labs/hw4/Histogram/solution.cu", "end_function": "main", "end_line": 315, "end_time": 5505756663532466, "id": "cc21c94f-4f84-4339-b2fc-5d6c134ba2bf", "idx": 4, "kind": "GPU", "message": "Freeing GPU Memory", "mpi_rank": 0, "parent_id": -1, "session_id": "session_id_disabled", "start_file": "/home/u16/joelmaldonado/HPC-GPU/ece569/labs/hw4/Histogram/solution.cu", "start_function": "main", "start_line": 311, "start_time": 5505756661770195, "stopped": true}, "id": "cc21c94f-4f84-4339-b2fc-5d6c134ba2bf", "session_id": "session_id_disabled", "type": "timer"}
+	Command being timed: "./Histogram_Solution -e Histogram/Dataset/9/output.raw -i Histogram/Dataset/9/input.raw 1 -t integral_vector"
+	User time (seconds): 44.81
+	System time (seconds): 0.12
+	Percent of CPU this job got: 99%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:44.94
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 202148
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 5925
+	Voluntary context switches: 515
+	Involuntary context switches: 46
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 24
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
