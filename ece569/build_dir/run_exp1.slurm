@@ -20,6 +20,12 @@ DATASET=$hw_path/Histogram/Dataset/6   # dataset 6: 500k random elements
 cd $hw_path
 mkdir -p Histogram_output/exp1 Histogram_output/figures
 
+# Ensure datasets exist (DatasetGenerator is idempotent)
+if [ ! -f "$DATASET/input.raw" ]; then
+    echo "Dataset 6 not found — running DatasetGenerator..."
+    ./Histogram_DatasetGenerator
+fi
+
 echo "===== Experiment 1: Dataset 6 (random, 500k elements) ====="
 echo "10 runs per version — reading kernel time from each output file"
 

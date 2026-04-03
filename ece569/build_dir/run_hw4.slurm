@@ -76,6 +76,15 @@ do
    count=$((count+1))
 done
 
+### Version 3: bin-centric gather kernel (zero atomics)
+count=0
+for j in ${PATHS[@]}
+do
+   file=output_v3_$((count)).txt
+   /usr/bin/time ./Histogram_Solution -e $j/output.raw -i $j/input.raw 3 -t integral_vector > Histogram_output/$file
+   count=$((count+1))
+done
+
 echo "===== HW4 DONE ====="
 echo "Check outputs in Histogram_output/"
 
