@@ -65,6 +65,19 @@ VERSION_MARKS  = ["o", "s", "^", "D", "v", "P", "X", "*"]
 RUNS           = list(range(1, 11))
 NUM_VERSIONS   = 8   # V0 through V7
 
+MUTED_VERSIONS = {5}  # V5 Bin-Centric Gather — greyed out in all-version plots
+
+def _vc(v):
+    """Per-version color: grey for muted versions, normal otherwise."""
+    return "#CCCCCC" if v in MUTED_VERSIONS else VERSION_COLORS[v]
+
+# ── bandwidth calculation ─────────────────────────────────────────────────────
+def calculate_bandwidth(size_n, time_ms):
+    """Effective Memory Bandwidth in GB/s: N elements * 4 B / time."""
+    if np.isnan(time_ms) or time_ms <= 0:
+        return float("nan")
+    return (size_n * 4) / (time_ms / 1000.0) / 1e9
+
 # ── time extraction ───────────────────────────────────────────────────────────
 # Matches the actual output line from solution.cu:
 #   "Total compute time (ms) X.XXXXXX for version N"
@@ -78,7 +91,7 @@ TIME_PATTERNS = [
 
 def extract_time(filepath):
     try:
-        text = filepath.read_text()
+        text = filepath.read_text(encoding="utf-8")
     except FileNotFoundError:
         return None
     for pat in TIME_PATTERNS:
@@ -110,18 +123,22 @@ e1 = [collect(EXP1_DIR, v) for v in range(NUM_VERSIONS)]
 e2 = [collect(EXP2_DIR, v) for v in range(NUM_VERSIONS)]
 
 # ── print tables ──────────────────────────────────────────────────────────────
-def print_table(label, data):
-    print(f"{'='*85}")
+def print_table(label, data, size_n=500000):
+    print(f"{'='*115}")
     print(f"  {label}")
-    print(f"{'='*85}")
+    print(f"{'='*115}")
     print(f"  {'Run':<5} {'V0 (ms)':<14} {'V1 (ms)':<14} {'V2 (ms)':<14} {'V3 (ms)':<14} {'V4 (ms)':<14} {'V5 (ms)':<14} {'V6 (ms)':<14} {'V7 (ms)':<14}")
     print(f"  {'-'*110}")
     for i in range(10):
         row = [fmt(data[v][i]) if i < len(data[v]) else "N/A" for v in range(NUM_VERSIONS)]
         print(f"  {i+1:<5} {row[0]:<14} {row[1]:<14} {row[2]:<14} {row[3]:<14} {row[4]:<14} {row[5]:<14} {row[6]:<14} {row[7]:<14}")
     print(f"  {'-'*110}")
-    avgs = [f"{vavg(data[v]):.4f}" for v in range(NUM_VERSIONS)]
-    print(f"  {'Avg':<5} {avgs[0]:<14} {avgs[1]:<14} {avgs[2]:<14} {avgs[3]:<14} {avgs[4]:<14} {avgs[5]:<14} {avgs[6]:<14} {avgs[7]:<14}")
+    avgs = [vavg(data[v]) for v in range(NUM_VERSIONS)]
+    avg_strs = [f"{a:.4f}" if not np.isnan(a) else "N/A" for a in avgs]
+    print(f"  {'Avg':<5} {avg_strs[0]:<14} {avg_strs[1]:<14} {avg_strs[2]:<14} {avg_strs[3]:<14} {avg_strs[4]:<14} {avg_strs[5]:<14} {avg_strs[6]:<14} {avg_strs[7]:<14}")
+    bws = [calculate_bandwidth(size_n, a) for a in avgs]
+    bw_strs = [f"{b:.2f} GB/s" if not np.isnan(b) else "N/A" for b in bws]
+    print(f"  {'BW':<5} {bw_strs[0]:<14} {bw_strs[1]:<14} {bw_strs[2]:<14} {bw_strs[3]:<14} {bw_strs[4]:<14} {bw_strs[5]:<14} {bw_strs[6]:<14} {bw_strs[7]:<14}")
     print()
 
 print_table("Experiment 1 — Random data (dataset 6, 500k elements)", e1)
@@ -133,11 +150,16 @@ print_table("Experiment 2 — Uniform data (500k same-value elements)", e2)
 def plot_runs(data, title, filename):
     fig, ax = plt.subplots(figsize=(7, 4))
     for v in range(NUM_VERSIONS):
+        muted = v in MUTED_VERSIONS
         ax.plot(RUNS, nan_list(data[v]),
                 marker=VERSION_MARKS[v],
-                color=VERSION_COLORS[v],
+                color=_vc(v),
                 label=VERSION_LABELS[v],
-                linewidth=1.6, markersize=6)
+                linewidth=1.0 if muted else 1.6,
+                markersize=4 if muted else 6,
+                alpha=0.4 if muted else 1.0,
+                linestyle="--" if muted else "-",
+                zorder=1 if muted else 2)
     ax.set_xlabel("Run number")
     ax.set_ylabel("Kernel execution time (ms)")
     ax.set_title(title)
@@ -161,11 +183,16 @@ plot_runs(e2, "Experiment 2 — Kernel time per run (uniform data)", "fig_exp2_r
 def plot_runs_log(data, title, filename):
     fig, ax = plt.subplots(figsize=(7, 4))
     for v in range(NUM_VERSIONS):
+        muted = v in MUTED_VERSIONS
         ax.plot(RUNS, nan_list(data[v]),
                 marker=VERSION_MARKS[v],
-                color=VERSION_COLORS[v],
+                color=_vc(v),
                 label=VERSION_LABELS[v],
-                linewidth=1.6, markersize=6)
+                linewidth=1.0 if muted else 1.6,
+                markersize=4 if muted else 6,
+                alpha=0.4 if muted else 1.0,
+                linestyle="--" if muted else "-",
+                zorder=1 if muted else 2)
     ax.set_yscale("log")
     ax.set_xlabel("Run number")
     ax.set_ylabel("Kernel execution time (ms, log scale)")
@@ -198,15 +225,18 @@ XLABELS = [
 ]
 
 def plot_avg_bar(data, title, filename):
-    avgs = [vavg(data[v])   for v in range(NUM_VERSIONS)]
-    errs = [vstdev(data[v]) for v in range(NUM_VERSIONS)]
+    vlist  = [v for v in range(NUM_VERSIONS) if v not in MUTED_VERSIONS]
+    avgs   = [vavg(data[v])     for v in vlist]
+    errs   = [vstdev(data[v])   for v in vlist]
+    xlbls  = [XLABELS[v]        for v in vlist]
+    colors = [VERSION_COLORS[v] for v in vlist]
     fig, ax = plt.subplots(figsize=(7, 4))
-    x    = np.arange(NUM_VERSIONS)
+    x    = np.arange(len(vlist))
     bars = ax.bar(x, avgs, yerr=errs,
-                  color=VERSION_COLORS, width=0.5,
+                  color=colors, width=0.5,
                   capsize=5, error_kw={"linewidth": 1.2})
     ax.set_xticks(x)
-    ax.set_xticklabels(XLABELS)
+    ax.set_xticklabels(xlbls)
     ax.set_ylabel("Average kernel time (ms)")
     ax.set_title(title)
     err_max = max((e for e in errs if not np.isnan(e)), default=0)
@@ -227,19 +257,22 @@ plot_avg_bar(e2, "Experiment 2 — Average kernel time (uniform data)", "fig_exp
 # ════════════════════════════════════════════════════════════
 #  FIG 5 — Grouped bar: E1 vs E2 side-by-side per version
 # ════════════════════════════════════════════════════════════
+_bvlist = [v for v in range(NUM_VERSIONS) if v not in MUTED_VERSIONS]
+_bxlbls = [XLABELS[v]        for v in _bvlist]
+_bclrs  = [VERSION_COLORS[v] for v in _bvlist]
 fig, ax = plt.subplots(figsize=(8, 4.5))
-x      = np.arange(NUM_VERSIONS)
+x      = np.arange(len(_bvlist))
 width  = 0.32
-avgs1  = [vavg(e1[v])   for v in range(NUM_VERSIONS)]
-avgs2  = [vavg(e2[v])   for v in range(NUM_VERSIONS)]
-errs1  = [vstdev(e1[v]) for v in range(NUM_VERSIONS)]
-errs2  = [vstdev(e2[v]) for v in range(NUM_VERSIONS)]
+avgs1  = [vavg(e1[v])   for v in _bvlist]
+avgs2  = [vavg(e2[v])   for v in _bvlist]
+errs1  = [vstdev(e1[v]) for v in _bvlist]
+errs2  = [vstdev(e2[v]) for v in _bvlist]
 
 ax.bar(x - width/2, avgs1, width, yerr=errs1,
-       color=VERSION_COLORS, alpha=0.90,
+       color=_bclrs, alpha=0.90,
        capsize=4, error_kw={"linewidth": 1.1})
 ax.bar(x + width/2, avgs2, width, yerr=errs2,
-       color=VERSION_COLORS, alpha=0.45,
+       color=_bclrs, alpha=0.45,
        capsize=4, error_kw={"linewidth": 1.1}, hatch="//")
 
 ax.legend(handles=[
@@ -247,7 +280,7 @@ ax.legend(handles=[
     Patch(facecolor="#888", alpha=0.45, hatch="//", label="Experiment 2 — uniform"),
 ], loc="upper right")
 ax.set_xticks(x)
-ax.set_xticklabels(XLABELS)
+ax.set_xticklabels(_bxlbls)
 ax.set_ylabel("Average kernel time (ms)")
 ax.set_title("Experiment 1 vs. 2 — Average kernel time by version")
 fig.tight_layout()
@@ -260,18 +293,34 @@ print(f"  Saved: {out}")
 #  FIG 6 & 7 — Speedup over V0 baseline
 # ════════════════════════════════════════════════════════════
 def plot_speedup(data, title, filename):
-    baseline = vavg(data[0])
+    vlist        = [v for v in range(NUM_VERSIONS) if v not in MUTED_VERSIONS]
+    baseline     = vavg(data[0])
+    baseline_std = vstdev(data[0])
     if np.isnan(baseline) or baseline == 0:
         print(f"  SKIP speedup chart (no V0 baseline): {filename}")
         return
-    speedups = [baseline / vavg(data[v]) if not np.isnan(vavg(data[v])) and vavg(data[v]) > 0
-                else float("nan") for v in range(NUM_VERSIONS)]
+    speedups = []
+    s_errs   = []
+    for v in vlist:
+        avg_v = vavg(data[v])
+        std_v = vstdev(data[v])
+        if not np.isnan(avg_v) and avg_v > 0:
+            sp = baseline / avg_v
+            rel = np.sqrt((baseline_std / baseline) ** 2 + (std_v / avg_v) ** 2)
+            speedups.append(sp)
+            s_errs.append(sp * rel)
+        else:
+            speedups.append(float("nan"))
+            s_errs.append(0.0)
+    xlbls  = [XLABELS[v]        for v in vlist]
+    colors = [VERSION_COLORS[v] for v in vlist]
     fig, ax = plt.subplots(figsize=(7, 4))
-    x    = np.arange(NUM_VERSIONS)
-    bars = ax.bar(x, speedups, color=VERSION_COLORS, width=0.5)
+    x    = np.arange(len(vlist))
+    bars = ax.bar(x, speedups, yerr=s_errs, color=colors, width=0.5,
+                  capsize=5, error_kw={"linewidth": 1.2})
     ax.axhline(1.0, color="black", linewidth=0.9, linestyle="--", alpha=0.5, label="V0 baseline")
     ax.set_xticks(x)
-    ax.set_xticklabels(XLABELS)
+    ax.set_xticklabels(xlbls)
     ax.set_ylabel("Speedup relative to V0")
     ax.set_title(title)
     ax.legend(loc="upper left")
@@ -399,7 +448,7 @@ def plot_comparison_nov3(e1_data, e2_data, title, filename):
     plt.close(fig)
     print(f"  Saved: {out}")
 
-print("\nGenerating V0/V1/V2-only variants (no V3 for readable y-axis scale)...")
+print("\nGenerating without-V5 variants (excluding Bin-Centric Gather for readable y-axis scale)...")
 plot_runs_nov3(e1, "Experiment 1 — Kernel time per run (V0–V2, random)",   "fig_exp1_runs_nov3.pdf")
 plot_runs_nov3(e2, "Experiment 2 — Kernel time per run (V0–V2, uniform)",  "fig_exp2_runs_nov3.pdf")
 plot_avg_bar_nov3(e1, "Experiment 1 — Average kernel time (V0–V2, random)",  "fig_exp1_bar_nov3.pdf")
@@ -481,12 +530,14 @@ print(f"\nAll figures saved to {FIG_DIR}/\n")
 # ── LaTeX substitution map ────────────────────────────────────────────────────
 NUM_WORDS = ["One","Two","Three","Four","Five","Six","Seven","Eight","Nine","Ten"]
 
-def build_subs(prefix, times):
+def build_subs(prefix, times, size_n=500000):
     subs = {}
     for i, word in enumerate(NUM_WORDS):
         subs[f"\\{prefix}{word}"] = fmt(times[i]) if i < len(times) else "N/A"
     a = vavg(times);   subs[f"\\{prefix}Avg"]   = f"{a:.4f}"   if not np.isnan(a) else "N/A"
     s = vstdev(times); subs[f"\\{prefix}Stdev"] = f"{s:.4f}"   if not np.isnan(s) else "N/A"
+    bw = calculate_bandwidth(size_n, a)
+    subs[f"\\{prefix}BW"] = f"{bw:.2f}" if not np.isnan(bw) else "N/A"
     return subs
 
 substitutions = {}
@@ -496,7 +547,7 @@ for prefix, times in [
     ("ETwoVZero",  e2[0]), ("ETwoVOne",   e2[1]), ("ETwoVTwo",   e2[2]), ("ETwoVThree", e2[3]),
     ("ETwoVFour",  e2[4]), ("ETwoVFive",  e2[5]), ("ETwoVSix",   e2[6]), ("ETwoVSeven", e2[7]),
 ]:
-    substitutions.update(build_subs(prefix, times))
+    substitutions.update(build_subs(prefix, times, size_n=500000))
 
 # ── inject into LaTeX ─────────────────────────────────────────────────────────
 if "--inject" in sys.argv:
@@ -522,6 +573,7 @@ if "--inject" in sys.argv:
     pattern     = re.compile(r'\\newcommand\{(\\[A-Za-z]+)\}\{[^}]*\}')
     new_content = pattern.sub(replacer, content)
     backup      = tex_path.with_suffix(".tex.bak")
+    backup.unlink(missing_ok=True)
     tex_path.rename(backup)
     tex_path.write_text(new_content, encoding="utf-8")
     print(f"Injected {replaced} values into {tex_path}")

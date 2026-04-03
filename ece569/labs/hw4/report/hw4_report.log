@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.3.2)  3 APR 2026 08:43
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.3.2)  3 APR 2026 11:12
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -376,24 +376,24 @@ File: l3backend-pdftex.def 2025-10-09 L3 backend support: PDF output (pdfTeX)
 ) (./hw4_report.aux)
 \openout1 = `hw4_report.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 206.
-LaTeX Font Info:    ... okay on input line 206.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 206.
-LaTeX Font Info:    ... okay on input line 206.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 206.
-LaTeX Font Info:    ... okay on input line 206.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 206.
-LaTeX Font Info:    ... okay on input line 206.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 206.
-LaTeX Font Info:    ... okay on input line 206.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 206.
-LaTeX Font Info:    ... okay on input line 206.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 206.
-LaTeX Font Info:    ... okay on input line 206.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 206.
-LaTeX Font Info:    ... okay on input line 206.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 206.
-LaTeX Font Info:    ... okay on input line 206.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 258.
+LaTeX Font Info:    ... okay on input line 258.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 258.
+LaTeX Font Info:    ... okay on input line 258.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 258.
+LaTeX Font Info:    ... okay on input line 258.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 258.
+LaTeX Font Info:    ... okay on input line 258.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 258.
+LaTeX Font Info:    ... okay on input line 258.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 258.
+LaTeX Font Info:    ... okay on input line 258.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 258.
+LaTeX Font Info:    ... okay on input line 258.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 258.
+LaTeX Font Info:    ... okay on input line 258.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 258.
+LaTeX Font Info:    ... okay on input line 258.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -436,7 +436,7 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 48
  (c:/Users/ual-laptop/scoop/apps/tinytex/current/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 ))
-Package hyperref Info: Link coloring OFF on input line 206.
+Package hyperref Info: Link coloring OFF on input line 258.
  (./hw4_report.out) (./hw4_report.out)
 \@outlinefile=\write3
 \openout3 = `hw4_report.out'.
@@ -444,93 +444,93 @@ Package hyperref Info: Link coloring OFF on input line 206.
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: float package is loaded.
 Package caption Info: End \AtBeginDocument code.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 251.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 282.
  (c:/Users/ual-laptop/scoop/apps/tinytex/current/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 251.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 282.
  (c:/Users/ual-laptop/scoop/apps/tinytex/current/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-) [1{c:/Users/ual-laptop/scoop/apps/tinytex/current/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
-
-]
-<../../../build_dir/Histogram_output/figures/fig_exp1_runs.pdf, id=46, 496.45412pt x 280.55064pt>
+)
+<../../../build_dir/Histogram_output/figures/fig_exp1_runs.pdf, id=32, 496.45412pt x 280.55064pt>
 File: ../../../build_dir/Histogram_output/figures/fig_exp1_runs.pdf Graphic file (type pdf)
 <use ../../../build_dir/Histogram_output/figures/fig_exp1_runs.pdf>
-Package pdftex.def Info: ../../../build_dir/Histogram_output/figures/fig_exp1_runs.pdf  used on input line 304.
+Package pdftex.def Info: ../../../build_dir/Histogram_output/figures/fig_exp1_runs.pdf  used on input line 364.
 (pdftex.def)             Requested size: 225.4804pt x 127.42386pt.
-<../../../build_dir/Histogram_output/figures/fig_exp1_bar.pdf, id=47, 496.54855pt x 281.87685pt>
+<../../../build_dir/Histogram_output/figures/fig_exp1_bar.pdf, id=33, 496.51308pt x 281.87685pt>
 File: ../../../build_dir/Histogram_output/figures/fig_exp1_bar.pdf Graphic file (type pdf)
 <use ../../../build_dir/Histogram_output/figures/fig_exp1_bar.pdf>
-Package pdftex.def Info: ../../../build_dir/Histogram_output/figures/fig_exp1_bar.pdf  used on input line 309.
-(pdftex.def)             Requested size: 225.4804pt x 127.9961pt.
-<../../../build_dir/Histogram_output/figures/fig_exp1_speedup.pdf, id=48, 496.38419pt x 281.87685pt>
+Package pdftex.def Info: ../../../build_dir/Histogram_output/figures/fig_exp1_bar.pdf  used on input line 369.
+(pdftex.def)             Requested size: 225.4804pt x 128.009pt.
+<../../../build_dir/Histogram_output/figures/fig_exp1_speedup.pdf, id=34, 496.40143pt x 281.87685pt>
 File: ../../../build_dir/Histogram_output/figures/fig_exp1_speedup.pdf Graphic file (type pdf)
 <use ../../../build_dir/Histogram_output/figures/fig_exp1_speedup.pdf>
-Package pdftex.def Info: ../../../build_dir/Histogram_output/figures/fig_exp1_speedup.pdf  used on input line 318.
+Package pdftex.def Info: ../../../build_dir/Histogram_output/figures/fig_exp1_speedup.pdf  used on input line 378.
 (pdftex.def)             Requested size: 258.36668pt x 146.71443pt.
-<../../../build_dir/Histogram_output/figures/fig_exp2_runs.pdf, id=49, 496.45412pt x 280.55064pt>
+<../../../build_dir/Histogram_output/figures/fig_exp2_runs.pdf, id=35, 496.45412pt x 280.55064pt>
 File: ../../../build_dir/Histogram_output/figures/fig_exp2_runs.pdf Graphic file (type pdf)
 <use ../../../build_dir/Histogram_output/figures/fig_exp2_runs.pdf>
-Package pdftex.def Info: ../../../build_dir/Histogram_output/figures/fig_exp2_runs.pdf  used on input line 363.
+Package pdftex.def Info: ../../../build_dir/Histogram_output/figures/fig_exp2_runs.pdf  used on input line 452.
 (pdftex.def)             Requested size: 225.4804pt x 127.42386pt.
-<../../../build_dir/Histogram_output/figures/fig_exp2_bar.pdf, id=50, 496.54855pt x 281.87685pt>
+<../../../build_dir/Histogram_output/figures/fig_exp2_bar.pdf, id=36, 496.51308pt x 281.87685pt>
 File: ../../../build_dir/Histogram_output/figures/fig_exp2_bar.pdf Graphic file (type pdf)
 <use ../../../build_dir/Histogram_output/figures/fig_exp2_bar.pdf>
-Package pdftex.def Info: ../../../build_dir/Histogram_output/figures/fig_exp2_bar.pdf  used on input line 368.
-(pdftex.def)             Requested size: 225.4804pt x 127.9961pt.
-<../../../build_dir/Histogram_output/figures/fig_exp2_speedup.pdf, id=51, 496.38419pt x 281.87685pt>
+Package pdftex.def Info: ../../../build_dir/Histogram_output/figures/fig_exp2_bar.pdf  used on input line 457.
+(pdftex.def)             Requested size: 225.4804pt x 128.009pt.
+<../../../build_dir/Histogram_output/figures/fig_exp2_speedup.pdf, id=37, 496.34056pt x 281.87685pt>
 File: ../../../build_dir/Histogram_output/figures/fig_exp2_speedup.pdf Graphic file (type pdf)
 <use ../../../build_dir/Histogram_output/figures/fig_exp2_speedup.pdf>
-Package pdftex.def Info: ../../../build_dir/Histogram_output/figures/fig_exp2_speedup.pdf  used on input line 377.
-(pdftex.def)             Requested size: 258.36668pt x 146.71443pt.
-<../../../build_dir/Histogram_output/figures/fig_avg_comparison.pdf, id=52, 568.81853pt x 318.26778pt>
+Package pdftex.def Info: ../../../build_dir/Histogram_output/figures/fig_exp2_speedup.pdf  used on input line 466.
+(pdftex.def)             Requested size: 258.36668pt x 146.73595pt.
+<../../../build_dir/Histogram_output/figures/fig_avg_comparison.pdf, id=38, 568.78311pt x 318.26778pt>
 File: ../../../build_dir/Histogram_output/figures/fig_avg_comparison.pdf Graphic file (type pdf)
 <use ../../../build_dir/Histogram_output/figures/fig_avg_comparison.pdf>
-Package pdftex.def Info: ../../../build_dir/Histogram_output/figures/fig_avg_comparison.pdf  used on input line 384.
-(pdftex.def)             Requested size: 305.33789pt x 170.8422pt.
- [2] [3 <../../../build_dir/Histogram_output/figures/fig_exp1_runs.pdf> <../../../build_dir/Histogram_output/figures/fig_exp1_bar.pdf> <../../../build_dir/Histogram_output/figures/fig_exp1_speedup.pdf>] [4 <../../../build_dir/Histogram_output/figures/fig_exp2_runs.pdf> <../../../build_dir/Histogram_output/figures/fig_exp2_bar.pdf> <../../../build_dir/Histogram_output/figures/fig_exp2_speedup.pdf> <../../../build_dir/Histogram_output/figures/fig_avg_comparison.pdf>]
+Package pdftex.def Info: ../../../build_dir/Histogram_output/figures/fig_avg_comparison.pdf  used on input line 473.
+(pdftex.def)             Requested size: 305.33789pt x 170.85191pt.
+ [1{c:/Users/ual-laptop/scoop/apps/tinytex/current/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
+
+] [2 <../../../build_dir/Histogram_output/figures/fig_exp1_runs.pdf> <../../../build_dir/Histogram_output/figures/fig_exp1_bar.pdf>] [3 <../../../build_dir/Histogram_output/figures/fig_exp1_speedup.pdf>] [4 <../../../build_dir/Histogram_output/figures/fig_exp2_runs.pdf> <../../../build_dir/Histogram_output/figures/fig_exp2_bar.pdf> <../../../build_dir/Histogram_output/figures/fig_exp2_speedup.pdf> <../../../build_dir/Histogram_output/figures/fig_avg_comparison.pdf>]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 426.
+(hyperref)                removing `math shift' on input line 515.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 426.
+(hyperref)                removing `math shift' on input line 515.
 
 [5]
-<../../../build_dir/Histogram_output/figures/fig_v2_v4_vectorization.pdf, id=502, 496.39137pt x 279.95416pt>
-File: ../../../build_dir/Histogram_output/figures/fig_v2_v4_vectorization.pdf Graphic file (type pdf)
-<use ../../../build_dir/Histogram_output/figures/fig_v2_v4_vectorization.pdf>
-Package pdftex.def Info: ../../../build_dir/Histogram_output/figures/fig_v2_v4_vectorization.pdf  used on input line 550.
-(pdftex.def)             Requested size: 281.85587pt x 158.96466pt.
- [6]
-<../../../build_dir/Histogram_output/figures/fig_v5_pcie_overhead.pdf, id=513, 496.47105pt x 281.35864pt>
-File: ../../../build_dir/Histogram_output/figures/fig_v5_pcie_overhead.pdf Graphic file (type pdf)
-<use ../../../build_dir/Histogram_output/figures/fig_v5_pcie_overhead.pdf>
-Package pdftex.def Info: ../../../build_dir/Histogram_output/figures/fig_v5_pcie_overhead.pdf  used on input line 584.
-(pdftex.def)             Requested size: 281.85587pt x 159.73212pt.
- [7 <../../../build_dir/Histogram_output/figures/fig_v2_v4_vectorization.pdf>] [8 <../../../build_dir/Histogram_output/figures/fig_v5_pcie_overhead.pdf>] (./hw4_report.aux)
+<../../../build_dir/Histogram_output/figures/fig_v2_v3_ablation.pdf, id=538, 496.51308pt x 279.95416pt>
+File: ../../../build_dir/Histogram_output/figures/fig_v2_v3_ablation.pdf Graphic file (type pdf)
+<use ../../../build_dir/Histogram_output/figures/fig_v2_v3_ablation.pdf>
+Package pdftex.def Info: ../../../build_dir/Histogram_output/figures/fig_v2_v3_ablation.pdf  used on input line 615.
+(pdftex.def)             Requested size: 305.33789pt x 172.16437pt.
+ [6] [7 <../../../build_dir/Histogram_output/figures/fig_v2_v3_ablation.pdf>]
+<../../../build_dir/Histogram_output/figures/fig_v5_gather_overhead.pdf, id=610, 496.5658pt x 281.35864pt>
+File: ../../../build_dir/Histogram_output/figures/fig_v5_gather_overhead.pdf Graphic file (type pdf)
+<use ../../../build_dir/Histogram_output/figures/fig_v5_gather_overhead.pdf>
+Package pdftex.def Info: ../../../build_dir/Histogram_output/figures/fig_v5_gather_overhead.pdf  used on input line 688.
+(pdftex.def)             Requested size: 281.85587pt x 159.70206pt.
+ [8 <../../../build_dir/Histogram_output/figures/fig_v5_gather_overhead.pdf>] [9] [10] (./hw4_report.aux)
  ***********
 LaTeX2e <2025-11-01>
 L3 programming layer <2026-01-19>
  ***********
 Package rerunfilecheck Info: File `hw4_report.out' has not changed.
-(rerunfilecheck)             Checksum: D6E8B258FA887CF73EC0E7F154C7FDFD;1800.
+(rerunfilecheck)             Checksum: 07BCE6D82561384F402041371E166B3C;1841.
  ) 
 Here is how much of TeX's memory you used:
- 14298 strings out of 469515
- 231412 string characters out of 5467663
- 839465 words of memory out of 5000000
- 42745 multiletter control sequences out of 15000+600000
+ 14352 strings out of 469515
+ 232074 string characters out of 5467663
+ 848465 words of memory out of 5000000
+ 42794 multiletter control sequences out of 15000+600000
  637649 words of font info for 78 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 75i,11n,79p,581b,600s stack positions out of 10000i,1000n,20000p,200000b,200000s
- <c:/Users/ual-laptop/scoop/apps/tinytex/current/texmf-var/fonts/pk/ljfour/jknappen/ec/tcrm1095.600pk><c:/Users/ual-laptop/scoop/apps/tinytex/current/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb><c:/Users/ual-laptop/scoop/apps/tinytex/current/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><c:/Users/ual-laptop/scoop/apps/tinytex/current/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><c:/Users/ual-laptop/scoop/apps/tinytex/current/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:/Users/ual-laptop/scoop/apps/tinytex/current/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><c:/Users/ual-laptop/scoop/apps/tinytex/current/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/Users/ual-laptop/scoop/apps/tinytex/current/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb><c:/Users/ual-laptop/scoop/apps/tinytex/current/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on hw4_report.pdf (8 pages, 299230 bytes).
+ 75i,11n,79p,581b,594s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ <c:/Users/ual-laptop/scoop/apps/tinytex/current/texmf-var/fonts/pk/ljfour/jknappen/ec/tcrm1095.600pk><c:/Users/ual-laptop/scoop/apps/tinytex/current/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb><c:/Users/ual-laptop/scoop/apps/tinytex/current/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><c:/Users/ual-laptop/scoop/apps/tinytex/current/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><c:/Users/ual-laptop/scoop/apps/tinytex/current/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:/Users/ual-laptop/scoop/apps/tinytex/current/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><c:/Users/ual-laptop/scoop/apps/tinytex/current/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb><c:/Users/ual-laptop/scoop/apps/tinytex/current/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/Users/ual-laptop/scoop/apps/tinytex/current/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb><c:/Users/ual-laptop/scoop/apps/tinytex/current/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
+Output written on hw4_report.pdf (10 pages, 324843 bytes).
 PDF statistics:
- 685 PDF objects out of 1000 (max. 8388607)
- 182 compressed objects within 2 object streams
- 45 named destinations out of 1000 (max. 500000)
+ 744 PDF objects out of 1000 (max. 8388607)
+ 198 compressed objects within 2 object streams
+ 50 named destinations out of 1000 (max. 500000)
  102 words of extra memory for PDF output out of 10000 (max. 10000000)
 
