@@ -6,36 +6,43 @@
 \providecommand*\caption@xref[2]{\@setref\relax\@undefined{#1}}
 \newlabel{tab:versions}{{1}{1}{Histogram kernel version summary}{table.caption.2}{}}
 \@writefile{toc}{\contentsline {section}{\numberline {1}Experiment 1: Random Data (Dataset 6)}{1}{section.1}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {2}Experiment 2: Uniform Data (Same Value)}{1}{section.2}\protected@file@percent }
-\@writefile{lot}{\contentsline {table}{\numberline {2}{\ignorespaces Kernel execution time — Experiment 1 (random, 500k elements, 4096 bins, clipped at 127)}}{2}{table.caption.3}\protected@file@percent }
-\newlabel{tab:exp1}{{2}{2}{Kernel execution time — Experiment 1 (random, 500k elements, 4096 bins, clipped at 127)}{table.caption.3}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {3}{\ignorespaces Kernel execution time — Experiment 1, V4–V7 (random, 500k elements, 4096 bins, clipped at 127)}}{2}{table.caption.4}\protected@file@percent }
-\newlabel{tab:exp1b}{{3}{2}{Kernel execution time — Experiment 1, V4–V7 (random, 500k elements, 4096 bins, clipped at 127)}{table.caption.4}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces Experiment 1 — kernel execution time, random data}}{2}{figure.caption.5}\protected@file@percent }
-\newlabel{fig:exp1}{{1}{2}{Experiment 1 — kernel execution time, random data}{figure.caption.5}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces Experiment 1 — speedup of V1, V2, V3 relative to V0 baseline}}{3}{figure.caption.6}\protected@file@percent }
-\newlabel{fig:exp1_speedup}{{2}{3}{Experiment 1 — speedup of V1, V2, V3 relative to V0 baseline}{figure.caption.6}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {4}{\ignorespaces Kernel execution time — Experiment 2 (uniform, 500k elements, 4096 bins, clipped at 127)}}{3}{table.caption.7}\protected@file@percent }
-\newlabel{tab:exp2}{{4}{3}{Kernel execution time — Experiment 2 (uniform, 500k elements, 4096 bins, clipped at 127)}{table.caption.7}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {5}{\ignorespaces Kernel execution time — Experiment 2, V4–V7 (uniform, 500k elements, 4096 bins, clipped at 127)}}{3}{table.caption.8}\protected@file@percent }
-\newlabel{tab:exp2b}{{5}{3}{Kernel execution time — Experiment 2, V4–V7 (uniform, 500k elements, 4096 bins, clipped at 127)}{table.caption.8}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces Experiment 2 — kernel execution time, uniform data}}{4}{figure.caption.9}\protected@file@percent }
-\newlabel{fig:exp2}{{3}{4}{Experiment 2 — kernel execution time, uniform data}{figure.caption.9}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces Experiment 2 — speedup of V1, V2, V3 relative to V0 baseline}}{4}{figure.caption.10}\protected@file@percent }
-\newlabel{fig:exp2_speedup}{{4}{4}{Experiment 2 — speedup of V1, V2, V3 relative to V0 baseline}{figure.caption.10}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces Side-by-side comparison of average kernel time: Experiment 1 vs.\ 2 per version}}{4}{figure.caption.11}\protected@file@percent }
-\newlabel{fig:comparison}{{5}{4}{Side-by-side comparison of average kernel time: Experiment 1 vs.\ 2 per version}{figure.caption.11}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {3}Analysis 1: V0 vs.\ V1 — Global vs.\ Shared Memory}{5}{section.3}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {4}Analysis 2: Version 2 — Vectorized $\mathcal  {R}$-per-Block Privatization}{5}{section.4}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {5}Analysis 3: Version 3 — Ablation: R=2 Without RLE}{6}{section.5}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {6}{\ignorespaces RLE ablation: V3 (R=2, no RLE) vs.\ V2 (R=2+RLE) for both experiments. Difference isolates the pure temporal compression gain.}}{7}{figure.caption.23}\protected@file@percent }
-\newlabel{fig:v2v3ablation}{{6}{7}{RLE ablation: V3 (R=2, no RLE) vs.\ V2 (R=2+RLE) for both experiments. Difference isolates the pure temporal compression gain}{figure.caption.23}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {6}Additional Kernel Variants}{7}{section.6}\protected@file@percent }
-\@writefile{lot}{\contentsline {table}{\numberline {6}{\ignorespaces V4 (warp aggregation) vs.\ V1/V2 — average execution time}}{8}{table.caption.25}\protected@file@percent }
-\newlabel{tab:v4}{{6}{8}{V4 (warp aggregation) vs.\ V1/V2 — average execution time}{table.caption.25}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {7}{\ignorespaces V5 bin-centric gather vs.\ V0/V1: $O(N{\times }B)$ arithmetic cost vs.\ atomic-based versions. V5 is much slower in absolute time despite issuing zero atomics.}}{8}{figure.caption.27}\protected@file@percent }
-\newlabel{fig:v5gather}{{7}{8}{V5 bin-centric gather vs.\ V0/V1: $O(N{\times }B)$ arithmetic cost vs.\ atomic-based versions. V5 is much slower in absolute time despite issuing zero atomics}{figure.caption.27}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {7}{\ignorespaces V4, V6, and V7 — average execution time summary}}{9}{table.caption.30}\protected@file@percent }
-\newlabel{tab:v467}{{7}{9}{V4, V6, and V7 — average execution time summary}{table.caption.30}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {7}Short Answer Questions}{9}{section.7}\protected@file@percent }
-\gdef \@abspage@last{10}
+\@writefile{lot}{\contentsline {table}{\numberline {2}{\ignorespaces Kernel execution time — Experiment 1 (random, 500k elements, 4096 bins, clipped at 127)}}{2}{table.caption.4}\protected@file@percent }
+\newlabel{tab:exp1}{{2}{2}{Kernel execution time — Experiment 1 (random, 500k elements, 4096 bins, clipped at 127)}{table.caption.4}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {3}{\ignorespaces Kernel execution time — Experiment 1, V4–V7 (random, 500k elements, 4096 bins, clipped at 127)}}{2}{table.caption.5}\protected@file@percent }
+\newlabel{tab:exp1b}{{3}{2}{Kernel execution time — Experiment 1, V4–V7 (random, 500k elements, 4096 bins, clipped at 127)}{table.caption.5}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces Experiment 1 — kernel execution time, random data}}{2}{figure.caption.6}\protected@file@percent }
+\newlabel{fig:exp1}{{1}{2}{Experiment 1 — kernel execution time, random data}{figure.caption.6}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces Experiment 1 — speedup of V1, V2, V3 relative to V0 baseline}}{3}{figure.caption.7}\protected@file@percent }
+\newlabel{fig:exp1_speedup}{{2}{3}{Experiment 1 — speedup of V1, V2, V3 relative to V0 baseline}{figure.caption.7}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {2}Experiment 2: Uniform Data (Same Value)}{3}{section.2}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {4}{\ignorespaces Kernel execution time — Experiment 2 (uniform, 500k elements, 4096 bins, clipped at 127)}}{3}{table.caption.8}\protected@file@percent }
+\newlabel{tab:exp2}{{4}{3}{Kernel execution time — Experiment 2 (uniform, 500k elements, 4096 bins, clipped at 127)}{table.caption.8}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {3}Analysis 1: V0 vs.\ V1 — Global vs.\ Shared Memory}{3}{section.3}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {5}{\ignorespaces Kernel execution time — Experiment 2, V4–V7 (uniform, 500k elements, 4096 bins, clipped at 127)}}{4}{table.caption.9}\protected@file@percent }
+\newlabel{tab:exp2b}{{5}{4}{Kernel execution time — Experiment 2, V4–V7 (uniform, 500k elements, 4096 bins, clipped at 127)}{table.caption.9}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces Experiment 2 — kernel execution time, uniform data}}{4}{figure.caption.10}\protected@file@percent }
+\newlabel{fig:exp2}{{3}{4}{Experiment 2 — kernel execution time, uniform data}{figure.caption.10}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces Experiment 2 — speedup of V1, V2, V3 relative to V0 baseline}}{4}{figure.caption.11}\protected@file@percent }
+\newlabel{fig:exp2_speedup}{{4}{4}{Experiment 2 — speedup of V1, V2, V3 relative to V0 baseline}{figure.caption.11}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces Side-by-side comparison of average kernel time: Experiment 1 vs.\ 2 per version}}{5}{figure.caption.12}\protected@file@percent }
+\newlabel{fig:comparison}{{5}{5}{Side-by-side comparison of average kernel time: Experiment 1 vs.\ 2 per version}{figure.caption.12}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {4}Analysis 2: Version 2 — Vectorized $\mathcal  {R}$-per-Block Privatization}{6}{section.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {5}Analysis 3: Version 3 — Ablation: R=2 Without RLE}{7}{section.5}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {6}{\ignorespaces RLE ablation: V3 (R=2, no RLE) vs.\ V2 (R=2+RLE) for both experiments. Difference isolates the pure temporal compression gain.}}{7}{figure.caption.24}\protected@file@percent }
+\newlabel{fig:v2v3ablation}{{6}{7}{RLE ablation: V3 (R=2, no RLE) vs.\ V2 (R=2+RLE) for both experiments. Difference isolates the pure temporal compression gain}{figure.caption.24}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {6}Additional Kernel Variants}{8}{section.6}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {6}{\ignorespaces V4 (warp aggregation) vs.\ V1/V2 — average execution time}}{8}{table.caption.26}\protected@file@percent }
+\newlabel{tab:v4}{{6}{8}{V4 (warp aggregation) vs.\ V1/V2 — average execution time}{table.caption.26}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {7}{\ignorespaces V5 bin-centric gather vs.\ V0/V1: $O(N{\times }B)$ arithmetic cost vs.\ atomic-based versions. V5 is much slower in absolute time despite issuing zero atomics.}}{9}{figure.caption.28}\protected@file@percent }
+\newlabel{fig:v5gather}{{7}{9}{V5 bin-centric gather vs.\ V0/V1: $O(N{\times }B)$ arithmetic cost vs.\ atomic-based versions. V5 is much slower in absolute time despite issuing zero atomics}{figure.caption.28}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {7}{\ignorespaces V4, V6, and V7 — average execution time summary}}{9}{table.caption.31}\protected@file@percent }
+\newlabel{tab:v467}{{7}{9}{V4, V6, and V7 — average execution time summary}{table.caption.31}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {7}Scaling Experiment: Kernel Time vs.\ Input Size}{10}{section.7}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {8}{\ignorespaces Average kernel time vs.\ input size for V0--V7 (random data, 4096 bins). Error bars show $\pm 1\sigma $ over five runs. V5 (Bin-Centric Gather) dominates at large $N$ due to its $O(N \times B)$ complexity.}}{10}{figure.caption.32}\protected@file@percent }
+\newlabel{fig:scaling_time}{{8}{10}{Average kernel time vs.\ input size for V0--V7 (random data, 4096 bins). Error bars show $\pm 1\sigma $ over five runs. V5 (Bin-Centric Gather) dominates at large $N$ due to its $O(N \times B)$ complexity}{figure.caption.32}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {8}Short Answer Questions}{10}{section.8}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {9}{\ignorespaces Log-log plot of average kernel time vs.\ input size. Slope $\approx 1$ confirms $O(N)$ behaviour for V0--V4 and V7; the steeper slope for V5 reflects the super-linear $O(N \times B)$ gather cost.}}{11}{figure.caption.33}\protected@file@percent }
+\newlabel{fig:scaling_loglog}{{9}{11}{Log-log plot of average kernel time vs.\ input size. Slope $\approx 1$ confirms $O(N)$ behaviour for V0--V4 and V7; the steeper slope for V5 reflects the super-linear $O(N \times B)$ gather cost}{figure.caption.33}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {10}{\ignorespaces Effective memory bandwidth (GB/s) vs.\ input size. Bandwidth rises as $N$ increases and the kernel becomes compute-bound, saturating near the P100 peak of ${\sim }732\,\text  {GB/s}$ for the best-performing versions at large $N$. Small-$N$ runs are latency-dominated and therefore bandwidth-inefficient.}}{11}{figure.caption.34}\protected@file@percent }
+\newlabel{fig:scaling_bw}{{10}{11}{Effective memory bandwidth (GB/s) vs.\ input size. Bandwidth rises as $N$ increases and the kernel becomes compute-bound, saturating near the P100 peak of ${\sim }732\,\text {GB/s}$ for the best-performing versions at large $N$. Small-$N$ runs are latency-dominated and therefore bandwidth-inefficient}{figure.caption.34}{}}
+\gdef \@abspage@last{12}

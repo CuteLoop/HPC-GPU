@@ -324,6 +324,8 @@ V7 & Multi-split      & Hierarchical Bucketing                    & Shared ($N$ 
 }
 \end{table}
 
+\section*{About the optimizations}
+There are three tiers of optimization strategies.
 
 
 % ════════════════════════════════════════════════════════════
@@ -827,6 +829,49 @@ V7 — Multi-split       & \EOneVSevenAvg & \EOneVSevenStdev & \ETwoVSevenAvg & 
 \bottomrule
 \end{tabular}
 \end{table}
+
+% ════════════════════════════════════════════════════════════
+\section{Scaling Experiment: Kernel Time vs.\ Input Size}
+% ════════════════════════════════════════════════════════════
+
+To characterise the asymptotic behaviour of each histogram version we
+benchmark V0--V7 across eight input sizes:
+2k, 10k, 50k, 200k, 500k, 1M, 10M, and 50M elements
+(random uniform in $[0,4095]$, 4096 bins fixed).
+Each (version, size) combination is repeated five times; error bars show
+one standard deviation.
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=\textwidth]{fig_scaling_time.pdf}
+  \caption{Average kernel time vs.\ input size for V0--V7 (random data,
+           4096 bins).  Error bars show $\pm 1\sigma$ over five runs.
+           V5 (Bin-Centric Gather) dominates at large $N$ due to its
+           $O(N \times B)$ complexity.}
+  \label{fig:scaling_time}
+\end{figure}
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=\textwidth]{fig_scaling_loglog.pdf}
+  \caption{Log-log plot of average kernel time vs.\ input size.
+           Slope $\approx 1$ confirms $O(N)$ behaviour for V0--V4 and V7;
+           the steeper slope for V5 reflects the super-linear $O(N \times B)$
+           gather cost.}
+  \label{fig:scaling_loglog}
+\end{figure}
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=\textwidth]{fig_scaling_bandwidth.pdf}
+  \caption{Effective memory bandwidth (GB/s) vs.\ input size.
+           Bandwidth rises as $N$ increases and the kernel becomes
+           compute-bound, saturating near the P100 peak of
+           ${\sim}732\,\text{GB/s}$ for the best-performing versions at
+           large $N$.  Small-$N$ runs are latency-dominated and therefore
+           bandwidth-inefficient.}
+  \label{fig:scaling_bw}
+\end{figure}
 
 % ════════════════════════════════════════════════════════════
 \section{Short Answer Questions}

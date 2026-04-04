@@ -42,7 +42,7 @@ echo "--- Step 1: Generating datasets (~1 GB, temporary) ---"
 
 # Dataset IDs → sizes: 11=2k, 12=10k, 13=50k, 14=200k, 6=500k, 8=1M, 9=10M, 10=50M
 DATASETS=(11 12 13 14 6 8 9 10)
-VERSIONS=(0 1 2 3 4 5 6 7)   # All histogram versions
+VERSIONS=(0 1 2 3 4 6 7)   # V5 (Bin-Centric Gather) excluded: O(N×B) is too slow at large N
 N_RUNS=5
 
 echo "--- Step 2: Running benchmarks ---"

@@ -543,7 +543,7 @@ SCALING_DS_SIZES = {
     9:  10_000_000,
     10: 50_000_000,
 }
-SCALING_VERSIONS = list(range(NUM_VERSIONS))   # V0–V7
+SCALING_VERSIONS = [v for v in range(NUM_VERSIONS) if v != 5]  # V0–V4, V6–V7 (V5 O(N×B) excluded)
 SCALING_RUNS     = 5
 
 def collect_scaling():
